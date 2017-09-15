@@ -29,7 +29,6 @@
 <script src="./js/tools.js"></script>
 <script>
 //    getMajors(appData)
-    OCJSJAVA('/costin/mapi/authentication/major',getMajors,{},renderMajor);
     function postButton() {
         OCJSJAVA('/costin/mapi/authentication/later',postDataLast);
     }
@@ -57,14 +56,13 @@
         <div class="school-info bac-white">
             <ul>
                 <li class="form-list flex">
-                    <img src="./img/icon_name.png" alt="">
-                    <select id="alumni1Major" name="major" class="select-style">
-
-                    </select>
+                    <img src="./img/icon_major.png" alt="">
+                    <input id="alumni1Major" type="text" class="form-content" placeholder="学院(如长江商学院)">
+                    <!--<select id="alumni1Major" name="major" class="select-style"></select>-->
                 </li>
                 <li class="form-list flex">
-                    <img src="./img/icon_phone.png" alt="">
-                    <input id="alumni1Classes" type="text" class="form-content" placeholder="届别">
+                    <img src="./img/icon_grade.png" alt="">
+                    <input id="alumni1Classes" type="text" class="form-content" placeholder="届别(如EMBA25期)">
                 </li>
             </ul>
         </div>
@@ -87,14 +85,16 @@
         <div class="school-info bac-white">
             <ul>
                 <li class="form-list flex">
-                    <img src="./img/icon_name.png" alt="">
-                    <select id="alumni2Major" name="major" class="select-style">
+                    <img src="./img/icon_major.png" alt="">
+                    <input id="alumni2Major" type="text" class="form-content" placeholder="学院(如长江商学院)">
 
-                    </select>
+                    <!--<select id="alumni2Major" name="major" class="select-style">-->
+
+                    <!--</select>-->
                 </li>
                 <li class="form-list flex">
-                    <img src="./img/icon_phone.png" alt="">
-                    <input id="alumni2Classes" type="text" class="form-content" placeholder="届别">
+                    <img src="./img/icon_grade.png" alt="">
+                    <input id="alumni2Classes" type="text" class="form-content" placeholder="届别(如EMBA25期)">
                 </li>
             </ul>
         </div>

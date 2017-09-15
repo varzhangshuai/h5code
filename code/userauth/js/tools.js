@@ -363,12 +363,7 @@ function renderLast(data) {
     }
     if(data.alumni1Major!=''){
         $('#alumni1Major').val(data.alumni1Major)
-        selectColor($('#alumni1Major'))
-        if($('#alumni1Major').val()!=null){
-            major_state1 = true;
-            buttonChange2()
-
-        }
+        major_state1 = true;
     }
     if(data.alumni1Classes!=''){
         $('#alumni1Classes').val(data.alumni1Classes)
@@ -381,7 +376,6 @@ function renderLast(data) {
     if(data.alumni2Name!=''){
         $('#alumni2Name').val(data.alumni2Name)
         name_state2 = true;
-
     }
     if(data.alumni2Phone!=''){
         $('#alumni2Phone').val(data.alumni2Phone)
@@ -389,16 +383,13 @@ function renderLast(data) {
     }
     if(data.alumni2Major!=''){
         $('#alumni2Major').val(data.alumni2Major)
-        selectColor($('#alumni2Major'))
-        if($('#alumni2Major').val()!=null){
-            major_state2 = true;
-            buttonChange2()
-        }
+        major_state2 = true;
     }
     if(data.alumni2Classes!=''){
         $('#alumni2Classes').val(data.alumni2Classes)
         classes_state2 = true;
     }
+    buttonChange2()
 }
 //设置img样式
 function imgCss(url) {
@@ -446,9 +437,16 @@ function renderAfter(data) {
     }
     if(data.companyImg!=''){
         $('#companyImg').css(imgCss(data.companyImg))
-        $('#companyImg').parent().next().css('display','block')
+        $('#companyImg').parents('label').next().css('display','block')
         company_state = true
     }
+    alert(JSON.stringify(data))
+
+    if(data.collegeImg!=''){
+        $('#collegeImg').css(imgCss(data.companyImg))
+        $('#collegeImg').parents('label').next().css('display','block')
+    }
+
 
     buttonChange()
 }
@@ -507,19 +505,25 @@ function postDataFirst(data) {
 }
 //提交表单2
 function postDataLast(data) {
-    var form = {
-        alumni1Name:$('#alumni1Name').val(),
-        alumni1Major:$('#alumni1Major').val(),
-        alumni1Classes:$('#alumni1Classes').val(),
-        alumni1Phone:$('#alumni1Phone').val(),
-        alumni2Name:$('#alumni2Name').val(),
-        alumni2Phone:$('#alumni2Phone').val(),
-        alumni2Major:$('#alumni2Major').val(),
-        alumni2Classes:$('#alumni2Classes').val(),
-    }
-    if(form.alumni1Name==''||form.alumni1Major==''||form.alumni1Classes==''||form.alumni1Phone==''||form.alumni2Name==''||form.alumni2Phone==''||form.alumni2Major==''||form.alumni2Classes==''){
+    var alumni1Name=$('#alumni1Name').val(),
+        alumni1Major=$('#alumni1Major').val(),
+        alumni1Classes=$('#alumni1Classes').val(),
+        alumni1Phone=$('#alumni1Phone').val(),
+        alumni2Name=$('#alumni2Name').val(),
+        alumni2Phone=$('#alumni2Phone').val(),
+        alumni2Major=$('#alumni2Major').val(),
+        alumni2Classes=$('#alumni2Classes').val();
+    if(alumni1Name==''||alumni1Major==''||alumni1Classes==''||alumni1Phone==''||alumni2Name==''||alumni2Phone==''||alumni2Major==''||alumni2Classes==''){
         toast('请填写完全部内容')
         return
+    }
+    var form = {
+        alumni1Name:alumni1Name,
+        alumni1Phone:alumni1Phone,
+        alumni1Classes:alumni1Major+','+alumni1Classes,
+        alumni2Name:alumni2Name,
+        alumni2Phone:alumni2Phone,
+        alumni2Classes:alumni2Major+','+alumni2Classes,
     }
     $.extend(data,form)
     // data = Object.assign(data,form)
@@ -540,44 +544,6 @@ function postDataLast(data) {
         }
     });
 }
-//获取商学院
-function getMajors(data) {
-    $.ajax({
-        type: "GET", //用POST方式传输
-        url:route+ '/costin/mapi/authentication/major',
-        //目标地址
-        data:data,
-        success: function (res){
-            if(res.code==1){
-                renderMajor(res.original)
-            } else{
-                toast(res.msg)
-            }
-        },
-        error:function(err){
-            console.log(err)
-        }
-    });
-}
-
-//渲染商学院
-function renderMajor(data) {
-    var list="<option value=''>攻读方向</option>"
-    var name=''
-    for (var i=0;i<data.length;i++){
-        list+="<option value="+data[i].majorItemid+">"+data[i].name+"</option>";
-        name+=(data[i].name+',')
-    }
-    $('.select-style').append(list);
-}
-//select 默认颜色
-function selectColor(dom) {
-    if(dom.val()==0 ||dom.val()==null){
-        dom.css('color','#cccccc')
-    }else {
-        dom.css('color','#333333')
-    }
-}
 
 //上传图片
 var client = new OSS.Wrapper({
@@ -587,7 +553,7 @@ var client = new OSS.Wrapper({
     bucket : 'daodao-upload'
 });
 function postPhoto(dom,callback){
-    var imgReplace = dom.parent().find('label div');
+    var imgReplace = dom.parent().find('label .oss');
     var closebtn = dom.parent().find('.close-img');
     var f = dom[0].files[0];
     var val= dom.val();
@@ -605,7 +571,7 @@ function postPhoto(dom,callback){
         return;
     }
 
-    if(f.size>2*1024*1024){
+    if(f.size>4*1024*1024){
         toast('上传的图片的大于2M,请重新选择')
         return
     }

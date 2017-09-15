@@ -53,18 +53,18 @@ body {
   height: 4.44rem;
 }
 .auth-bottom li:nth-child(1) {
-  background: url("../img/auth-bottom1.png") no-repeat;
+  background: url("../img/auth-bottom1.png?v=1.0") no-repeat;
   background-size: cover;
 }
 .auth-bottom li:nth-child(2) {
-  background: url("../img/auth-bottom2.png?v=1.0") no-repeat;
+  background: url("../img/auth-bottom2.png?v=1.1") no-repeat;
   background-size: cover;
 }
 .auth-bottom li:nth-child(3) {
-  background: url("../img/auth-bottom3.png?v=1.0") no-repeat;
+  background: url("../img/auth-bottom3.png?v=1.1") no-repeat;
   background-size: cover;
 }
 .auth-bottom li:nth-child(4) {
-  background: url("../img/auth-bottom4.png?v=1.0") no-repeat;
+  background: url("../img/auth-bottom4.png?v=1.1") no-repeat;
   background-size: cover;
 }

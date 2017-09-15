@@ -3,34 +3,6 @@ $(function () {
     // getFormData(appData,renderLast);
     OCJSJAVA('/costin/mapi/authentication/after',getFormData,{},renderLast);
 
-
-    // $('.next-button').click(function () {
-    //     // postDataLast(appData)
-    //     OCJSJAVA('/costin/mapi/authentication/later',postDataFirst);
-    //
-    // })
-    $('#alumni1Major').change(function () {
-        selectColor($(this));
-        console.log($(this).val());
-        if($(this).val()!=''){
-            major_state1 = true;
-            buttonChange2()
-        }else{
-            major_state1 = false;
-            buttonChange2()
-        }
-    })
-    $('#alumni2Major').change(function () {
-        if($(this).val()!=''){
-            major_state2 = true;
-            buttonChange2()
-        }else {
-            major_state2 = false;
-            buttonChange2()
-        }
-        selectColor($(this))
-    })
-
     //确定value
     //姓名
     if($('#alumni1Name').val()!=null){
@@ -60,7 +32,6 @@ $(function () {
         buttonChange2()
     }
      if($('#alumni1Major').val()!=null){
-        console.log($('#alumni1Major').val())
          major_state1 = true;
         buttonChange2()
     }
@@ -156,7 +127,31 @@ $(function () {
         }
     })
 
+//学院
+    $('#alumni1Major').blur(function () {
+        var value=$(this).val()
+        if (this.value == "") {
+            toast('请输入学院!')
+            major_state1 = false;
+            buttonChange2()
+        } else {
+            major_state1 = true;
+            buttonChange2()
+        }
+    })
 
+    //学院
+    $('#alumni2Major').blur(function () {
+        var value=$(this).val()
+        if (this.value == "") {
+            toast('请输入学院!')
+            major_state2 = true;
+            buttonChange2()
+        } else {
+            major_state2 = true;
+            buttonChange2()
+        }
+    })
 //        班级
     $('#alumni1Classes').blur(function () {
         var value=$(this).val()
@@ -181,10 +176,5 @@ $(function () {
             buttonChange2()
         }
     })
-
-    selectColor($('#alumni1Major'))
-    selectColor($('#alumni2Major'))
-
-
 })
 

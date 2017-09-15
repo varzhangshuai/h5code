@@ -117,9 +117,22 @@ input[type="text"] {
   height: 4.8rem;
   margin: 0 auto;
 }
+.company-bg {
+  width: 8.50666667rem;
+  height: 4.8rem;
+  margin: 0 auto;
+  background: url("../img/bg_company.png") no-repeat;
+  background-size: cover;
+}
+.school-bg {
+  width: 8.50666667rem;
+  height: 4.8rem;
+  margin: 0 auto;
+  background: url("../img/bg_school.png") no-repeat;
+  background-size: cover;
+}
 .bac-after {
-  border: 0.02666667rem dashed #cccccc;
-  background: url(../img/upload.png) no-repeat center center;
+  background: url(../img/upload.png?v=1.0) no-repeat center center;
   background-size: 2.13333333rem 1.2rem;
 }
 .bac-before {

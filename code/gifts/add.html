@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>新建地址</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no, email=no"/>
+		<meta name="Keywords" content="道道，企业家社群，企业家社交，企业家平台，长江互助，中大互助">
+		<meta name="Description" content="北京道同网络信息技术有限公司，是服务于企业家人群的信息技术平台。通过云计算和大数据，快速精准的匹配企业家需要的资源。打造新时代的经济共享平台。">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<script type="text/javascript" src="http://img.daodaoclub.com/public/baiduTotal.js"></script>
+		<script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/add.css?v=1.0.3">
+	</head>
+	<script type="text/javascript">
+	//rem适配方案
+			(function(){
+				var width =document.documentElement.clientWidth/10;
+				var styleNode = document.createElement("style");
+					styleNode.innerHTML="html{font-size:"+width+"px!important}"
+					document.head.appendChild(styleNode);
+			})()
+	</script>
+	<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+	<script src="js/zeptodetect.js"></script>
+	<script src="js/tools.js"></script>
+	<script src="js/index.js"></script>
+	<body>
+		<div id="whole">
+			<div class="top">
+				<div class="item">
+					<span class="icon">
+						收货人
+					</span>
+					<input type="text" name="name" id="name" maxlength="15"/>
+				</div>
+				<div class="item">
+					<span class="icon">
+						联系电话
+					</span>
+					<input type="text" class="form-inputOne"  name="phone" id="phone" maxlength="15" onkeyup="value=value.replace(/[^0-9]/g,'')" oncontextmenu = "value=value.replace(/[^0-9]/g,'')"/>
+				</div>
+				<div class="item">
+					<span class="icon">
+						所在地区
+					</span>
+					<div class="normal" id="area">
+						请选择
+					</div>
+				</div>
+
+				<div class="item item-bottom">
+					<span class="icon" id="detail-icon">
+						详细地址
+					</span>
+					<textarea name="address" id="adddetail"  placeholder="请填写详细地址，不少于5个字"></textarea>
+				</div>
+			</div>
+			<div id="button">
+				保存
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/area.js"></script>
+<script src="js/picker.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="js/wxshare.js?v=1.0.17"></script>
+<script>
+    //分享
+    appShareWX(shareObj);
+	window.onload=function () {
+
+        var route = myRoutes();
+        var searchObj=getUserid();
+//        var appObj = new Object();
+        var  cityid='';
+
+        OCJSJAVA('/costin/mapi/address',getDetail);
+
+		//地区picker
+        getArea();
+	    function getArea() {
+            var area = document.getElementById('area');
+            var first = []; /* 省，直辖市 */
+            var second = []; /* 市 */
+            var selectedIndex =[0, 0];
+            ; /* 默认选中的地区 */
+            var checked = [0, 0]; /* 已选选项 */
+
+            function creatList(obj, list){
+                obj.forEach(function(item, index, arr){
+                    var temp = new Object();
+                    temp.text = item.name;
+                    temp.value = item.id;
+                    list.push(temp);
+                })
+            }
+
+            creatList(allArea, first);
+
+            if (allArea[selectedIndex[0]].hasOwnProperty('children')) {
+                creatList(allArea[selectedIndex[0]].children, second);
+            } else {
+                second = [{text: '', value: 0}];
+            }
+            var picker = new Picker({
+                data: [first, second],
+                selectedIndex: selectedIndex,
+                title: '地址选择'
+            });
+
+
+            picker.on('picker.select', function (selectedVal, selectedIndex) {
+                var text1 = first[selectedIndex[0]].text;
+                var text2 = second[selectedIndex[1]].text;
+                area.innerText = text1 + ' ' + text2 ;
+            });
+
+
+            picker.on('picker.change', function (index, selectedIndex) {
+                if (index === 0){
+                    firstChange();
+                }
+                function firstChange() {
+                    second = [];
+                    checked[0] = selectedIndex;
+                    var firstCity = allArea[selectedIndex];
+                    if (firstCity.hasOwnProperty('children')) {
+                        creatList(firstCity.children, second);
+                    } else {
+                        second = [{text: '', value: 0}];
+                        checked[1] = 0;
+                    }
+                    picker.refillColumn(1, second);
+                    picker.scrollColumn(1, 0)
+                }
+            });
+            picker.on('picker.valuechange', function (selectedVal, selectedIndex) {
+
+                cityid = selectedVal[1];
+                console.log(selectedVal)
+            });
+
+            area.addEventListener('click', function () {
+                picker.show();
+            });
+
+        }
+
+        //提交
+
+		$('#button').click(function () {
+			var obj={}
+			if(searchObj.id){
+                obj.recordid=searchObj.id
+			}else{
+			    obj.recordid=getCookies('_recordid')
+			}
+			var uri = '/costin/mapi/address/update';
+			deleteOs(postForm,uri,obj)
+
+        });
+
+		function postForm(appObj){
+			var name=$('#name').val();
+            var phone=$('#phone').val();
+            var	addr=$('#adddetail').val();
+            if(! name || name==''){
+                toast('请输入收件人姓名')
+				return
+			}
+            if(! phone || phone==''){
+                toast('请输入收件人手机号码')
+                return
+            }
+            if(! cityid || cityid==''){
+                toast('请选择收件人所在城市')
+                return
+            }
+            if(! addr || addr==''){
+                toast('请输入收件人地址')
+                return
+            }
+            if(addr.length<6){
+                toast('您输入地址过短，请重新输入')
+                return
+            }
+            if(addr.length>38){
+                toast('您输入地址过长，请重新输入')
+                return
+            }
+
+			var id = searchObj.addressid || ''
+
+			var obj={
+                addressid:id,
+                cityid:cityid,
+                name:name,
+                addr:addr,
+                phone:phone,
+                isdefault:1
+			};
+			obj = Object.assign(obj, appObj);
+            $.ajax({
+                type: "POST", //用POST方式传输
+                url: route+'/costin/mapi/address/update' , //目标地址
+                data:obj,
+                success: function (res){
+                    if(res.code==1){
+                        var uri="/app/gifts/adrlist.html";
+                        var _t = gettimestamp();
+						uri+= "?_t="+_t;
+
+                        var recordid = searchObj.id|| getCookies('_recordid');
+						if(recordid){
+						    uri += "&id="+recordid;
+						}
+                        var addressid = searchObj.addressid;
+						if(addressid){
+                            uri += "&addressid="+addressid
+						}
+                        window.location.href = uri;
+                    }else{
+                        toast(res.msg)
+                    }
+                },
+                error:function(err){
+                    console.log(JSON.stringify(err))
+                   // $('#newLog').html('4'+JSON.stringify(err))
+                }
+            });
+        }
+
+		function getDetail(appObj) {
+			if(!searchObj.addressid){
+                return
+			}else {
+                var obj=appObj
+				obj.addressid=searchObj.addressid
+                $.ajax({
+                    type: "GET", //用POST方式传输
+                    url: route+'/costin/mapi/address/detail' , //目标地址
+                    data:obj,
+                    success:function (res) {
+                        $('#newLog').html('detail'+JSON.stringify(res))
+                        if(res.code==1){
+                            var data = res.original
+                            $('#name').val(data.name);
+                            $('#phone').val(data.phone);
+                            $('#adddetail').val(data.addr);
+                        }
+                    },
+                    error:function(err){
+                        console.log(err)
+                    }
+                })
+			}
+        }
+
+        //wxshaere
+        getWxShare();
+    }
+</script>

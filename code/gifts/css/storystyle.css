@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+ul {
+  list-style: none;
+}
+#image li {
+  font-size: 0;
+}
+#image img {
+  height: 2.66666667rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#mv {
+  height: 3.6rem;
+  width: 8rem;
+  position: absolute;
+  top: 18.26666667rem;
+  left: 0.97333333rem;
+}

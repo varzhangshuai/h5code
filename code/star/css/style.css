@@ -1,0 +1,21 @@
+/*清默认样式*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: helvetica;//这个字体是移动端设备通用的西方字体
+}
+img{
+    display: block;
+}
+a,h1,h2,h3,h4,ul,li{
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);//解决a标签高亮问题
+}
+ul{
+    list-style: none;
+}
+input{
+    outline: none;//去除边框高亮
+-webkit-appearance: none;
+}
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var APPCommon = {
+        iphoneSchema: 'XingboTV://',
+        iphoneDownUrl: 'https://itunes.apple.com/cn/app/xing-botv-mei-nu-shuai-ge3d/id1098066581?l=en&mt=8',
+        androidSchema: 'scheme://com.xingbo/',
+        androidDownUrl: 'http://webrs.xingbo.tv/app/XingboLive-release.apk',
+        openApp: function(){
+            var this_  =  this;
+            //微信
+            if(this_.isWeixin()){
+                $(".weixin-tip").css("height",$(window).height());
+                $(".weixin-tip").show();
+                $('.weixin-tip').on('touchstart', function () {
+                    $(".weixin-tip").hide();
+                });
+
+            }else{//非微信浏览器
+                if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+                    var loadDateTime = new Date();
+                    window.setTimeout(function() {
+                        var timeOutDateTime = new Date();
+                        if (timeOutDateTime - loadDateTime < 5000) {
+                            window.location = this_.iphoneDownUrl;//ios下载地址
+                        } else {
+                            window.close();
+                        }
+                    },25);
+                    window.location = this.iphoneSchema;
+                }else if (navigator.userAgent.match(/android/i)) {
+                    try {
+                        window.location = this_.androidSchema;
+                        setTimeout(function(){
+                            window.location=this_.androidDownUrl; //android下载地址
+
+                        },500);
+                    } catch(e) {}
+                }
+            }
+        },
+        isWeixin: function(){ //判断是否是微信
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+    };
+
+</script>

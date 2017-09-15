@@ -1,0 +1,70 @@
+body {
+  font-size: 0.4rem;
+}
+.top {
+  padding-top: 0.8rem;
+  text-align: center;
+}
+.top img {
+  width: 2.77333333rem;
+  height: 2.02666667rem;
+  display: block;
+  margin: 0 auto;
+}
+.top-word {
+  margin: 0.84rem 0 0.70666667rem;
+  line-height: 0.72rem;
+}
+.top-word-success {
+  font-size: 0.45333333rem;
+  line-height: 0.45333333rem;
+  margin: 1.2rem 0 0.81333333rem;
+}
+.apply-auth {
+  width: 8.32rem;
+  height: 1.17333333rem;
+  text-align: center;
+  line-height: 1.17333333rem;
+  font-size: 0.45333333rem;
+  color: #FFFFFF;
+  background: #CB9555;
+  border-radius: 0.13333333rem;
+  margin: 0 auto;
+}
+.middle {
+  padding-top: 0.81333333rem;
+  text-align: center;
+}
+.middle li {
+  float: left;
+}
+.border {
+  border-bottom: 0.01333333rem solid #cccccc;
+  width: 2.01333333rem;
+  padding-top: 0.26666667rem;
+  margin: 0 0.34666667rem 0 0.4rem;
+}
+.long-width {
+  width: 3.04rem;
+}
+.auth-bottom li {
+  float: left;
+  width: 5rem;
+  height: 4.44rem;
+}
+.auth-bottom li:nth-child(1) {
+  background: url("../img/auth-bottom1.png") no-repeat;
+  background-size: cover;
+}
+.auth-bottom li:nth-child(2) {
+  background: url("../img/auth-bottom2.png?v=1.0") no-repeat;
+  background-size: cover;
+}
+.auth-bottom li:nth-child(3) {
+  background: url("../img/auth-bottom3.png?v=1.0") no-repeat;
+  background-size: cover;
+}
+.auth-bottom li:nth-child(4) {
+  background: url("../img/auth-bottom4.png?v=1.0") no-repeat;
+  background-size: cover;
+}

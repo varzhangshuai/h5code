@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>礼尚往来</title>
+    <meta name="Keywords" content="道道，企业家社群，企业家社交，企业家平台，长江互助，中大互助">
+    <meta name="Description" content="北京道同网络信息技术有限公司，是服务于企业家人群的信息技术平台。通过云计算和大数据，快速精准的匹配企业家需要的资源。打造新时代的经济共享平台。">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="http://img.daodaoclub.com/public/baiduTotal.js"></script>
+    <script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>
+</head>
+<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+<script src="js/zeptodetect.js"></script>
+<script src="js/tools.js"></script>
+<script>
+    var route=myRoutes();
+    var uri =route+'/app/gifts/index.html';
+    var _unionid=getCookies('_unionid'); //获取cookie的_unionid
+    var search = getUserid();
+
+    var count=search.count || 0;
+    //判断微信 app
+    if(isWechat){
+        count++;
+        uri+= "?count="+count;
+        if(search.sharerid){
+            uri+= "&sharerid="+search.sharerid;
+        }
+        nodewxsign(uri)
+    }else if(isApp){
+        uri+='?enid='+search.enid;
+        if(count){
+            uri+="&count="+count;
+        }
+        window.location.href = uri;
+    }else{
+        var url = '/app/gifts/index.html'
+        window.location.href = route+url
+    }
+
+    function nodewxsign(uri) {
+        var data={
+            uri:uri
+        }
+//        if(count){
+//            toast('认证失败')
+//            return
+//        }
+        $.ajax({
+            type: "GET", //用POST方式传输
+            url:route+ '/wx/api/oauth/wxoauth' ,
+            //目标地址
+            data:data,
+            success: function (res){
+                if(res.code==1){
+                    window.location.href = res.data
+                }else{
+                    alert(res.msg)
+                }
+            },
+            error:function(err){
+
+            }
+        });
+    }
+
+    //分享
+    appShareWX(shareObj);
+</script>
+<body>
+</body>
+</html>

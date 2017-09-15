@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>礼尚往来</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="Keywords" content="道道，企业家社群，企业家社交，企业家平台，长江互助，中大互助">
+    <meta name="Description" content="北京道同网络信息技术有限公司，是服务于企业家人群的信息技术平台。通过云计算和大数据，快速精准的匹配企业家需要的资源。打造新时代的经济共享平台。">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="http://img.daodaoclub.com/public/baiduTotal.js"></script>
+    <script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/noneadd.css?v=1.0.4">
+
+</head>
+<script type="text/javascript">
+    //rem适配方案
+    (function(){
+        var width =document.documentElement.clientWidth/10;
+        var styleNode = document.createElement("style");
+        styleNode.innerHTML="html{font-size:"+width+"px!important}"
+        document.head.appendChild(styleNode);
+    })()
+</script>
+<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+<script src="js/zeptodetect.js"></script>
+<script src="js/tools.js?v=1.0.3"></script>
+<script src="js/index.js?v=1.1.7"></script>
+<script>
+
+    var recordid=getUserid();
+    var data={
+        recordid:recordid.id||getCookies('_recordid'),
+        addressid:recordid.addressid
+    };
+
+    var uri= '/costin/mapi/lottery/gifts/express';
+    deleteOs(renderAdd,uri,data);
+    appShareWX(shareObj);
+</script>
+<body>
+<div id="mask-bac">
+    <div id="mask"></div>
+</div>
+<div class="whole">
+    <div id="alert-ios">
+        <div class="alert-title">道道客服电话</div>
+        <div class="alert-text"><span style="width: 0;height:0;-webkit-user-select: text;overflow: hidden;" id="phone-number">010-67880529</span></div>
+        <div class="alert-button clearfix">
+            <div id="alert-cancel">取消</div>
+            <a class="phone-inWechat" style="display: block" href="tel:010-67880529">呼叫</a>
+        </div>
+    </div>
+    <div class="top">
+        <div class="logo_2"></div>
+    </div>
+    <div class="content" id="orderdetail">
+        <div class="c-logo-1">
+            <div>
+                <p class="cl1-word c-lightorange">静候快递到家，体验道道更多服务…</p>
+                <p class="cl1-word cl1-word-2">
+                    感觉不错，送给其他同学！
+                </p>
+                <div class="cl1-button" ></div>
+            </div>
+        </div>
+        <div class="a-opcity orderinfo" style="display: block">
+            <div class="title">订单信息</div>
+            <div class="order-word">
+                您的奖品已发货，请等待收货！
+            </div>
+            <div class="order-word">
+                <span class="item-express-name"></span>单号：<span class="item-express-number order"></span>
+            </div>
+        </div>
+        <div class="a-opcity personinfo">
+            <div class="title">收货地址信息</div>
+            <div class="consignee">
+                收货人：<span class="name"></span><span class="phone"></span>
+            </div>
+            <div class="detailaddress">
+                地址：<span class="addr"></span>
+            </div>
+        </div>
+
+        <!--礼品详情-->
+        <div class="a-opcity gift-detail ">
+            <div class="ad-gift-img fl"><img src="http://img.daodaoclub.com/app/gifts/imghome-adver.png" class="win-item-img"/></div>
+            <div class="fl  express-data-width">
+                <p class="fs30 wd400 win-item-prize"></p>
+                <p class="fs24">
+                    <span class="win-item-patron"></span><span class="fs32 bold500 c-orange pad4 win-item-name"></span>赠送
+                </p>
+            </div>
+            <div class="fr prize-item-right">
+                <span class="win-item-detail">详情</span>
+            </div>
+        </div>
+
+        <!--跳转首页-->
+        <div class="goba-index">返回活动首页</div>
+    </div>
+
+</div>
+</body>
+</html>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+<script src="js/zeptodetect.js"></script>
+<script src="js/wxshare.js?v=1.0.17"></script>
+
+<script>
+
+    window.onload=function () {
+
+        //分享
+       // appShareWX(shareObj);
+        //wxshaere
+        getWxShare();
+        //新增收货地址
+        var obj = {
+            recordid:recordid.id||getCookies('_recordid')
+        }
+
+        $('#add_address').click(function () {
+            addaddress(obj)
+        })
+        //修改地址
+        $('#add_revise').click(function () {
+
+            toast('暂不支持修改，请联系客服')
+            return
+            var addressid = $(this).parent().attr('id');
+            if(addressid){
+                var len = addressid.length;
+                addressid=addressid.substring(4,len);
+                obj.addressid = addressid;
+                //跳转到列表页
+                toAddrlist(obj.recordid,addressid)
+//                addaddress(obj);
+            }
+        });
+
+        //新增收货地址
+        function addaddress(obj) {
+            var time =gettimestamp();
+            var uri = '?recordid='+obj.recordid+'&_t'+time;
+            if(obj.addressid){
+                uri+= "&addressid="+obj.addressid;
+                window.location.href='/app/gifts/add.html'+uri;
+            }else {
+                window.location.href='/app/gifts/add.html'+uri;
+            }
+        }
+        
+        //拨打 客服电话
+        customer();
+
+        //分享
+        appShareToast();
+        closeShareToast();
+
+        //复制文本
+        $('.phone-inApp').click(function () {
+            copyToClipboard('phone-number')
+            toast('号码复制成功')
+        })
+
+
+        //新增 8*****
+        //toast
+
+        $('.cl1-button').click(function () {
+            $('#mask-bac').css('display','block')
+            $('#mask').css('display','block')
+        })
+        $('#mask-bac').click(function () {
+            $('#mask-bac').css('display','none')
+            $('#mask').css('display','none')
+        })
+
+        $('.win-item-detail').click(function () {
+            var id= $('.win-item-detail').attr('id');
+            id=id.substr(id.length-1,1)
+            var name = ''
+            if(id==1){
+                name='rice';//大米
+            }else if(id==2){
+                name='mask';//面膜
+            }else if(id==3){
+                name='wheat';//小麦蛋白
+            }else if(id==4){
+                name='wine';//红酒
+            }else if(id==5){
+                name='drugs';//保健品
+            }else if(id==6){
+                name='book';//书
+            }
+            //渲染下部的产品
+            var url = '/app/gifts/production/'+name+'/index.html'
+            window.location.href =route+url;
+        })
+        $('.goba-index').click(function () {
+            var url = '/app/gifts/index.html';
+            window.location.href = route+url;
+        })
+
+
+
+
+    }
+</script>

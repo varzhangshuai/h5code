@@ -1,0 +1,139 @@
+@rem:75rem;
+
+#whole{
+  position: absolute;
+  top: 24/@rem;
+  left: 36/@rem;
+  width: 680/@rem;
+  height: 500/@rem;
+  border-radius: 10/@rem;
+  box-sizing: border-box;
+  background: rgba(255,255,255,0.3);
+  font-size: 30/@rem;
+  color: white;
+  ::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #FFF;
+    opacity:  0.5;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #FFFFFF;
+    opacity:  0.5;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #FFFFFF;
+    opacity:  .5;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #FFFFFF;
+    opacity:  0.5;
+  }
+}
+body{
+  background: url("http://img.daodaoclub.com/app/gifts/img/bg.jpg") no-repeat;
+}
+
+.item{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100/@rem;
+  //background: white;
+  padding-left: 20/@rem;
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  input{
+    border: none;
+    height: 50/@rem;
+    width: 460/@rem;
+    font-size: 30/@rem;
+    vertical-align:middle;
+    position: absolute;
+    top: 50%;
+    margin-top: -25/@rem;
+    background: rgba(0,0,0,0);
+    color: white;
+  }
+}
+.item-bottom{
+  border: none;
+}
+
+.icon{
+  width: 160/@rem;
+  height: 100/@rem;
+  line-height: 100/@rem;
+  text-align: left;
+  display: inline-block;
+
+  img{
+    height: 100%;
+    vertical-align:middle;
+  }
+}
+#detail-icon{
+display: block;
+}
+
+
+
+.normal{
+  width: 490/@rem;
+  height: 82/@rem;
+  font-size: 30/@rem;
+  background:url("http://img.daodaoclub.com/app/gifts/img/sanjiao.png?v=0.0.1") no-repeat right center ;
+  background-size: 16/@rem 26/@rem;
+  vertical-align: middle;
+  text-align: right;
+  line-height: 82/@rem;
+  box-sizing: border-box;
+  display: inline-block;
+  padding-right: 40/@rem;
+  margin-left: -15/@rem;
+  
+}
+#adddetail {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  width: 635/@rem;
+  height: 90/@rem;
+  resize: none;
+  position: relative;
+  top: -15/@rem;
+  overflow: auto;
+  outline: none; //选中时的边框
+  font-size: 28/@rem;
+  font-family: helvetica;
+}
+
+#button{
+  margin-top: 140/@rem;
+  width: 680/@rem;
+  height: 90/@rem;
+  line-height: 90/@rem;
+  background: #e5aa00;
+  border-radius: 10/@rem;
+  color: white;
+  text-align: center;
+  font-size: 38/@rem;
+}
+
+//输入框 默认输入颜色
+textarea{
+color: #FFFFFF;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #FFFFFF;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #FFFFFF;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #FFFFFF;
+}
+
+
+

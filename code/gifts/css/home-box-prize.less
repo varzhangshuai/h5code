@@ -1,0 +1,253 @@
+@rem:75rem;
+
+.mod-chest-cont{
+		width: 276/@rem;
+		margin:27/@rem auto 118/@rem;
+		position: relative;
+		}
+.mod-chest-cont .content{   position: relative;
+    z-index: 2;
+    margin-left: 143/@rem;
+    margin-top: 37/@rem;
+}
+.home-box-top{
+	width:300/@rem;
+	height: auto;
+	left:-80/@rem;
+	position: absolute;
+	z-index: 4;
+	top:30/@rem;
+}
+
+.home-box-flow{
+   	width:700/@rem;
+    height: auto;
+    margin-left: -100/@rem;
+    margin-top: -100/@rem;
+    position: absolute;
+    z-index: 4;
+   }
+.home-prize-box{
+			width:260/@rem;
+			height:300/@rem;
+			z-index: 1;
+			position: absolute;
+    		margin-top:60/@rem;
+			margin-left:120/@rem;
+    		}
+.mod-chest{position: relative;width: 100%;}
+.mod-chest .chest-close{
+	width: 320/@rem;height:135/@rem;
+	opacity: 0;
+	z-index: 1;
+	position: absolute;
+	left:50%;
+	top:300/@rem;
+	margin-left:-160/@rem;
+
+	}
+.mod-chest .chest-close .gift{
+	width: 1500/@rem;
+    height: 320/@rem;
+    background: url(http://img.daodaoclub.com/app/gifts/img/back_box.png) no-repeat -580/@rem 0/@rem;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0/@rem;
+	}
+
+.mod-chest .chest-open {
+	width:1100/@rem;
+    height: 1000/@rem;
+    background: url(http://img.daodaoclub.com/app/gifts/img/back_box.png) no-repeat -160/@rem -250/@rem;
+    background-size: cover;
+	opacity: 0;
+	z-index:1;
+	position: absolute;
+	left:0/@rem;top:135/@rem;
+	}
+.mod-chest .chest-open .mod-chest-cont{
+	position: absolute;
+	}
+.mod-chest .show{z-index: 2;opacity: 1;}
+
+.chest-icon-zuan{
+	position: relative;
+	width:50/@rem;
+	overflow: visible;
+	height:0/@rem;
+	vertical-align: middle;
+	display: inline-block;
+	}
+.chest-icon-zuan:after{
+	display: block;
+	content:"";
+	width: 75/@rem;
+	height:50/@rem;
+	position: absolute;
+	top:-30/@rem;left:0/@rem;
+	//background:url(http://img.daodaoclub.com/app/gifts/img/chest-icon-zuan.png) 0/@rem 0/@rem no-repeat;
+	background-size: 75/@rem auto;
+	left:-10/@rem;
+	}
+
+
+   /*  打开动画      */
+.open-has .title-open{
+	opacity: 0;
+	-webkit-transition:all .5s;
+	position: absolute;
+	top:110/@rem;
+	left:0/@rem;
+	text-align: center;
+	width: 100%;
+	font-size:50/@rem;
+	color:#ffffff;
+	}
+.mod-chest .chest-close:after{
+	width: 320/@rem;
+	height:300/@rem;
+	position: absolute;
+	top:-100/@rem;
+	left:-61/@rem;
+	content:"";
+	display: block;
+	}
+.mod-chest .chest-close:active{-webkit-transform:scale(1.05);-webkit-transition:all .3s;}
+.mod-chest .chest-close.shake .gift{-webkit-animation:shake 1.2s linear;-webkit-animation-fill-mode:forwards;}
+
+.open-has.opened .title-open{opacity: 1;}
+.open-has.opened .title-close{opacity: 0;}
+
+.open-has.opened .mod-chest .chest-open{-webkit-transform:translate(0/@rem,150/@rem);}
+.open-has .mod-chest-cont{
+	/*overflow: hidden;*/
+	opacity: 0;
+	-webkit-transform:translate(0/@rem,30/@rem);
+	z-index: 9;
+	-webkit-animation-fill-mode: forwards;
+	}
+.open-has .chest-open.show .mod-chest-cont{
+	-webkit-animation:move2 .2s .0s linear;
+	-webkit-animation-fill-mode: forwards;
+	}
+.open-none{
+	position: relative;
+	z-index:2;
+	height:450/@rem;
+	width: 320/@rem;
+	margin:0/@rem auto;
+	}
+.open-none .mod-chest{height:150/@rem;}
+.open-none h3{
+	font-size: 15/@rem;
+	color:#865500;
+	text-align: center;
+	padding-top:35/@rem;
+	padding-bottom:40/@rem;
+	}
+//抽奖页面的按钮
+.home-prize-button{
+	position: absolute;
+	bottom: 100/@rem;
+	font-size: 36/@rem;
+	display: block;
+	width: 100%;
+	text-align: center;
+	z-index: 10;
+	span{
+		width: 180/@rem;
+		height: 54/@rem;
+		line-height: 54/@rem;
+		display: inline-block;
+		background: url("http://img.daodaoclub.com/app/gifts/img/home_prize_button.png") no-repeat;
+		background-size: contain;
+		margin: 20/@rem;
+		color: red;
+	}
+}
+
+
+
+
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform:rotate(0deg);
+    }
+    100% {
+        -webkit-transform:rotate(360deg);
+    }
+
+}
+@-webkit-keyframes move {
+    0% {
+        -webkit-transform:translate(0/@rem ,0/@rem);
+    }
+    100% {
+        -webkit-transform:translate(0/@rem ,-5/@rem);
+    }
+
+}
+@-webkit-keyframes move2 {
+    0% {
+       -webkit-transform:translate(0/@rem,30/@rem);
+       opacity: 0;
+    }
+    70% {
+       -webkit-transform:translate(0/@rem,-20/@rem);
+       opacity: 1;
+    }
+    100% {
+       -webkit-transform:translate(0/@rem,0/@rem);
+       opacity: 1;
+    }
+
+
+}
+
+@-webkit-keyframes shake {
+  0% {
+  	transform: scale(1);
+    -webkit-transform: scale3d(1, 1, 1);
+    
+  }
+
+  6%{
+    -webkit-transform: scale(.9) rotate(-8deg);
+    -webkit-transform: scale3d(1, 1, 1) rotate(0, 0, 1, -8deg);
+  }
+
+  18%, 30%,42%{
+    -webkit-transform: scale(1.1) rotate(8deg);
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 8deg);
+    
+  }
+
+  12%,24%, 36%,48%{
+    -webkit-transform: scale(1.1) rotate(-8deg);
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -8deg);
+    
+  }
+  54%{
+    -webkit-transform: scale(1);
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+  
+  60%{
+    -webkit-transform: scale(1);
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+  80% {
+    -webkit-transform: scale(1) translate(0/@rem,150/@rem);
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0/@rem,150/@rem,0);
+  }
+  90% {
+    -webkit-transform: scale(1) translate(0/@rem,130/@rem);
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0/@rem,130/@rem,0);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0/@rem,150/@rem);
+    -webkit-transform: scale3d(1, 1, 1) translate3d(0/@rem,150/@rem,0);
+  }
+
+}

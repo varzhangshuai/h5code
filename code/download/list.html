@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>道道</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="Keywords" content="道道，企业家社群，企业家社交，企业家平台，长江互助，中大互助">
+    <meta name="Description" content="北京道同网络信息技术有限公司，是服务于企业家人群的信息技术平台。通过云计算和大数据，快速精准的匹配企业家需要的资源。打造新时代的经济共享平台。">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="http://img.daodaoclub.com/public/baiduTotal.js"></script>
+    <script>
+        //rem适配方案
+        (function(){
+            var width = document.documentElement.clientWidth/10;
+            var styleNode = document.createElement("style");
+            styleNode.innerHTML="html{font-size:"+width+"px!important}"
+            document.head.appendChild(styleNode);
+        })()
+    </script>
+</head>
+<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+<body>
+    <div class="list">
+        <div class="list-top">
+            <img src="./img/list_logo.png" alt="">
+            道道V1.3.0
+        </div>
+        <div class="list-line">
+            <ul>
+                <li>更新内容</li>
+                <li>1、新增到到超级名片功能；</li>
+                <li>2、新增粉丝和关注功能；</li>
+                <li>3、新增首页需求制定功能；</li>
+                <li>4、修复已知bug。</li>
+            </ul>
+        </div>
+        <div class="list-button">立即下载</div>
+    </div>
+</body>
+</html>
+<script>
+    $(function(){
+        $('.list-button').click(function () {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                window.location = 'http://t.cn/RXqwmmO'
+            }else if (/(Android)/i.test(navigator.userAgent)) {
+                androidDown();
+            }
+        })
+        function androidDown() {
+            if(/(micromessenger)/i.test(navigator.userAgent)){
+                //微信
+                setTimeout(function () {
+                    setTimeout(function(){window.location = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.daodaoclub.costin'},300);
+                },500)
+            }else{
+                //此操作会调起app并阻止接下来的js执行
+                setTimeout(function(){window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.daodaoclub.costin'},300)
+            }
+        }
+    })
+
+</script>

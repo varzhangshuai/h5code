@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>各有各道</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="css/person.css?v=1.0.2">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        //rem适配方案
+        (function(){
+            var width = document.documentElement.clientWidth/10;
+            var styleNode = document.createElement("style");
+            styleNode.innerHTML="html{font-size:"+width+"px!important}"
+            document.head.appendChild(styleNode);
+        })()
+    </script>
+</head>
+<body>
+    <section  id="wrap">
+        <section class="wrap" id="content">
+            <header id="head" class="head-chi"></header>
+            <article class="brife">
+                <h2>迟景朝</h2>
+                <p><b>国籍：</b>中国</p>
+                <p><b>公司职务：</b>天鹰资本 创始合伙人</p>
+                <p><b class="two-width"></b>中国股权投资协会理事</p>
+                <p><b>毕业院校：</b>长江商学院  EMBA  25期 </p>
+                <p><b class="two-width"></b>中欧商学院  MBA  2004届</p>
+                <div class="brife-button">
+                    <div class="followed follow" id="followed">已关注</div>
+                    <div class="follow" id="follow">关注</div>
+                    <div class="followers"><span id="followCount">0</span>人已关注</div>
+                </div>
+            </article>
+            <article class="personal">
+                <h3>主要经历</h3>
+                <ul>
+                    <li>
+                        <p>2009年作为创始合伙人创立天鹰资本</p>
+                    </li>
+                    <li>
+                        <p>担任中央电视台财经频道《创业英雄汇》点评导师</p>
+                    </li>
+                    <li>
+                        <p>担任第一财经节目特约嘉宾</p>
+                    </li>
+                    <li>
+                        <p>现任清华大学、上海交通大学特聘教授，讲授资本运作课程 </p>
+                    </li>
+                </ul>
+            </article>
+            <article class="combrife">
+                <h3>公司简介</h3>
+                <div>
+                    <img src="img/logo_01.png" alt="">
+                   天鹰资本是一家有资源、重投后服务的新锐投资机构，我们投资的不仅是一家家公司，更是这个时代。
+                   目前公司专注于企业服务及新技术、工业4.0等领域。公司有着强大的商学院背景，合伙人来自长江商学院、中欧国际工商学院、哈佛商学院等。
+         		<p>我们的核心业务涵盖以下方面：早期股权基金、Pre-IPO股权基金、并购基金等。</p>
+                </div>
+            </article>
+            <div class="dynamic clearfix">
+                <h3>公司动态</h3>
+                <div class="dynamicwrap">
+                    <ul class="item" id="dynamiclist">
+                        <li>
+                            <b>天鹰资本完成对小狗电器投资</b>
+                            <p>时间：2017-05-10</p>
+                            <p>天鹰资本完成对小狗电器的投资。本次融资后，小狗电器正式开启IPO冲刺。</p>
+                        </li>
+                        <li>
+                            <b>工业4.0基金发布会隆重召开</b>
+                            <p>时间：2017-05-02</p>
+                            <p>天鹰资本工业4.0基金发布会在上海召开。创世合伙人迟景朝许小年发表演讲</p>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="successful clearfix">
+                <h3>成功案例</h3>
+                <div class="successfulwrap">
+                    <ul class="item" id="successfullist">
+                        <li>
+                            <b>红领服饰</b>
+                            <p>地点：山东青岛</p>
+                            <p>行业：工业4.0</p>
+                            <p>亮点：工业互联网+智能制造标杆企业</p>
+                        </li>
+                        <li>
+                            <b>寰慧科技</b>
+                            <p>地点：西藏</p>
+                            <p>行业：清洁能源</p>
+                            <p>亮点：城市供暖龙头企业</p>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            </div>
+            <article class="photo clearfix">
+                <h3>相关相册</h3>
+                <div class="photowrap">
+                    <ul class="item" id="photolist">
+                        <li>		                       	
+                       		<img src="img/chi1.png"/>
+                        <li>                        	
+                        	<img src="img/chi2.png"/>                       	                        	                         
+                        </li>
+                        <li>                       	
+                        	<img src="img/chi3.png" />                       	                                           
+                        </li>
+                        <li class="more" id="photomore"></li>
+                    </ul>
+                </div>
+            </article>
+            <article class="label">
+                <h3>大家眼中的老迟</h3>
+                <ul class="clearfix " id="labellist">
+
+                </ul>
+            </article>
+            <div class="need">
+                <h3>老迟的商务需求</h3>
+                <div class="needwrap">
+                    <ul class="item" id="needlist">
+
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+    </section>
+    <div class="scrollBar"></div>
+    <div id="mask">      
+        <img id="close" src=""/>
+    </div>
+    <div id="star_float"><img src="img/star_close.png" alt=""></div>
+
+</body>
+</html>
+<script src="js/touch.js"></script>
+<script src="js/zeptodetect.js?v=1.0.1"></script>
+<script src="js/getUserid.js"></script>
+<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+<script src="js/route.js" ></script>
+<script src="js/jquery.imgbox.pack.js?v=1.0.4"></script>
+<script src="js/bridege.js?v=1.0.4" charset="utf-8"></script>
+<script>
+
+    window.onload=function () {	
+        //清除事件的默认行为
+        document.addEventListener("touchstart",function(ev){
+            ev.preventDefault();
+        });
+
+        var ua = this.navigator.userAgent;
+        var platform =  this.navigator.platform
+        detect(ua, platform);
+        //        $('#log3').html(JSON.stringify(ua))
+        os = JSON.stringify(os.daodaoclub);
+        var uri = 'celebrity/detail/chijingzhao'
+        getData(uri);
+
+        if(!os){
+            $('.brife-button').css('display','none')
+        }
+
+        //左滑事件
+        var dynamic = document.querySelector('.dynamicwrap')
+        var dynamiclist = document.querySelector('#dynamiclist')
+        listdrag(dynamic,dynamiclist);
+        var successful = document.querySelector('.successfulwrap')
+        var successfullist = document.querySelector('#successfullist')
+        listdrag(successful,successfullist);
+        var photo = document.querySelector('.photowrap')
+        var photolist = document.querySelector('#photolist')
+        listdrag(photo,photolist);
+
+        var followBtn = document.querySelector('.brife-button');
+        clickEvent(followBtn,clickfollow);
+        var shareObj ={
+            topName:'各有各道',
+            title:'各有各道',
+            image:'http://test.m.daodaoclub.com/img/daodaologo_40.png',
+            describe:'红人'
+//            shareurl:'http://m.daodaoclub.com/app/star/person_chijingzhao.html'
+        }
+        appShareWX(shareObj);
+        //關注
+        function clickfollow() {
+            OCJSJAVA('/costin/mapi/relation/follow',getFollow)
+            appShareWX(shareObj);
+        }
+        //各有各道
+
+
+    }
+</script>

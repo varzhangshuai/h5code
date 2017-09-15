@@ -1,0 +1,92 @@
+@rem:75rem;
+*{
+  margin: 0;
+  padding: 0;
+
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y:scroll;
+  -webkit-overflow-scrolling : touch;//ios 流畅性
+}
+ul {
+  list-style: none;
+}
+#content {
+  img {
+    max-width: 100%;
+  }
+  ol {
+    padding-left: 20px;
+  }
+  font-size: 30/@rem;
+}
+//内容部分
+#content{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50/@rem 40/@rem;
+}
+
+
+#lists{
+  font-size: 30/@rem;
+  color: #333333;
+  border-top:10/@rem solid #eeeeee;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 70/@rem 0;
+}
+.list-title{
+  padding: 30/@rem 40/@rem 0 40/@rem;
+  line-height: 30/@rem;
+  .list-title-l{
+    float: left;
+    font-size: 30/@rem;
+    color: #333333;
+  }
+  .list-title-r{
+    float: right;
+    font-size: 28/@rem;
+    color: #999999;
+    padding-right: 30/@rem;
+    background: url("../img/icon.jpg") no-repeat;
+    background-size: 24/@rem 25/@rem;
+    background-position: right 2/@rem;
+  }
+}
+
+
+#lis{
+  box-sizing: border-box;
+  width: 100%;
+  padding:0 30/@rem ;
+  font-size: 30/@rem;
+  color: #333333;
+}
+.list{
+  display: flex;
+  align-items:center;
+  padding: 30/@rem 0;
+  width: 100%;
+  border-bottom: 1/@rem solid #eeeeee;
+}
+.list-img{
+  width: 220/@rem;
+  height: 140/@rem;
+  margin-right: 20/@rem;
+}
+.list-r{
+  width: 449/@rem;
+  height: 140/@rem;
+
+}
+.els3{
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+  overflow:hidden;
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>礼尚往来</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="Keywords" content="道道，企业家社群，企业家社交，企业家平台，长江互助，中大互助">
+    <meta name="Description" content="北京道同网络信息技术有限公司，是服务于企业家人群的信息技术平台。通过云计算和大数据，快速精准的匹配企业家需要的资源。打造新时代的经济共享平台。">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="http://img.daodaoclub.com/public/baiduTotal.js"></script>
+    <script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/phonesign.css">
+</head>
+<script type="text/javascript">
+    //rem适配方案
+    (function(){
+        var width = document.documentElement.clientWidth/10;
+        var styleNode = document.createElement("style");
+        styleNode.innerHTML="html{font-size:"+width+"px!important}"
+        document.head.appendChild(styleNode);
+    })()
+</script>
+<body>
+    <div class="bg">
+        <div class="sign-top">
+            验证手机号，确认您的校友身份
+        </div>
+        <div class="sign-form">
+            <div class="item boder-b">
+					<span class="icon">
+						手机号
+					</span>
+                <input type="number" name="phone" id="phone" maxlength="15" onkeyup="value=value.replace(/[^0-9]/g,'')" oncontextmenu = "value=value.replace(/[^0-9]/g,'')"/>
+            </div>
+            <div class="item">
+					<span class="icon">
+						验证码
+					</span>
+                <input  type="text" name="yzm" id="yzm" maxlength="5"/>
+                <span class="getyzm" id="getCode">获取验证码</span>
+            </div>
+        </div>
+        <div id="button">
+            保存
+        </div>
+    </div>
+</body>
+</html>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+<script src="js/zeptodetect.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/index.js"></script>
+<script src="js/wxshare.js?v=1.0.17"></script>
+
+<script>
+    window.onload=function () {
+
+        //wxshaere
+        getWxShare();
+        //share
+        appShareWX(shareObj);
+
+        //验证码倒计时
+        var InterValObj; //timer变量，控制时间
+        var count = 60; //间隔函数，1秒执行
+        var curCount;//当前剩余秒数
+        var count_state = true;
+
+        var route = myRoutes()
+
+
+        //手机号验证
+        var phone = document.getElementById('phone')
+        var phone_state = false;//验证码状态
+        phone.onblur = function() {
+            //含有非法字符 不能为空 长度超25 长度少于6个字符
+            var re = /[^\w\u4e00-\u9fa5]/g;
+            if (re.test(this.value)) {
+                toast('含有非法字符')
+                phone_state = false;
+            } else if (this.value == "") {
+                toast('请输入手机号!')
+                phone_state = false;
+            } else if (this.value.length > 11) {
+                toast('手机号输入错误，请重新输入！')
+                phone_state = false;
+            } else if (this.value.length < 11) {
+                toast('手机号输入错误，请重新输入!')
+                phone_state = false;
+            } else {
+                phone_state = true;
+            }
+        }
+
+        //获取验证码
+
+
+        function getCode() {
+
+            if(!count_state){
+                return
+            }
+            if(!phone_state){
+                toast('请输入正确的电话号码')
+                return
+            }
+            var phone = $('#phone').val();
+            var _unionid = getCookies('_unionid');
+            if(!_unionid){
+                getUnionid(search);
+                return
+            }
+            $.ajax({
+                type: "POST",
+                url:route+ '/costin/mapi/lottery/wechatCode',
+                //目标地址
+                data:{mobilePhone:phone,_unionid:_unionid},
+                success:function (res) {
+                   if(res.code==1){
+                       numberdown();
+                   } 
+                }
+            })
+        }
+        //获取验证码
+        $('#getCode').click(getCode);
+
+        //提交Form
+        $('#button').click(postForm)
+
+
+        function numberdown() {
+            curCount=count;
+            count_state=false
+            $("#getCode").text( curCount + "秒");
+            InterValObj = window.setInterval(SetRemainTime,1000);
+        }
+
+        //timer处理函数
+        function SetRemainTime() {
+            if (curCount == 0) {
+                window.clearInterval(InterValObj);//停止计时器
+                $("#getCode").text("重新发送");
+                count_state = true;
+            } else {
+                if(!count_state){
+                    curCount--;
+                    $("#getCode").text( + curCount + "秒");
+                }
+
+            }
+        }
+
+
+
+
+        function postForm() {
+            var mobilePhone = $('#phone').val(),
+                code = $('#yzm').val();
+
+                if(mobilePhone==''){
+                    toast('请输入手机号')
+                    return
+                }
+                if(phone_state == false){
+                    toast('手机号输入错误，<br>请重新输入!')
+                    return
+                }
+                if(code==''){
+                    toast('请输入验证码')
+                    return
+                }
+
+            var time = new Date().getTime();
+            var id =getCookies('id');
+
+
+            var _unionid = getCookies('_unionid');
+            if(!_unionid){
+                getUnionid(search);
+                return
+            }
+            $.ajax({
+                type: "POST",
+                url:route+ '/costin/mapi/lottery/wechatLogin',
+                //目标地址
+                data:{mobilePhone:mobilePhone, verifyCode:code,_unionid:_unionid},
+                success:function (res) {
+                    if(res.code=="1"){
+                        var data = res.original;
+                        setCookie('_enid',data.enid)
+                        setCookie('_status',data.status)
+                        setCookie('_userid',data.userid)
+                        window.location.href='/app/gifts/adrlist.html?id='+id+'&_t='+time;
+                    }else if(res.code=='20022'){
+                        window.location.href='/app/gifts/signerr.html?_t='+time;
+                    }else if(res.code=='20007'){
+                        //验证码不可用
+                        toast(res.msg)
+                    }else {
+                        //验证码不可用
+                        toast(res.msg)
+                    }
+                },
+                error:function (err) {
+                    console.log(err)
+                }
+            })
+
+        }
+    }
+</script>

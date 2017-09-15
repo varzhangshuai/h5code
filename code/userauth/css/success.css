@@ -1,0 +1,16 @@
+.success {
+  width: 100%;
+  margin-top: 0.77333333rem;
+}
+.success img {
+  width: 1.33333333rem;
+  height: 1.33333333rem;
+  display: block;
+  margin: 0 auto;
+}
+.success .word {
+  padding: 0.69333333rem 0.34666667rem;
+  color: #333333;
+  font-size: 0.37333333rem;
+  text-align: center;
+}

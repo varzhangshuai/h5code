@@ -1,0 +1,500 @@
+@rem:75rem;
+
+html,body{
+  width: 100%;
+  height: 100%;
+}
+.fs50{font-size: 50/@rem;}
+.fs42{font-size:42/@rem;}
+.fs40{font-size:40/@rem;}
+.fs36{font-size:36/@rem;}
+.fs34{font-size:34/@rem}
+.fs32{font-size:32/@rem;}
+.fs30{font-size:30/@rem;}
+.fs28{font-size:28/@rem;}
+.fs24{font-size:24/@rem;}
+.fs20{font-size:20/@rem;}
+
+
+//宽度
+.wd400{
+  width: 400/@rem;
+}
+.colf{color:#fff}
+.colf-them-yellow{color: #ebd178;max-width: 456/@rem;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;}
+.texrig{text-align: right;}
+.marig35{margin-right: 35/@rem;}
+p{margin:8/@rem 0;}
+.mt15{margin-top:15/@rem;}
+.mt20{margin-top:20/@rem}
+.mt30{margin-top:30/@rem}
+.mt50{margin-top:50/@rem}
+
+.home-whole{
+  height: auto;
+  min-height:100%;
+  width: 100%;
+  background: url("http://img.daodaoclub.com/app/gifts/img/bg.jpg") repeat;
+  background-size:750/@rem;
+  padding-bottom: 50/@rem;
+}
+.text-center{text-align: center;}
+.home-cont{
+  background: url("http://img.daodaoclub.com/app/gifts/img/home_back_1.png") ,
+          url("http://img.daodaoclub.com/app/gifts/img/home_back_2.png") 0 100/@rem,
+          url("http://img.daodaoclub.com/app/gifts/img/home_back_3.png") 0 200/@rem,
+          url("http://img.daodaoclub.com/app/gifts/img/home_back_4.png") 0 300/@rem,
+          url("http://img.daodaoclub.com/app/gifts/img/home_back_5.png") 0 400/@rem,
+          url("http://img.daodaoclub.com/app/gifts/img/home_back_6.png") 0 500/@rem,
+          url("http://img.daodaoclub.com/app/gifts/img/home_back_7.png") 0 600/@rem,
+          url("http://img.daodaoclub.com/app/gifts/img/home_back_8.png") 0 700/@rem,
+          url("http://img.daodaoclub.com/app/gifts/img/home_back_9.png") 0 800/@rem,
+          url("http://img.daodaoclub.com/app/gifts/img/home_back_10.png") 0 900/@rem;
+  background-repeat:  no-repeat;
+  width:100%;
+  height:100%;
+  background-size: 750/@rem 101/@rem;
+}
+b{display: inline-block;}
+.home-active{margin:0 80/@rem;}
+.home-empty-heig{height:260/@rem;}
+
+/*   跑马灯   */
+.mask{
+  width:180/@rem;
+  height:180/@rem;
+  position:absolute;
+  left:0/@rem;
+  top:0/@rem;
+  background:url(http://img.daodaoclub.com/app/gifts/img/home_draw.png) no-repeat;
+  background-size: contain;
+  display:none;
+}
+.lottery-mask-1{
+  background:url(http://img.daodaoclub.com/app/gifts/img/home_draw_other.png) no-repeat;
+  background-size: contain;
+}
+.home-race-lamp{
+  margin: 75/@rem 10/@rem;
+  position: relative;
+  ul{overflow: hidden; }
+}
+.home-li-gold{margin-bottom:18/@rem}
+.home-li-gold li{
+  width: 176/@rem;
+  height: 176/@rem;
+  float: left;
+  position:relative;
+  color:#333;
+  img{
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
+.lottery-unit-1,.lottery-unit-5,.lottery-unit-8{
+  margin: 0 18/@rem;
+}
+
+.home-li-gold li.active .mask{display:block;}
+.home-enjoy-key{
+  width: 180/@rem; height: 180/@rem;
+  display: block;
+  background: url(http://img.daodaoclub.com/app/gifts/img/home_drawStrat.png) no-repeat;
+  background-size: contain;
+}
+.count-0{
+  background: url(http://img.daodaoclub.com/app/gifts/img/home_darw_count0.png) no-repeat;
+  background-size: contain;
+}
+.count-n{
+  background: url(http://img.daodaoclub.com/app/gifts/img/home_darw_count2.png) no-repeat;
+  background-size: contain;
+}
+
+.lottery-button{
+  position: absolute;
+  width: 180/@rem;
+  height: 45/@rem;
+  color: white;
+  font-size: 20/@rem;
+  top: 55/@rem;
+  z-index: 9;
+  line-height: 36/@rem;
+  display: none;
+
+}
+
+.home-actDescrip {
+ height: 114/@rem;
+  span{
+    width:214/@rem;
+    height:74/@rem;
+    display: inline-block;
+    margin-top:40/@rem;
+  }
+
+  .home-butt-desc{
+    background: url("http://img.daodaoclub.com/app/gifts/img/home_but_left.png") no-repeat;
+    background-size:contain;
+  }
+  .home-butt-rect{
+    background: url("http://img.daodaoclub.com/app/gifts/img/home_but_right.png") no-repeat;
+    background-size:contain;
+  }
+}
+
+.home-counts{
+  width: 432/@rem;
+  height: 56/@rem;
+  padding-top: 20/@rem;
+  background:url("http://img.daodaoclub.com/app/gifts/img/home_counts.png") no-repeat ;
+  background-size: contain;
+
+  position: absolute;
+  left: 50%;
+  margin-left: -216/@rem;
+  margin-top: 5/@rem;
+  text-align: center;
+  color: white;
+  font-size: 28/@rem;
+  line-height: 56/@rem;
+  display: block;
+}
+
+//prize 我的奖品列表
+
+.home-prize,.home-award{
+  border: 4/@rem solid #efc82f;
+  border-radius: 14/@rem;
+  width: 690/@rem ;
+  box-sizing: border-box;
+  position: relative;
+  margin-left: 30/@rem;
+  margin-top: 120/@rem;
+  .prize-header{
+    background:url("http://img.daodaoclub.com/app/gifts/img/home_prize_header.png") no-repeat;
+    background-size: contain;
+    width: 394/@rem;
+    height: 98/@rem;
+
+    position:absolute ;
+    top: -74/@rem;
+    left: 50%;
+    margin-left: -196/@rem;
+  }
+  .award-header{
+    background:url("http://img.daodaoclub.com/app/gifts/img/award_other.png") no-repeat;
+    background-size: contain;
+  }
+}
+.home-shop {
+  width: 106/@rem; height: 106/@rem;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.home-back-cont{background: #000;}
+.home-ic-priz{
+  background: url("http://img.daodaoclub.com/app/gifts/img/home_split.png") no-repeat;
+  height:2/@rem; width:240/@rem;
+  background-size: contain;
+}
+.home-word-priz{font-size: 26/@rem; position: relative;
+  top: 10/@rem;}
+.home-word-head{text-align: center;}
+.home-word-priz{color:#cfa051; font-size:36/@rem;}
+.home-ic-award{
+  background: url("http://img.daodaoclub.com/app/gifts/img/split.png") no-repeat;
+  width: 40/@rem;
+  background-position: -20/@rem -13/@rem;
+  height:40/@rem;
+  vertical-align: middle;
+}
+
+.home-getPrize{
+  float: right;
+  margin: 16/@rem 26/@rem;
+}
+.prize-count0-cont{
+  height: 198/@rem;
+  width: 100%;
+  color: white;
+  font-size: 30/@rem;
+  text-align: center;
+  line-height: 198/@rem;
+}
+
+.home-ul-cont li{
+  height: 198/@rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20/@rem 20/@rem 20/@rem 0;
+  border-bottom: 1px solid #efc82f;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  .prize-item-right{
+    font-size: 30/@rem;
+    height: 74/@rem;
+    width: 134/@rem;
+    line-height: 74/@rem;
+    background: url("http://img.daodaoclub.com/app/gifts/img/home_prize_button.png") no-repeat;
+    background-size: contain;
+    text-align: center;
+    color: white;
+  }
+
+}
+
+.home-center{margin:0 auto;}
+
+.home-posit-reciv{position: absolute; right: 4/@rem }
+.home-ic-reciv{
+  background: url("http://img.daodaoclub.com/app/gifts/img/split.png") no-repeat;
+  background-position: 0/@rem -65/@rem;
+  width: 150/@rem;
+  height: 100/@rem;
+}
+.home-receiv-award{text-align:left; margin-left:300/@rem;vertical-align: middle;}
+.home-ul-luck{width: 694/@rem;margin:0 auto; }
+.home-ul-luck li{height: 122/@rem;
+  border-bottom: 1px solid #000; background: #b3b3b3;
+  width: 694/@rem
+}
+.home-winn-first{padding:10/@rem 10/@rem;}
+.home-list-num{
+  width:40/@rem; height: 40/@rem;
+  line-height: 40/@rem;
+  text-align: center;
+  border-radius:100%;
+  margin:40/@rem 20/@rem;
+}
+.home-color-num1{background: #9e0b0f;}
+.home-color-num2{background: #d09a33;}
+.home-color-num3{background: #237391;}
+.home-color-often{background: #000000}
+.home-winn-photo img{
+  width: 100/@rem;
+  height: 100/@rem;
+  margin-right:15/@rem;
+}
+.home-empty200{height:200/@rem;}
+.home-numb{margin:60/@rem 50/@rem 0 0;}
+.home-li-more{
+  margin:0 auto;
+  background: url("http://img.daodaoclub.com/app/gifts/img/split.png") no-repeat;
+  width:150/@rem;
+  background-position: -65/@rem 20/@rem;
+  height: 30/@rem;
+  padding:18/@rem 0;
+}
+.home-line{line-height: 120/@rem}
+
+/*    活动说明     */
+.desc-cont{
+  background: rgba(0, 0, 0,0.9);
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  height:100%;
+  top:0;
+  display: none;
+}
+.home-box-act,.home-box-rect,.home-share{display: none;}
+.desc-act-whole{
+  background: rgba(255, 255, 255,0.5);
+  color: white;
+  width: 660/@rem;
+  //margin:260/@rem auto;
+  border-radius:10/@rem;
+  padding-bottom: 70/@rem;
+  padding-top:20/@rem;
+  position: fixed;
+  top:240/@rem;
+  left:46/@rem;
+  border: 4/@rem solid #efc82f;
+  border-radius: 14/@rem;
+}
+.home-box-rect>.desc-act-whole{
+  top:130/@rem;
+}
+.desc-logo{background:url("http://img.daodaoclub.com/app/gifts/img/desc_logo.png") no-repeat;
+  background-size: contain;
+  width: 334/@rem;
+  height: 96/@rem ;
+  margin-left:124/@rem;
+  margin-bottom: 46/@rem;
+
+}
+.desc-ic-key{background: url("http://img.daodaoclub.com/app/gifts/img/desc_cancel.png") no-repeat;
+  background-size: cover;
+  width: 54/@rem;
+  height: 144/@rem;
+  margin:-100/@rem 20/@rem 0 0;
+  float: right;
+}
+.desc-data{
+  margin:0 auto;
+  padding:0 70/@rem;
+  p{
+    margin-bottom: 14/@rem;
+  }
+}
+
+/*  活动招募  */
+.home-rect-logo{
+  background:url("http://img.daodaoclub.com/app/gifts/img/desc_logo2.png") no-repeat;
+  background-size: contain;
+  width: 334/@rem;
+  height: 96/@rem ;
+  margin-left:124/@rem;
+  margin-bottom: 46/@rem;
+}
+/*   分享机会弹框    */
+.home-enjoy-cont{
+  background:url("http://img.daodaoclub.com/app/gifts/img/home_chance.png") no-repeat;
+  background-size: contain;
+  width: 660/@rem;
+  height:620/@rem;
+  border-radius:10/@rem;
+  padding-bottom: 70/@rem;
+  padding-top:20/@rem;
+  position: fixed;
+  top:300/@rem;
+  left:46/@rem;
+}
+.home-enjoy-logo{
+  background:url("http://img.daodaoclub.com/app/gifts/img/home-enjoy-logo.png") no-repeat;
+  background-size: cover;
+  width: 495/@rem;
+  height:126/@rem;
+  margin:0  auto;
+  margin-top:50/@rem
+}
+.home-enjoy-button{
+  background:url("http://img.daodaoclub.com/app/gifts/img/home-button-share.png") no-repeat;
+  background-size: contain;
+  width:450/@rem;
+  height:104/@rem;
+  margin: 20/@rem 100/@rem;
+}
+.home-enjoy-button b{
+  margin:0 70/@rem;
+}
+/*   中奖页面  */
+.award-cont{background: url("http://img.daodaoclub.com/app/gifts/img/award_back.png") no-repeat;
+  width:100%; height:auto;
+  min-height: 100%;
+  background-size: contain;}
+.award-winn-data{
+  width: 685/@rem;
+  height:916/@rem;
+  background: url("http://img.daodaoclub.com/app/gifts/img/award_winn.png") no-repeat;
+  background-size: contain;
+  margin:0 auto;
+  position: relative;
+}
+.award-empty{height:26/@rem;}
+.award-infro{font-size: 34/@rem; color: #efc82f; padding-top:110/@rem}
+.award-infro p{text-align: center}
+.award-winn-shop{margin:50/@rem 75/@rem;}
+.award-winn-shop img{
+  font-size: 0;
+  margin: 0;
+  display: block;
+  width:520/@rem;height:520/@rem;
+}
+.award-button{
+  width: 214/@rem;
+  height: 74/@rem;
+  background: url("http://img.daodaoclub.com/app/gifts/img/award_button.png") no-repeat;
+background-size: contain;
+  position: absolute;
+  bottom: 52/@rem;
+  left: 50%;
+  margin-left: -107/@rem;
+}
+.award-word-priz{font-size:36/@rem; color: #ebd178;position: relative;
+  top: 10/@rem;}
+.award-else-prize{
+  background: #fff; width: 200/@rem;
+  height: 140/@rem;
+  margin:23/@rem 20/@rem;
+
+}
+.award-else-prize img{
+  width:124/@rem; height:142/@rem;
+  text-align: center;
+  margin:0 auto;
+}
+.award-ul-cont li{
+  border:2/@rem solid #f8d65b;
+  width: 700/@rem; height:180/@rem;
+  margin: 20/@rem auto;
+
+}
+.award-ul-cont{
+  padding-bottom: 300/@rem;
+  border: 4/@rem solid ;
+}
+.award-look-deta{
+  width: 130/@rem; height: 40/@rem;
+  background: #fdc689;
+  text-align: center;
+  line-height:40/@rem;
+  padding: 2/@rem;
+}
+
+/*   礼盒动画  */
+.home-gift{margin:80/@rem auto}
+.home-box-lid{
+  background: url("http://img.daodaoclub.com/app/gifts/img/home_box_bott.png") no-repeat;
+  background-size: contain;
+  width:512/@rem;
+  height: 289/@rem;
+}
+
+.img-radius{
+ border-radius:100%;
+}
+
+//产品最大宽度
+.procuctname-width{
+  width: 620/@rem;
+  margin: 0 auto;
+}
+
+//mask toast 分享弹层
+
+//mask toast 弹层
+#mask-bac{
+  display: none;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+#mask{
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url("http://img.daodaoclub.com/app/gifts/img/share_toast.png") no-repeat;
+  background-size: contain;
+}
+
+//关闭mask点击区域
+#click-area{
+  width: 300/@rem;
+  height: 120/@rem;
+  position: absolute;
+  top: 880/@rem;
+  left: 225/@rem;
+}
+
+//文字过长问题
+.express-data-width{
+  max-width: 440/@rem;
+}

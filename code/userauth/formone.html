@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实名身份认证</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="Keywords" content="道道，企业家社群，企业家社交，企业家平台，长江互助，中大互助">
+    <meta name="Description" content="北京道同网络信息技术有限公司，是服务于企业家人群的信息技术平台。通过云计算和大数据，快速精准的匹配企业家需要的资源。打造新时代的经济共享平台。">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/form.css">
+    <script type="text/javascript" src="http://img.daodaoclub.com/public/baiduTotal.js"></script>
+    <script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>
+    <script>
+        //rem适配方案
+        (function () {
+            var width = document.documentElement.clientWidth / 10;
+            var styleNode = document.createElement("style");
+            styleNode.innerHTML = "html{font-size:" + width + "px!important}"
+            document.head.appendChild(styleNode);
+        })()
+
+
+    </script>
+</head>
+<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+<script src="./js/zeptodetect.js"></script>
+<script src="./js/tools.js"></script>
+<script>
+    //上传头像
+
+    function headChange(dom) {
+        postPhoto($(dom), function () {
+            if($('#headUrl').css('background-image')!=null){
+                head_state = true;
+                buttonChange()
+            }else {
+                head_state = false;
+                buttonChange()
+            }
+        });
+    }
+    function companyChange(dom) {
+        postPhoto($(dom), function () {
+            if($('#companyImg').css('background-image')!=null && getImgUrl($('#companyImg').css('background-image')).indexOf('uoload.png') ==-1){
+                company_state = true;
+                buttonChange()
+            }else {
+                company_state = false;
+                buttonChange()
+            }
+        });
+    }
+    function schoolChange(dom) {
+        postPhoto($(dom), function () {
+
+        });
+    }
+    //下一步
+    function nextButton() {
+        OCJSJAVA('/costin/mapi/authentication',postDataFirst);
+    }
+    //关闭图片
+    function imgClose(dom){
+        $(dom).css('display','none')
+        $(dom).parent().find('label div').css('background-image','url(./img/upload.png)').removeClass('bac-before').addClass('bac-after')
+//        $(dom).parent().find('label div').css({'background': 'url(./img/upload.png) no-repeat center center', 'background-size': '160/@rem 90/@rem','border':'1px dashed #cccccc'})
+        $(dom).parent().find('input').val(null)
+        if($(dom).parent().hasClass('company')){
+            company_state = false;
+            buttonChange()
+        }
+    }
+
+
+</script>
+<body>
+    <div class="whole">
+        <div class="top">
+            为保证道道实名认证用户的真实性，请上传您的真实头像、输入正式姓名、上传个人名片、就读证明照片。此信息仅用于认证审核，道道会严格保密用户的真实信息
+        </div>
+        <div class="name bac-white">
+            <div class="small-title flex">
+                <img src="./img/icon-title.png" alt=""><span class="small-title-name">实名信息</span>
+            </div>
+            <div class="head-img flex">
+                <div class="list-left">真实头像</div>
+                <div class="upload-headurl list-right">
+                    <input type="file" id="photoHead" style="display:none" onchange="headChange(this)">
+                    <label for="photoHead" >
+                        <div id="headUrl"></div>　　　　　
+                    </label>
+                    <img id="headButton" class="uoload" src="./img/uoload.png" alt="">
+                </div>
+            </div>
+            <div class="real-name flex">
+                <div class="list-left">真实姓名</div>
+                <input id="name" type="text" class="style-name color-333" >
+            </div>
+            <div class="border-b"></div>
+        </div>
+        <div class="company bac-white">
+            <div class="small-title flex">
+                <img src="./img/icon-title.png" alt=""><span class="small-title-name">公司信息</span>
+            </div>
+            <div class="com-word">
+                <span class="com-word-left">请上传名片照片</span><span class="com-word-right">(请上传正面照)</span>
+            </div>
+            <input type="file" id="photoCard" style="display:none" onchange="companyChange(this)">
+            <label class="relative" for="photoCard" >
+                <div class="com-update bac-after" id="companyImg"></div>　　　　　　　
+            </label>
+            <div class="close-img" onclick="imgClose(this)"></div>
+        </div>
+        <div class="commercial bac-white">
+            <div class="small-title flex">
+                <img src="./img/icon-title.png" alt=""><span class="small-title-name">商学院信息</span>
+            </div>
+            <div class="com-word">
+                <span class="com-word-left">请上传就读证明</span><span class="com-word-right">(请上传正面照)</span>
+            </div>
+            <input type="file" id="photoShcool" style="display:none" onchange="schoolChange(this)">
+            <label class="relative" for="photoShcool" >
+                <div class="com-update bac-after" id="collegeImg"></div>　　　　
+            </label>
+            <div class="close-img" onclick="imgClose(this)"></div>
+        </div>
+        <div class="next-button" onclick="nextButton()">下一步</div>
+    </div>
+</body>
+</html>
+<script src="./js/formone.js"></script>
+<script>
+    var shareObj={
+        topName:document.title
+    }
+    appShareWX(shareObj)
+</script>

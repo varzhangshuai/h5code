@@ -1,0 +1,203 @@
+.whole {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden ;
+  background: #eeeeee;
+  font-size: 0.4rem;
+}
+.top {
+  font-size: 0.32rem;
+  color: #666666;
+  line-height: 0.48rem;
+  box-sizing: border-box;
+  padding: 0.37333333rem;
+}
+.top2 {
+  font-size: 0.37333333rem;
+}
+.name {
+  width: 100%;
+  padding: 0.32rem 0 0.4rem;
+  margin-bottom: 0.26666667rem;
+}
+.bac-white {
+  background: #FFFFFF;
+}
+.small-title {
+  margin-left: 0.4rem;
+  vertical-align: middle;
+  margin-bottom: 0.64rem;
+}
+.small-title img {
+  width: 0.06666667rem;
+  height: 0.50666667rem;
+}
+.small-title-name {
+  margin-left: 0.24rem;
+  color: #CB9555;
+  font-size: 0.48rem;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.list-left {
+  margin-left: 0.66666667rem;
+}
+.list-right {
+  margin-left: 2.13333333rem;
+  display: inline-block;
+}
+.upload-headurl {
+  display: inline-block;
+  width: 2.05333333rem;
+  height: 2.05333333rem;
+  overflow: hidden;
+  position: relative;
+  font-size: 0;
+}
+#headUrl {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  margin: 0;
+  vertical-align: bottom;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.uoload {
+  width: 0.58666667rem;
+  height: 0.58666667rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.real-name {
+  margin: 0.72rem 0 0.50666667rem;
+}
+.style-name {
+  color: #cccccc;
+  margin-left: 0.77333333rem;
+}
+input[type="text"] {
+  box-sizing: border-box;
+  border: none;
+  font-size: 0.4rem;
+  color: #333333;
+  -web-kit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  outline: 0;
+  padding: 0 1em;
+  text-decoration: none;
+}
+.border-b {
+  width: 8.66666667rem;
+  border-bottom: 0.01333333rem solid #eeeeee;
+  margin: 0 auto;
+}
+.company,
+.commercial {
+  padding: 0.45333333rem 0 0.64rem;
+  margin-bottom: 0.26666667rem;
+  position: relative;
+}
+.com-word {
+  margin: -0.02666667rem 0 0.45333333rem 0.66666667rem;
+}
+.com-word .com-word-right {
+  padding-left: 0.26666667rem;
+  font-size: 0.32rem;
+  color: #cccccc;
+}
+.com-update {
+  position: relative;
+  width: 8.50666667rem;
+  height: 4.8rem;
+  margin: 0 auto;
+}
+.bac-after {
+  border: 0.02666667rem dashed #cccccc;
+  background: url(../img/upload.png) no-repeat center center;
+  background-size: 2.13333333rem 1.2rem;
+}
+.bac-before {
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border: none;
+}
+.close-img {
+  background: url("../img/close_1.png") no-repeat;
+  width: 0.58666667rem;
+  height: 0.58666667rem;
+  background-size: cover;
+  position: absolute;
+  right: 0.42666667rem;
+  top: 2.42666667rem;
+  display: none;
+}
+.next-button {
+  width: 8.32rem;
+  height: 1.17333333rem;
+  margin: 0.64rem auto;
+  border-radius: 0.18666667rem;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 1.17333333rem;
+  font-size: 0.48rem;
+  background: #cccccc;
+}
+.alumnus {
+  padding-top: 0.32rem;
+}
+.form-list {
+  height: 1.45333333rem;
+  width: 100%;
+  border-bottom: 0.01333333rem solid #eeeeee;
+}
+.form-list img {
+  width: 0.58666667rem;
+  height: 0.58666667rem;
+  margin-left: 0.32rem;
+}
+.form-list .form-field {
+  margin-left: 0.32rem;
+  color: #cccccc;
+  width: 1.77333333rem;
+}
+.school-info {
+  margin: 0.34666667rem 0 0.53333333rem;
+  padding-bottom: 0.4rem;
+}
+.select-style {
+  font-size: 0.4rem;
+  box-sizing: border-box;
+  width: 8.8rem;
+  height: 0.93333333rem;
+  border: none;
+  color: #333333;
+  padding: 0 1em;
+  background: url("../img/icon-more.png") no-repeat right center;
+  background-size: 0.58666667rem 0.58666667rem;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #cccccc;
+  opacity: 1;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #cccccc;
+  opacity: 1;
+}
+input:-ms-input-placeholder {
+  color: #cccccc;
+  opacity: 1;
+}
+input::-webkit-input-placeholder {
+  color: #cccccc;
+  opacity: 1;
+}

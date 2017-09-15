@@ -1,0 +1,175 @@
+/*清默认样式*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: helvetica;
+}
+img {
+  display: block;
+}
+a,
+h1,
+h2,
+h3,
+h4,
+ul,
+li {
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+ul {
+  list-style: none;
+}
+input {
+  outline: none;
+  -webkit-appearance: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-size: 0.4rem;
+  background: black;
+  color: white;
+}
+.whole {
+  width: 10rem;
+  height: 100%;
+  min-height: 16.08rem;
+  text-align: center;
+  position: relative;
+  background: url("../img/bg1.jpg") no-repeat;
+  background-size: 100% ;
+  overflow-y: auto;
+}
+.whole > div {
+  margin: 0 auto ;
+}
+.head {
+  height: 2.69333333rem;
+  width: 2.69333333rem;
+  background: url("../img/head_bg.png") no-repeat;
+  background-size: contain;
+}
+.head .headurl {
+  width: 1.73333333rem;
+  height: 1.73333333rem;
+  border-radius: 1.33333333rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -0.86666667rem;
+  top: 0.49333333rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.info {
+  padding: 0.93333333rem 0 0.26666667rem;
+}
+.info img {
+  width: 0.34666667rem;
+  height: 0.42666667rem;
+  display: inline;
+  margin-left: 0.26666667rem;
+  position: relative;
+  top: 0.02666667rem;
+}
+.info .info-name {
+  font-size: 0.48rem;
+}
+.info .info-word {
+  font-weight: 100;
+  font-size: 0.34666667rem;
+  display: block;
+  width: 7.33333333rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 0.13333333rem auto;
+}
+.need {
+  padding-top: 0.53333333rem;
+  position: relative;
+  width: 7.86666667rem;
+}
+.need-permit,
+.need-label {
+  color: #ffb052;
+}
+.need-label {
+  text-align: left;
+  padding-top: 0.26666667rem;
+}
+.need-label img {
+  display: inline;
+  width: 0.34666667rem;
+  height: 0.34666667rem;
+  margin-right: 0.18666667rem;
+  position: relative;
+  bottom: -0.02666667rem;
+}
+.need-label span {
+  font-size: 0.32rem;
+}
+.need-content {
+  text-align: left;
+  line-height: 0.64rem;
+}
+.icon-top {
+  width: 0.34666667rem;
+  height: 0.34666667rem;
+  background: url("../img/icon_top.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.icon-bottom {
+  width: 0.34666667rem;
+  height: 0.34666667rem;
+  background: url("../img/icon_bottom.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.els4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+.buttons {
+  position: absolute;
+  top: 10.33333333rem;
+  left: 1.66666667rem;
+}
+.buttons > div {
+  width: 6.66666667rem;
+  height: 1.06666667rem;
+  border-radius: 0.13333333rem;
+  font-size: 0.48rem;
+  line-height: 1.06666667rem;
+}
+.person-call {
+  background: #d79a51;
+}
+.person-share {
+  border: 0.01333333rem solid rgba(255, 255, 255, 0.4);
+  margin-top: 0.26666667rem;
+}
+#mask {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+#mask img {
+  width: 8.73333333rem;
+  height: 4.21333333rem;
+  position: absolute;
+}

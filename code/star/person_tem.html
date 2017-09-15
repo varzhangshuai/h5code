@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>各有各道</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="css/person.css?v=1.0.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        //rem适配方案
+        (function(){
+            var width = document.documentElement.clientWidth/10;
+            var styleNode = document.createElement("style");
+            styleNode.innerHTML="html{font-size:"+width+"px!important}"
+            document.head.appendChild(styleNode);
+        })()
+    </script>
+</head>
+<body>
+    <section  id="wrap">
+        <section class="wrap" id="content">
+            <header id="head"></header>
+            <article class="brife">
+                <h2 id="name"></h2>
+                <div><b>国籍：</b><span id="country"></span></div>
+
+                <div class="post">
+                    <div><b>公司职务：</b></div><div class="post-item"><span></span></div>
+                </div>
+                <div class="school">
+                    <div><b>毕业院校：</b></div><div class="school-item"><span></span></div>
+                </div>
+                <div class="brife-button">
+                    <div class="followed follow" id="followed">已关注</div>
+                    <div class="follow" id="follow">关注</div>
+                    <div class="followers"><span id="followCount">0</span>人已关注</div>
+                </div>
+            </article>
+            <article class="personal">
+                <h3>主要经历</h3>
+                <ul>
+                    <li><p></p></li>
+                    <li>
+                        <p></p>
+                    </li>
+                </ul>
+            </article>
+            <article class="compro" >
+                <h3>公司简介</h3>
+                <div>
+                    <img src="img/logo_02.png" alt="" class="img-jzzb">
+                </div>
+                <div class="describe"></div>
+            </article>
+            <div class="dynamic clearfix" style="display: none">
+                <h3>公司动态</h3>
+                <div class="dynamicwrap">
+                    <ul class="item" id="dynamiclist"></ul>
+                </div>
+            </div>
+            <div class="successful clearfix" style="display: none">
+                <h3>成功案例</h3>
+                <div class="successfulwrap">
+                    <ul class="item" id="successfullist"></ul>
+                </div>
+
+            </div>
+            <article class="photo clearfix" style="display: none">
+                <h3>相关相册</h3>
+                <div class="photowrap">
+                    <ul class="item" id="photolist"></ul>
+                </div>
+            </article>
+            <article class="label ">
+                <h3>大家眼中的张颖</h3>
+                <ul class="clearfix " id="labellist">
+
+                </ul>
+            </article>
+            <div class="need">
+                <h3>张颖的商务需求</h3>
+                <div class="needwrap">
+                    <ul class="item" id="needlist">
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </section>
+    <div class="scrollBar"></div>
+    <div id="mask">      
+        <img id="close" src=""/>
+    </div>
+    <div id="star_float"><img src="img/star_close.png" alt=""></div>
+</body>
+</html>
+<script src="js/touch.js"></script>
+<script src="js/zeptodetect.js?v=1.0.1"></script>
+<script src="js/getUserid.js"></script>
+<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+<script src="js/route.js" ></script>
+<script src="js/bridege.js?v=1.0.2"></script>
+<script src="js/jquery.imgbox.pack.js?v=1.0.3"></script>
+<script>
+
+        window.onload=function () {
+
+            var ua = this.navigator.userAgent;
+            var platform =  this.navigator.platform
+            detect(ua, platform);
+            //        $('#log3').html(JSON.stringify(ua))
+            os = JSON.stringify(os.daodaoclub);
+            function getPerson() {
+                var str = window.location.pathname;
+                var index = str .lastIndexOf("\/");
+                str= str.substring(index + 1, str .length);
+                var i = str.indexOf('?')
+               if(i>-1){
+                str=str.split('?');
+                str=str[0]
+               }
+                return str
+
+            }
+            var person =getPerson();
+            person=(person.split('.'))[0]
+
+            var uri = 'celebrity/detail/';
+            uri+=person;
+            console.log(uri)
+            getData(uri);
+
+            if(!os){
+                $('.brife-button').css('display','none')
+            }
+
+            //左滑事件
+
+            var followBtn = document.querySelector('.brife-button');
+            clickEvent(followBtn,clickfollow);
+            var shareObj ={
+                topName:'各有各道',
+                title:'各有各道',
+                image:'http://test.m.daodaoclub.com/img/daodaologo_40.png',
+                describe:'红人'
+//            shareurl:'http://m.daodaoclub.com/app/star/person_chijingzhao.html'
+            }
+            appShareWX(shareObj);
+            //關注
+
+            function clickfollow() {
+                OCJSJAVA('/costin/mapi/relation/follow',getFollow)
+                appShareWX(shareObj);
+            }
+            morePhoto('zhangying');
+
+
+
+            function showData() {
+                var celebrityid = 2;
+                $.ajax({
+                    type: 'POST',
+                    url:route+'sectionDetails/getDetail' ,
+                    data:{celebrityid:celebrityid},
+                    success:function (res) {
+
+                    },
+                    error:function (err) {
+                        console.log(err)
+                        err= JSON.stringify(err)
+                    }
+                })
+            }
+
+        }
+</script>

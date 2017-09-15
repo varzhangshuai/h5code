@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+/* 禁止复制 */
+/*
+html{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+*/
+
+body,h1,h2,h3,h4,ul,li{
+    margin: 0;
+    padding: 0;
+    font-family: helvetica;//这个字体是移动端设备通用的西方字体;
+    font-weight: 300;
+}
+a,img,button,input,textarea,div{
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);//解决a标签高亮问题
+}
+ul{
+    list-style: none;
+}
+input,select{
+    outline: none;//去除边框高亮
+-moz-appearance:none;    /*for firefox*/
+    -webkit-appearance: none;
+    appearance:none;
+}
+
+
+.clearfix:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.fl{float:left;}
+.fr{float:right;}
+.cl{clear: both;}
+.ellilsis{
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.ell3{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+/*公共颜色*/
+.c-orange{
+  color: #ffc620;
+}
+.c-white{
+    color: #ffffff;
+}
+.c-deeporange{
+    color: #ff9000;
+}
+.c-lightorange{
+    color: #ffcb34;
+}
+.c-deepcoffee{
+    color: #3f2622;
+}
+
+/*公共背景*/
+.bg-deepyellow{
+    background: #d5a843;
+}
+
+/*公共字体weight*/
+.bold500{
+    font-weight: 500;
+}
+
+/*公共padding*/
+.pad4{
+    padding: 0 2px;
+}
+.pad16{
+    padding: 0 6px;
+}
+/*公共字体大小*/
+
+

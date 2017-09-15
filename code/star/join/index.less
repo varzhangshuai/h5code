@@ -1,0 +1,108 @@
+@rem:75rem;
+
+*{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+ul {
+  list-style: none;
+}
+#image{
+  li{
+    font-size:0
+  }
+  img{
+    height: 200/@rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+ }
+#mv{
+  height: 270/@rem;
+  width: 600/@rem;
+  position: absolute;
+  top: 1370/@rem;
+  ;left: 73/@rem;
+}
+#button-bac{
+  width: 750/@rem;
+  height: 157/@rem;
+  background: url("img/bottom_btn_bg.png");
+  background-size: contain;
+  position: fixed;
+  bottom: 0;
+}
+#button{
+  width: 424/@rem;
+  height: 115/@rem;
+  background: url("img/btn_normal.png");
+  background-size: contain;
+  position: absolute;
+  top:50%;
+  margin-top: -30/@rem;
+  left: 50%;
+  margin-left: -212/@rem;
+
+}
+
+//弹窗
+#mask{
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 3;
+}
+#alert-ios{
+  width: 620/@rem;
+  height: 306/@rem;
+  border-radius: 20/@rem;
+  background: #ffffff;
+  position: fixed;
+  top: 350/@rem;
+  left: 50%;
+  margin-left: -310/@rem;
+  z-index: 5;
+  display: none;
+  font-weight: 300;
+  .alert-title{
+    font-size: 34/@rem;
+    line-height: 34/@rem;
+    color: #cb9555;
+    text-align: center;
+    width: 100%;
+    margin-top: 36/@rem;
+    margin-bottom: 30/@rem;
+  }
+  .alert-text{
+    font-size: 32/@rem;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    line-height: 42/@rem;
+    margin-bottom: 30/@rem;
+    box-sizing: border-box;
+    padding: 0 20/@rem;
+  }
+  .alert-button{
+    border-top:1/@rem solid #dddddd ;
+    div{
+      float: left;
+      display: block;
+      width: 308/@rem;
+      text-align: center;
+      font-size: 34/@rem;
+      color: #9e9e9e;
+      height: 88/@rem;
+      line-height: 88/@rem;
+    }
+    #alert-yes{
+      color: #CB9555;
+      border-left: 1/@rem solid #dddddd ;
+    }
+  }
+}
+

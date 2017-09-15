@@ -1,0 +1,92 @@
+.wechat-whole {
+  width: 100%;
+}
+.wechat-cont {
+  margin: 0 auto;
+}
+.col9 {
+  color: #999999;
+}
+.text-center {
+  text-align: center;
+}
+.fs28 {
+  font-size: 0.37333333rem;
+}
+.fs30 {
+  font-size: 0.4rem;
+}
+.mt60 {
+  margin-top: 0.8rem;
+}
+.mt50 {
+  margin-top: 0.66666667rem;
+}
+.mt30 {
+  margin-top: 0.4rem;
+}
+.safire_logo {
+  width: 2.24rem;
+  height: 2.24rem;
+  margin: 0 auto;
+}
+.daodao_logo {
+  width: 1.92rem;
+  height: 3.46666667rem;
+  margin: 0 auto;
+}
+.line_b01 {
+  border-bottom: 1px solid #999999;
+  width: 2.66666667rem;
+  margin: 0.10666667rem 0.4rem 0 0.4rem;
+}
+.daodao-load-btn {
+  color: #3f2622;
+  font-size: 0.42666667rem;
+  border: 1px solid #3f2622;
+  width: 8rem;
+  height: 1.06666667rem;
+  line-height: 1.06666667rem;
+  margin: 0 auto;
+  margin-top: 0.53333333rem;
+  display: block;
+  border-radius: 0.13333333rem;
+}
+.daodao-not-installed {
+  margin-top: 1.06666667rem;
+}
+.list {
+  font-size: 0.4rem;
+  color: #333333;
+}
+.list-top {
+  padding: 0.69333333rem 0 0.61333333rem;
+  text-align: center;
+  font-size: 0.42666667rem;
+}
+.list-top img {
+  width: 2.10666667rem;
+  height: 2.66666667rem;
+  margin: 0 auto;
+}
+.list-line {
+  width: 8.93333333rem;
+  height: 4.6rem;
+  background: url("../img/list_line.png") no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  padding: 0.58666667rem;
+  margin: 0 auto;
+  line-height: 0.58666667rem;
+}
+.list-button {
+  width: 8.8rem;
+  height: 1.17333333rem;
+  background: #3f2622;
+  color: #FFFFFF;
+  font-size: 0.48rem;
+  text-align: center;
+  line-height: 1.17333333rem;
+  margin: 1.41333333rem auto 0;
+  border-radius: 0.13333333rem;
+}

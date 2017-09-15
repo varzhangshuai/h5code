@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加入各有各道</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <link rel="stylesheet" href="../join/index.css">
+    <script type="text/javascript">
+        //rem适配方案
+        (function(){
+            var width =document.documentElement.clientWidth/10;
+            var styleNode = document.createElement("style");
+            styleNode.innerHTML="html{font-size:"+width+"px!important}"
+            document.head.appendChild(styleNode);
+        })()
+    </script>
+</head>
+<body>
+    <div id="mask"></div>
+    <div id="alert-ios">
+        <div class="alert-title">提示</div>
+        <div class="alert-text">长江校友提供完整资料均可加入首页各有各道活动，进行个人形象展示</div>
+        <div class="alert-button clearfix">
+            <div id="alert-cancel">取消</div>
+            <div id="alert-yes">确认报名</div>
+        </div>
+    </div>
+    <div>
+        <ul id="image"></ul>
+    </div>
+    <div id="button-bac">
+        <div id="button"></div>
+    </div>
+</body>
+</html>
+<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+<script src="../js/zeptodetect.js?v=1.0.1"></script>
+<script src="../js/route.js" ></script>
+<script src="../js/bridege.js?v=1.0.2" charset="utf-8"></script>
+<script>
+
+
+window.onload=function () {
+    var list = document.querySelector("#image");
+    var lis = list.getElementsByTagName("li");
+    var start = 1;
+    var length =11;
+
+    var urlArr =[];
+    for(var i=0;i<length+1;i++){
+        urlArr.push("http://img.daodaoclub.com/app/star/join/img/"+i+".png");
+    }
+    createLi();
+
+    function createLi() {
+        var end = start + length;
+        end = end > urlArr.length ? urlArr.length : end;
+        for(var i=start;i<end;i++) {
+            var li = document.createElement("li");
+            li.src = urlArr[i];
+            list.appendChild(li);
+        }
+        showImg();
+    }
+
+
+//加载图片（懒加载）
+    function showImg(){
+        for(var i=0;i<lis.length;i++){
+            creatImg(lis[i]);
+        }
+    }
+
+    //创建img标签
+    //transtion在元素没有完全渲染完的情况下是不会被触发的
+    function creatImg(li){
+        var img = new Image();
+        img.src=li.src;
+        li.appendChild(img);
+        img.onload=function(){
+            img.style.opacity="1";
+        }
+    }
+
+
+    var route = myRoutes()
+
+    //点击报名
+    var isToast = true;
+    $('#button').click(function () {
+        $('#alert-ios').css('display','block')
+        $('#mask').css('display','block')
+    });
+    $('#alert-cancel').click(function () {
+        $('#alert-ios').css('display','none')
+        $('#mask').css('display','none')
+    });
+    $('#alert-yes').click(function () {
+        OCJSJAVA('/costin/mapi/celebrity/apply',joinStar)
+    });
+
+    function joinStar(appObj) {
+        if(!isToast){
+            return
+        }
+        $.ajax({
+            type: 'POST',
+            url:route+'celebrity/apply' ,
+            data:appObj,
+            success:function (res) {
+                if(res.code==1){
+                    $('#alert-ios').css('display','none')
+                    $('#mask').css('display','none')
+                    toast('提交成功，一个工作日内系统将以短信形式给您反馈！')
+                }else{
+                    $('#alert-ios').css('display','none')
+                    $('#mask').css('display','none')
+                    toast(res.msg)
+                }
+            },
+            error:function (err) {
+                console.log(err)
+            }
+        })
+    }
+
+
+    var shareObj ={
+        title:'加入各有各道',
+        topName:'加入各有各道',
+//        image:'http://m.daodaoclub.com/user/img/shareimg.png',
+        describe:'各有各道'
+//            shareurl:'http://m.daodaoclub.com/app/star/person_chijingzhao.html'
+    }
+    appShareWX(shareObj);
+
+
+    //toast
+    function toast(tip) {
+        if(!isToast){
+            return
+        }
+        isToast = false;
+        var $toast = $("<div id='toast'></div>")
+        $("body").append($toast);
+        var obj= {
+            "display": "none",
+            "background": "rgba(0, 0, 0, 0.7)",
+            "position": "fixed",
+            "z-index": "10",
+            "width": "5rem",
+            "line-height": "0.8rem",
+            "left": "2.5rem",
+            "top": "50%",
+            "margin-top":" -0.66666667rem",
+            "border-radius":" 0.16rem",
+            "font-size": "0.4rem",
+            "color": "white",
+            "text-align":" center",
+            "padding": "0.26666667rem 0.13333333rem"
+        }
+        $('#toast').css(obj);
+        $('#toast').css('display','block').html(tip)
+        setTimeout(function () {
+            $('#toast').css('display','none').html()
+            isToast = true;
+        },3000)
+    }
+}
+
+
+
+</script>

@@ -1,0 +1,407 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-size: 0.45333333rem;
+}
+body {
+  width: 100%;
+  background: #0A2051;
+}
+.whole {
+  width: 100%;
+  height: 100%;
+  background: url("http://img.daodaoclub.com/app/gifts/img/bg.jpg") no-repeat;
+  background-size: 10rem !important;
+}
+.top {
+  width: 9.2rem;
+  height: 1.33333333rem;
+  position: relative;
+  top: 0.8rem;
+  left: 0.4rem;
+}
+.logo_2 {
+  width: 1.4rem;
+  height: 1.4rem;
+  background: url("http://img.daodaoclub.com/app/gifts/img/noneadd_customer.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  right: 0;
+  top: -0.4rem;
+  z-index: 9;
+}
+.middle {
+  width: 9.6rem;
+  height: 1.86666667rem;
+  margin: 0 0.2rem;
+  background: rgba(255, 255, 255, 0.7);
+  position: relative;
+  top: 1.46666667rem;
+  margin-bottom: 0.26666667rem;
+}
+.middle .add_address {
+  width: 4.26666667rem;
+  height: 1.01333333rem;
+  background: #ECB724;
+  border-radius: 0.13333333rem;
+  color: #FFF;
+  text-align: center;
+  line-height: 1.01333333rem;
+  font-size: 0.53333333rem;
+}
+#noneadd .add-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -2.13333333rem;
+  margin-top: -0.50666667rem;
+}
+#selectadd .sendgift,
+#wxwait .sendgift,
+#appwait .sendgift {
+  height: 4.66666667rem;
+}
+#selectadd .sendgift .detailword,
+#wxwait .sendgift .detailword,
+#appwait .sendgift .detailword {
+  text-align: center;
+  font-size: 0.4rem;
+  box-sizing: border-box;
+  padding: 0 0.4rem;
+}
+#selectadd .sendgift .detailword p:first-child,
+#wxwait .sendgift .detailword p:first-child,
+#appwait .sendgift .detailword p:first-child {
+  padding-top: 0.48rem;
+  padding-bottom: 0.33333333rem;
+}
+#selectadd .sendgift .add-button,
+#wxwait .sendgift .add-button,
+#appwait .sendgift .add-button {
+  position: absolute;
+  bottom: 0.37333333rem;
+  left: 50%;
+  margin-left: -2.13333333rem;
+}
+#selectadd .express,
+#wxwait .express,
+#appwait .express {
+  height: 2.66666667rem;
+  text-align: center;
+  font-size: 0.50666667rem;
+  font-weight: 500;
+  color: #333;
+}
+#selectadd .express p:first-child,
+#wxwait .express p:first-child,
+#appwait .express p:first-child {
+  padding-top: 0.64rem;
+}
+#selectadd .openapp,
+#wxwait .openapp,
+#appwait .openapp {
+  height: 3.36rem;
+  text-align: center;
+  font-size: 0.50666667rem;
+  font-weight: 500;
+  color: #333;
+}
+#selectadd .openapp p:first-child,
+#wxwait .openapp p:first-child,
+#appwait .openapp p:first-child {
+  padding-top: 0.4rem;
+}
+#selectadd .openapp .add-button,
+#wxwait .openapp .add-button,
+#appwait .openapp .add-button {
+  position: absolute;
+  bottom: 0.26666667rem;
+  left: 50%;
+  margin-left: -2.13333333rem;
+}
+#selectadd .reviseaddress,
+#wxwait .reviseaddress,
+#appwait .reviseaddress {
+  background: url("http://img.daodaoclub.com/app/gifts/img/noneadd_revisebac.png") no-repeat;
+  background-size: contain ;
+}
+#selectadd .reviseaddress .revise,
+#wxwait .reviseaddress .revise,
+#appwait .reviseaddress .revise {
+  position: absolute;
+  top: 0.05333333rem;
+  right: 0.08rem;
+  color: white;
+  font-size: 0.32rem;
+}
+/*
+内容修改
+ */
+.content {
+  position: absolute;
+  top: 0.50666667rem;
+  left: 0.4rem;
+  width: 9.2rem;
+  max-height: 100% ;
+}
+.content .c-logo-1 {
+  width: 9.2rem;
+  height: 7.81333333rem;
+  background: url("http://img.daodaoclub.com/app/gifts/img/add_toplogo.png") no-repeat;
+  background-size: contain;
+}
+.content .c-logo-1 .cl1-word {
+  text-align: center;
+  font-size: 0.4rem;
+  font-weight: 300;
+}
+.content .c-logo-1 .cl1-word-2 {
+  margin-top: 1.04rem;
+  color: white;
+}
+.content .c-logo-1 .cl1-button {
+  width: 2.85333333rem;
+  height: 0.98666667rem;
+  background: url("http://img.daodaoclub.com/app/gifts/img/cl1-button.png") no-repeat;
+  background-size: contain;
+  margin: 0.66666667rem auto;
+}
+.content .c-logo-1 > div {
+  position: absolute;
+  width: 100%;
+  top: 3.30666667rem;
+}
+.a-opcity {
+  width: 9.2rem;
+  background: rgba(255, 255, 255, 0.3);
+  margin-top: 0.4rem;
+  border-radius: 0.13333333rem;
+}
+.orderinfo {
+  height: 2.85333333rem;
+  font-size: 0.4rem;
+  font-weight: 300;
+  color: white;
+  box-sizing: border-box;
+  padding: 0 0.4rem;
+}
+.orderinfo .title {
+  border-bottom: 0.01333333rem solid rgba(255, 255, 255, 0.1);
+  height: 0.93333333rem;
+  line-height: 0.93333333rem;
+}
+.orderinfo .order-word {
+  padding-top: 0.37333333rem;
+  position: relative;
+  line-height: 0.4rem;
+}
+.personinfo {
+  height: 3.46666667rem;
+  font-size: 0.4rem;
+  font-weight: 300;
+  color: white;
+}
+.personinfo .title {
+  border-bottom: 0.01333333rem solid rgba(255, 255, 255, 0.1);
+  height: 0.93333333rem;
+  line-height: 0.93333333rem;
+}
+.personinfo .consignee {
+  padding-top: 0.37333333rem;
+  position: relative;
+  line-height: 0.4rem;
+}
+.personinfo .consignee .phone {
+  position: absolute;
+  right: 0.8rem;
+}
+.personinfo .detailaddress {
+  padding-top: 0.37333333rem;
+  height: 1.33333333rem;
+  display: inline-block;
+  width: 100%;
+}
+.personinfo > div {
+  box-sizing: border-box;
+  padding: 0 0.4rem;
+}
+.gift-detail {
+  color: #FFF;
+  height: 2.64rem;
+  width: 9.2rem;
+  box-sizing: border-box;
+  padding: 0.26666667rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 300;
+}
+.gift-detail .ad-gift-img {
+  width: 1.41333333rem;
+  height: 1.41333333rem;
+}
+.gift-detail .ad-gift-img img {
+  width: 100%;
+  height: 100%;
+}
+.gift-detail .prize-item-right {
+  height: 0.98666667rem;
+  width: 1.78666667rem;
+  line-height: 0.98666667rem;
+  background: url("http://img.daodaoclub.com/app/gifts/img/home_prize_button.png") no-repeat;
+  background-size: contain;
+  text-align: center;
+  color: white;
+}
+.goba-index {
+  color: #efc82f;
+  font-size: 0.48rem;
+  text-align: center;
+  margin: 0.4rem auto;
+}
+/*
+内容修改end
+ */
+iframe {
+  margin-top: 2.66666667rem;
+}
+#alert-ios {
+  width: 8.26666667rem;
+  height: 3.92rem;
+  border-radius: 0.26666667rem;
+  background: #ffffff;
+  position: absolute;
+  top: 6rem;
+  left: 50%;
+  margin-left: -4.13333333rem;
+  z-index: 5;
+  display: none;
+}
+#alert-ios .alert-title {
+  font-size: 0.45333333rem;
+  line-height: 0.45333333rem;
+  color: #cb9555;
+  text-align: center;
+  width: 100%;
+  margin-top: 0.48rem;
+  margin-bottom: 0.64rem;
+}
+#alert-ios .alert-text {
+  display: block;
+  font-size: 0.56rem;
+  color: #333;
+  text-align: center;
+  width: 100%;
+  line-height: 0.56rem;
+  margin-bottom: 0.64rem;
+  -webkit-user-select: text;
+}
+#alert-ios .alert-button {
+  border-top: 0.01333333rem solid #eeeeee;
+}
+#alert-ios .alert-button #alert-cancel {
+  border-right: 0.01333333rem solid #eeeeee;
+}
+#alert-ios .alert-button div,
+#alert-ios .alert-button a {
+  float: left;
+  display: block;
+  width: 4.10666667rem;
+  text-align: center;
+  font-size: 0.45333333rem;
+  color: #9e9e9e;
+  line-height: 1.06666667rem;
+}
+#alert-ios .alert-button a {
+  color: #cb9555;
+}
+#alert-ios .alert-button .phone-inApp {
+  color: #cb9555;
+}
+#mask-bac {
+  display: none;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+}
+#mask {
+  display: none;
+  position: absolute;
+  left: 50%;
+  margin-left: -4.4rem;
+  z-index: 99;
+  width: 8.73333333rem;
+  height: 4.21333333rem;
+  background: url("http://img.daodaoclub.com/app/gifts/img/share_toast.png") no-repeat;
+  background-size: contain;
+}
+#click-area {
+  width: 4rem;
+  height: 1.6rem;
+  position: absolute;
+  top: 11.73333333rem;
+  left: 3rem;
+}
+#add-iframe {
+  width: 10rem;
+  height: 100%;
+  margin-top: 1.6rem;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+ul {
+  list-style: none;
+}
+#image {
+  margin-top: 2.13333333rem;
+}
+#image li {
+  font-size: 0;
+}
+#image img {
+  height: 2.66666667rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#mv {
+  height: 3.6rem;
+  width: 8rem;
+  position: absolute;
+  top: 18.26666667rem;
+  left: 0.97333333rem;
+}
+.fs42 {
+  font-size: 0.56rem;
+}
+.fs40 {
+  font-size: 0.53333333rem;
+}
+.fs36 {
+  font-size: 0.48rem;
+}
+.fs34 {
+  font-size: 0.45333333rem;
+}
+.fs32 {
+  font-size: 0.42666667rem;
+}
+.fs30 {
+  font-size: 0.4rem;
+}
+.fs28 {
+  font-size: 0.37333333rem;
+}
+.fs24 {
+  font-size: 0.32rem;
+}
+.fs20 {
+  font-size: 0.26666667rem;
+}
+.wd400 {
+  width: 5.33333333rem;
+}

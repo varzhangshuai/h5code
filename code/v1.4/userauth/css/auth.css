@@ -40,12 +40,12 @@ body {
 }
 .border {
   border-bottom: 0.01333333rem solid #cccccc;
-  width: 2.01333333rem;
+  width: 1.97333333rem;
   padding-top: 0.26666667rem;
   margin: 0 0.34666667rem 0 0.4rem;
 }
 .long-width {
-  width: 3.04rem;
+  width: 3.01333333rem;
 }
 .auth-bottom li {
   float: left;

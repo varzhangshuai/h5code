@@ -322,10 +322,8 @@ function renderList(data){
         }
         if(isPraise==0||isPraise==''){
             $('#isPraise').removeClass('cancellike').addClass('like')
-            toast('已取消喜欢',1)
         }else if(isPraise==1){
             $('#isPraise').removeClass('like').addClass('cancellike')
-            toast('已喜欢',1)
         }else {
             $('#isPraise').css('display','none')
         }

@@ -22,11 +22,14 @@ var gulp = require('gulp'), //本地安装gulp所用到的地方
     ftp = require('gulp-ftp');
 
 
-var item='userauth';
+var item='article';
 
 gulp.task('default',['minifyCss','minifyJs','productionCss','minifyImg']);
 gulp.task('detail',function (cb) {
     runSequence('cleante',['detailCss','detailJs','detailImg'],'moveDetail')(cb)
+});
+gulp.task('ossdetail',function (cb) {
+    runSequence('cleante',['detailCss','detailJs','detailImg'],'testHtmlmin')(cb)
 });
 
 //3.压缩css

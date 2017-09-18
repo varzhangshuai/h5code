@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+ul {
+  list-style: none;
+}
+#page-list {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 0.4rem;
+  font-size: 0.4rem;
+  color: #333333;
+}
+.page {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 0;
+  width: 100%;
+  border-bottom: 0.01333333rem solid #eeeeee;
+}
+.page-img {
+  width: 2.93333333rem;
+  height: 1.86666667rem;
+  margin-right: 0.26666667rem;
+}
+.page-r {
+  width: 5.98666667rem;
+  height: 1.86666667rem;
+}
+.page-title {
+  height: 1.54666667rem;
+}
+.page-time {
+  height: 0.32rem;
+  color: #999999;
+  font-size: 0.32rem;
+  line-height: 0.32rem;
+}
+.pagation {
+  margin-top: 0.66666667rem;
+  padding-bottom: 0.93333333rem;
+  font-size: 0.26666667rem;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagation div {
+  display: inline-block;
+  width: 1.6rem;
+  height: 0.66666667rem;
+  line-height: 0.66666667rem;
+  background: #CB9555;
+  color: white;
+}
+#toPage {
+  box-sizing: border-box;
+  padding-left: 0.26666667rem;
+  width: 2rem;
+  height: 0.66666667rem;
+  border: 0.01333333rem solid #CB9555;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0.05333333rem;
+  outline: none;
+  color: #CB9555;
+  font-size: 0.32rem;
+  margin: 0 0.4rem;
+  text-align: center;
+  background-color: #fafafb;
+  background: url("../img/select_icon.jpg") no-repeat 1.33333333rem center;
+  background-size: 0.29333333rem 0.14666667rem;
+}
+.els2 {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

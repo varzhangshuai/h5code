@@ -1,0 +1,93 @@
+@rem:75rem;
+*{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+ul {
+  list-style: none;
+}
+
+//page - headlist
+#page-list{
+  box-sizing: border-box;
+  width: 100%;
+  padding:0 30/@rem ;
+  font-size: 30/@rem;
+  color: #333333;
+}
+.page{
+  display: flex;
+  align-items:center;
+  padding: 30/@rem 0;
+  width: 100%;
+  border-bottom: 1/@rem solid #eeeeee;
+}
+.page-img{
+  width: 220/@rem;
+  height: 140/@rem;
+  margin-right: 20/@rem;
+}
+.page-r{
+  width: 449/@rem;
+  height: 140/@rem;
+}
+.page-title{
+  height: 116/@rem;
+}
+.page-time{
+  height: 24/@rem;
+  color: #999999;
+  font-size: 24/@rem;
+  line-height: 24/@rem;
+}
+
+//分页
+.pagation{
+  margin-top: 50/@rem;
+  padding-bottom: 70/@rem;
+  font-size: 20/@rem;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div{
+    display: inline-block;
+    width: 120/@rem;
+    height: 50/@rem;
+    line-height: 50/@rem;
+    background: #CB9555;
+    color: white;
+  }
+
+}
+#toPage{
+  box-sizing: border-box;
+  padding-left: 20/@rem;
+  width: 150/@rem;
+  height: 50/@rem;
+  border: 1/@rem solid #CB9555;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border-radius: 4/@rem;
+  outline: none;
+  color: #CB9555;
+  font-size: 24/@rem;
+  margin: 0 30/@rem;
+  text-align: center;
+  background-color: #fafafb;
+  background: url("../img/select_icon.jpg") no-repeat  100/@rem center;
+  background-size: 22/@rem 11/@rem;
+}
+.els2{
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+}

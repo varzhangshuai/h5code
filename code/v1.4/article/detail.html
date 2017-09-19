@@ -21,7 +21,8 @@
     </script>
     <title>商学院头条</title>
     <link rel="stylesheet" href="./css/index.css">
-    <script src="./js/route.js"></script>
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="js/route.js"></script>
     <script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
     <script src="http://img.daodaoclub.com/public/appShare.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
@@ -61,12 +62,19 @@
             </li>
         </ul>
     </div>
+    <div class="float-bottom" style="display: none"></div>
 </body>
 </html>
-<script src="./js/zeptodetect.js"></script>
-<script src="./js/index.js"></script>
+<script src="js/zeptodetect.js"></script>
+<script src="js/index.js"></script>
 <script>
-    $('.list-title-r').click(function () {
-        window.location.href = '/online/v1.4/article/list.html'
-    })
+        $('.list-title-r').click(function () {
+            var listUrl = '/app/article/list.html';
+            window.location.href = listUrl
+        })
+        $('.float-bottom').click(function () {
+            var tencentUrl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.daodaoclub.costin';
+            window.location.href = tencentUrl;
+        })
+
 </script>

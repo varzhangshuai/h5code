@@ -25,6 +25,8 @@ if(search.type){
     var daodaoclub = os.daodaoclub;
     if(daodaoclub){
         $('.inApp').css('display','block')
+    }else{
+        $('.float-bottom').css('display','block')
     }
 
     //获取数据
@@ -174,7 +176,7 @@ var wxShareObj={
 var shareObj ={
     topName:document.title,
     shareurl:window.location.href,
-    title:'document.title',
+    title:document.title,
     image:'http://img.daodaoclub.com/daodao_logo/daodao_logo_100.png',
     describe:'',
     topShare:1
@@ -213,7 +215,6 @@ function getData(data) {
         success:function (res) {
             if(res.code==1){
                 var data =res.original;
-                document.title=data.title;//title
                 $('#title').html(data.title) //大标题
                 $('#subtitle').html(data.subTitle) //副标题
                 var content = data.content;//内容
@@ -238,7 +239,7 @@ function getData(data) {
                 $('#praiseCount').html(praiseCount)  //显示关注数
                 var articleid = data.articleid; //文章id
                 //微信分享
-                var share = data.share
+                var share = data.share;
                 wxShareObj.title = share.showTitle;
                 wxShareObj.desc = share.subtitle;
                 wxShareObj.imgUrl = share.imgurl;
@@ -255,6 +256,7 @@ function getData(data) {
                 //点赞
                 $('#isPraise').click(function () {
                     OCJSJAVA('/costin/mapi/article/praise',toPraise,{articleid:data.articleid})
+                    appShareWX(shareObj);
                 })
                 //分享给好友
                 $('#sharefriend').click(function () {

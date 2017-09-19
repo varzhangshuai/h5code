@@ -1,0 +1,10 @@
+.float-bottom {
+  width: 10rem;
+  height: 2.13333333rem;
+  background: url("../img/float.jpg") no-repeat;
+  background-size: cover;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}

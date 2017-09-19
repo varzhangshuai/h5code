@@ -3,6 +3,16 @@ var route = myRoutes();
 //分享
 //wx
 window.onload=function () {
+    var ua = window.navigator.userAgent;
+    var platform =  window.navigator.platform;
+    detect(ua, platform);
+    var android=os.android;
+    var daodaoclub = os.daodaoclub;
+    if(!daodaoclub){
+        $('.float-bottom').css('display','block')
+    }else{
+        $('.float-bottom').css('display','none')
+    }
     var wxShareObj={
         link:window.location.href,
         title:document.title,
@@ -204,5 +214,10 @@ window.onload=function () {
             $('#toast').css('display','none').html()
         },time)
     }
+
+    //浮层跳转
+    $('.float-bottom').click(function () {
+        window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.daodaoclub.costin'
+    })
 
 }

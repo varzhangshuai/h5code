@@ -2,6 +2,8 @@ window.onload=function () {
 
     //获取数据
     OCJSJAVA('/costin/mapi/authentication/after',getFormData,{},renderAfter);
+    //ios标题
+    iosTitle({topName:document.title,topShare:1,topCloseButton:1})
     //姓名
     $('#name').blur(function () {
         var re = /[^\w\u4e00-\u9fa5]/g;

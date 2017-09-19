@@ -112,8 +112,11 @@ function appShareWX(obj) {
     if(!obj.shareurl || obj.shareurl==''){
         obj.shareurl=''
     }
+    if(!obj.topShare || obj.topShare==''){
+        obj.topShare=0
+    }
     setupWebViewJavascriptBridge(function (bridge) {
-        bridge.callHandler('webCallApp',{'topName':obj.topName,'title':obj.title,'image':obj.image,'describe':obj.describe,'shareurl':obj.shareurl},function (response) {
+        bridge.callHandler('webCallApp',{'topShare':obj.topShare,'topName':obj.topName,'title':obj.title,'image':obj.image,'describe':obj.describe,'shareurl':obj.shareurl},function (response) {
             var res = JSON.stringify(response)
         })
     })
@@ -173,7 +176,8 @@ var shareObj ={
     shareurl:window.location.href,
     title:'document.title',
     image:'http://img.daodaoclub.com/daodao_logo/daodao_logo_100.png',
-    describe:''
+    describe:'',
+    topShare:1
 }
 
 //微信分享

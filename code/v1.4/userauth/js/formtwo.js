@@ -2,7 +2,8 @@
 $(function () {
     // getFormData(appData,renderLast);
     OCJSJAVA('/costin/mapi/authentication/after',getFormData,{},renderLast);
-
+    //ios标题
+    iosTitle({topName:document.title,topShare:1,topCloseButton:1})
     //确定value
     //姓名
     if($('#alumni1Name').val()!=null){

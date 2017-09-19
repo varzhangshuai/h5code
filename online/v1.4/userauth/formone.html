@@ -28,7 +28,7 @@
 </head>
 <script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
 <script src="http://img.daodaoclub.com/app/userauth/js/zeptodetect-8637ea0814.js"></script>
-<script src="http://img.daodaoclub.com/app/userauth/js/tools-a0bfd2de05.js"></script>
+<script src="http://img.daodaoclub.com/app/userauth/js/tools-e147ee58eb.js"></script>
 <script>
     //上传头像
 
@@ -65,9 +65,11 @@
     }
     //关闭图片
     function imgClose(dom){
-        $(dom).css('display','none')
-        $(dom).parent().find('label .oss').css('background-image','url(./img/upload.png)').removeClass('bac-before').addClass('bac-after')
-//        $(dom).parent().find('label div').css({'background': 'url(./img/upload.png) no-repeat center center', 'background-size': '160/@rem 90/@rem','border':'1px dashed #cccccc'})
+        $(dom).css('display','none');
+        if($(dom).parent().find('label .oss').hasClass()){
+
+        }
+        $(dom).parent().find('label .oss').css('background-image','url(http://img.daodaoclub.com/app/userauth/img/upload.png)').removeClass('bac-before').addClass('bac-after')
         $(dom).parent().find('input').val(null)
         if($(dom).parent().hasClass('company')){
             company_state = false;
@@ -136,10 +138,4 @@
     </div>
 </body>
 </html>
-<script src="http://img.daodaoclub.com/app/userauth/./js/formone-d91d2b7bbe.js"></script>
-<script>
-    var shareObj={
-        topName:document.title
-    }
-    appShareWX(shareObj)
-</script>
+<script src="http://img.daodaoclub.com/app/userauth/./js/formone-e38517e558.js"></script>

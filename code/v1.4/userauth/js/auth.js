@@ -37,7 +37,8 @@ $(function(){
     var uri= '/costin/mapi/authentication/status';
     // var search = getUserid()
     OCJSJAVA(uri,getData);
-
+//ios标题
+    iosTitle({topName:document.title,topShare:1,topCloseButton:1})
     // getData(appData);
     function getData(data) {
         $.ajax({

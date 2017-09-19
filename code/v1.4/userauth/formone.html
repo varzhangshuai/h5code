@@ -65,9 +65,11 @@
     }
     //关闭图片
     function imgClose(dom){
-        $(dom).css('display','none')
-        $(dom).parent().find('label .oss').css('background-image','url(./img/upload.png)').removeClass('bac-before').addClass('bac-after')
-//        $(dom).parent().find('label div').css({'background': 'url(./img/upload.png) no-repeat center center', 'background-size': '160/@rem 90/@rem','border':'1px dashed #cccccc'})
+        $(dom).css('display','none');
+        if($(dom).parent().find('label .oss').hasClass()){
+
+        }
+        $(dom).parent().find('label .oss').css('background-image','url(http://img.daodaoclub.com/app/userauth/img/upload.png)').removeClass('bac-before').addClass('bac-after')
         $(dom).parent().find('input').val(null)
         if($(dom).parent().hasClass('company')){
             company_state = false;
@@ -137,9 +139,3 @@
 </body>
 </html>
 <script src="./js/formone.js"></script>
-<script>
-    var shareObj={
-        topName:document.title
-    }
-    appShareWX(shareObj)
-</script>

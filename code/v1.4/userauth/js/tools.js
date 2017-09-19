@@ -34,7 +34,7 @@ function getUserid(){
 
 //路由
 function myRoutes(){
-    var route = 'http://test.m.daodaoclub.com';
+    var route = 'http://m.daodaoclub.com';
     return route
 }
 var route = myRoutes()
@@ -142,6 +142,23 @@ function appShareWX(obj) {
     }
     setupWebViewJavascriptBridge(function (bridge) {
         bridge.callHandler('webCallApp',{'topName':obj.topName,'title':obj.title,'image':obj.image,'describe':obj.describe,'shareurl':obj.shareurl},function (response) {
+            var res = JSON.stringify(response)
+        })
+    })
+}
+
+function iosTitle(obj) {
+    if(!obj.topName || obj.topName==''){
+        obj.topName=''
+    }
+    if(!obj.topShare || obj.topShare==''){
+        obj.topShare=0
+    }
+    if(!obj.topCloseButton || obj.topCloseButton==''){
+        obj.topCloseButton=''
+    }
+    setupWebViewJavascriptBridge(function (bridge) {
+        bridge.callHandler('webCallApp',{'topName':obj.topName,'topShare':obj.topShare,'topCloseButton':obj.topCloseButton},function (response) {
             var res = JSON.stringify(response)
         })
     })
@@ -286,6 +303,41 @@ function toast(tip) {
         $('#toast').css('display','none').html()
     },2000)
 
+}
+
+//loading
+function loadingGif(boolean) {
+    var $loading = $("<div id='loading'><div id='gif'></div></div>")
+    $(".whole").append($loading);
+    var gifObj={
+        "position": "fixed",
+        "width": "50px",
+        "height": "50px",
+        "z-index": "13",
+        "background": "url('http://img.daodaoclub.com/app/userauth/img/loading.gif') no-repeat ",
+        "background-size": "cover",
+        "top": "40%",
+        "left": "50%",
+        "margin-left": "-25px",
+
+    }
+    $('#gif').css(gifObj);
+    var obj= {
+        "display": "none",
+        "background": "rgba(0, 0, 0, 0.7)",
+        "position": "fixed",
+        "top": "0",
+        "z-index": "12",
+        "width": "10rem",
+        "height": "100%",
+    }
+    $('#loading').css(obj);
+
+    if(boolean==true){
+        $('#loading').css('display','block')
+    }else {
+        $('#loading').css('display','none')
+    }
 }
 
 
@@ -453,16 +505,16 @@ function renderAfter(data) {
 
     }
     if(data.companyImg!=''){
-        $('#companyImg').css(imgCss(data.companyImg))
-        $('#companyImg').parents('label').next().css('display','block')
+        $('#companyImg').css('background-image','url('+data.companyImg+')').removeClass('bac-after').addClass('bac-before')
+        $('#companyImg').parents('label').next().css('display','block');
         company_state = true
+
     }
 
     if(data.collegeImg!=''){
-        $('#collegeImg').css(imgCss(data.companyImg))
+        $('#collegeImg').css('background-image','url('+data.collegeImg+')').removeClass('bac-after').addClass('bac-before')
         $('#collegeImg').parents('label').next().css('display','block')
     }
-
 
     buttonChange()
 }
@@ -569,13 +621,15 @@ var client = new OSS.Wrapper({
     bucket : 'daodao-upload'
 });
 function postPhoto(dom,callback){
+    loadingGif(true)
     var imgReplace = dom.parent().find('label .oss');
     var closebtn = dom.parent().find('.close-img');
     var f = dom[0].files[0];
     var val= dom.val();
     //上传图片为空
 
-    if(f.size==0){
+    if(f.size==0||!f.size){
+        loadingGif(false)
         return
     }
     //判断文件类型
@@ -583,12 +637,14 @@ function postPhoto(dom,callback){
     var type = f.type;
 
     if(!(/(?:jpg|gif|png|jpeg)$/i.test(type))){
+        loadingGif(false)
         toast("您上传图片的类型不符合(.jpg|.jpeg|.gif|.png)！");
         return;
     }
 
-    if(f.size>4*1024*1024){
-        toast('上传的图片的大于2M,请重新选择')
+    if(f.size>6*1024*1024){
+        loadingGif(false)
+        toast('上传的图片的大于6M,请重新选择')
         return
     }
     var suffix = val.substr(val.indexOf("."));
@@ -610,6 +666,10 @@ function postPhoto(dom,callback){
         if(callback){
             callback()
         }
+        setTimeout(function () {
+            loadingGif(false)
+        },1000)
+
     }).catch(function (err) {
         console.log(err);
     });

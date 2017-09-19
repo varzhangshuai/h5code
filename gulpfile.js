@@ -22,7 +22,7 @@ var gulp = require('gulp'), //本地安装gulp所用到的地方
     ftp = require('gulp-ftp');
 
 
-var item='article';
+var item='card';
 
 gulp.task('default',['minifyCss','minifyJs','productionCss','minifyImg']);
 gulp.task('detail',function (cb) {

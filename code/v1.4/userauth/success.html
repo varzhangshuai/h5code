@@ -35,8 +35,8 @@
 </html>
 <script src="js/tools.js"></script>
 <script>
-    var shareObj={
-        topName:document.title
+    window.onload=function () {
+        //ios标题
+        iosTitle({topName:document.title,topShare:1,topCloseButton:1})
     }
-    appShareWX(shareObj)
 </script>

@@ -10,6 +10,7 @@ window.onload=function () {
     var daodaoclub = os.daodaoclub;
     if(!daodaoclub){
         $('.float-bottom').css('display','block')
+        $('body').css('padding-bottom','2rem')
     }else{
         $('.float-bottom').css('display','none')
     }

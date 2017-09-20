@@ -25,12 +25,16 @@ if(search.type){
     var daodaoclub = os.daodaoclub;
     if(daodaoclub){
         $('.inApp').css('display','block')
+        OCJSJAVA(ajaxurl,getData,appObj)
     }else{
-        $('.float-bottom').css('display','block')
+        getData(appObj);
+        $('.padding').css('display','block');
+        $('.float-bottom').css('display','block');
+
     }
 
     //获取数据
-    getData(appObj);
+
 
 
 //是否已关注
@@ -219,25 +223,23 @@ function getData(data) {
                 $('#subtitle').html(data.subTitle) //副标题
                 var content = data.content;//内容
                 $('#content').html(content);
-                //
-                isPraise = data.isPraise; //是否关注
-                //已关注样式
-                if(isPraise==0||isPraise==''){
-                    if($('#isPraise').hasClass('cancellike')) {
-                        $(this).removeClass('cancellike')
-                    }
-                    $('#isPraise').addClass('like')
-                }else if(isPraise==1){
-                    if($('#isPraise').hasClass('like')) {
-                        $('#isPraise').removeClass('like')
-                    }
-                    $('#isPraise').addClass('cancellike')
-                }else {
-                    $('#isPraise').css('display','none')
-                }
-                var praiseCount = data.praiseCount; //关注数量
-                $('#praiseCount').html(praiseCount)  //显示关注数
+
                 var articleid = data.articleid; //文章id
+
+                isPraise = data.isPraise; //是否关注
+                //获取点赞数据
+                var praiseType={
+                    objectid:articleid,
+                    type:2 //商学院头条文章点赞
+                }
+                OCJSJAVA('/costin/mapi/praise/get',getPraise,praiseType)
+
+//点赞
+                $('#isPraise').click(function () {
+                    OCJSJAVA('/costin/mapi/praise',toPraise,praiseType)
+                    appShareWX(shareObj);
+                })
+
                 //微信分享
                 var share = data.share;
                 wxShareObj.title = share.showTitle;
@@ -253,11 +255,7 @@ function getData(data) {
                 appShareWX(shareObj);
                 var recommend =res.original.recommend;
                 renderList(recommend)
-                //点赞
-                $('#isPraise').click(function () {
-                    OCJSJAVA('/costin/mapi/article/praise',toPraise,{articleid:data.articleid})
-                    appShareWX(shareObj);
-                })
+
                 //分享给好友
                 $('#sharefriend').click(function () {
                     appShareWechat({wechat:'message',shareObj:shareObj})
@@ -341,7 +339,7 @@ function renderList(data){
     function toPraise(obj) {
         $.ajax({
             type: 'POST',
-            url:route+'/costin/mapi/article/praise',
+            url:route+'/costin/mapi/praise',
             data:obj,
             success:function (res) {
                 var count = $('#praiseCount').html();
@@ -369,7 +367,42 @@ function renderList(data){
         })
     }
 
+    //post获取点赞数据
+    function getPraise(data) {
+        $.ajax({
+            type: "POST",
+            url: route+'/costin/mapi/praise/get',
+            data:data,
+            success: function(res){
+                if(res.code==1){
+                    var praiseCount=res.original.praiseCount; //喜欢数量
 
+                    isPraise = res.original.isPraise;
+                    //已关注、点赞初始默认样式
+                    if(isPraise==0||isPraise==''){
+                        if($('#isPraise').hasClass('cancellike')) {
+                            $(this).removeClass('cancellike')
+                        }
+                        $('#isPraise').addClass('like')
+                    }else if(isPraise==1){
+                        if($('#isPraise').hasClass('like')) {
+                            $('#isPraise').removeClass('like')
+                        }
+                        $('#isPraise').addClass('cancellike')
+                    }else {
+                        $('#isPraise').css('display','none')
+                    }
+
+                    //喜欢数量
+                    $('#praiseCount').html(praiseCount)  //显示关注数
+                }
+            },
+            error:function(err){
+                console.log('err',err)
+            }
+
+        });
+    }
     //toast弹窗
     function toast(tip,time) {
         if(!time){

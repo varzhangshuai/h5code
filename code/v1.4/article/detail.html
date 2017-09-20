@@ -26,41 +26,38 @@
     <script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
     <script src="http://img.daodaoclub.com/public/appShare.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-
 </head>
 <body>
-    <div id="title"></div>
-    <div id="subtitle"></div>
-    <div id="content"></div>
-    <div class="inApp" style="display: none">
-        <div id="isPraise" >
-            <span id="praiseCount"></span>人喜欢
-        </div>
-        <div class="flex">
-            <span class="border-left"></span>
-            <span class="border-word">分享</span>
-            <span class="border-right"></span>
-        </div>
-        <div class="share">
-            <div id="sharefriend">
-                <span>微信好友</span>
+    <div class="whole">
+        <div id="title"></div>
+        <div id="subtitle"></div>
+        <div id="content"></div>
+        <div class="inApp" style="display: none">
+            <div id="isPraise">
+                <span id="praiseCount"></span>人喜欢
             </div>
-            <div id="sharetimeline">
-                <span>微信朋友圈</span>
+            <div class="flex">
+                <span class="border-left"></span>
+                <span class="border-word">分享</span>
+                <span class="border-right"></span>
+            </div>
+            <div class="share">
+                <div id="sharefriend">
+                    <span>微信好友</span>
+                </div>
+                <div id="sharetimeline">
+                    <span>微信朋友圈</span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="lists">
-        <div class="list-title clearfix">
-            <span class="list-title-l">相关推荐</span>
-            <span class="list-title-r">更多<img src="./img/icon.jpg" alt=""></span>
+        <div class="lists">
+            <div class="list-title clearfix">
+                <span class="list-title-l">相关推荐</span>
+                <span class="list-title-r">更多<img src="./img/icon.jpg" alt=""></span>
+            </div>
+            <ul id="lis" ></ul>
         </div>
-        <ul id="lis" >
-            <li class="list">
-                <img class="list-img" src="" alt="">
-                <div class="list-r"> <p class="els3"></p> </div>
-            </li>
-        </ul>
+        <div class="padding" style="height: 2rem;display: none"></div>
     </div>
     <div class="float-bottom" style="display: none"></div>
 </body>

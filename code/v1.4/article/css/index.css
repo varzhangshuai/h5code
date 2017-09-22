@@ -49,6 +49,7 @@ div {
 }
 #content img {
   max-width: 100%;
+  height: auto!important;
 }
 #content ol {
   padding-left: 20px;

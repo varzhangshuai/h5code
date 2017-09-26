@@ -63,16 +63,7 @@
         browser(ua);
         var isWeixin = os.isWeixin
 
-        if(isWeixin){
-            if(!unionid){
-                getUnionid(detailid)
-            }else{
-                getData()
-            }
-        }else {
-            getData()
-        }
-
+        getData();
         //分享mask
         $('.person-share').click(function () {
             $('#mask').show()

@@ -5,15 +5,8 @@
 		<title>邀请您加入道道</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
 		<meta name="format-detection" content="telephone=no, email=no"/>
-		<meta name="Keywords" content="道道，企业家社群，企业家社交，企业家平台，长江互助，中大互助">
-		<meta name="Description" content="北京道同网络信息技术有限公司，是服务于企业家人群的信息技术平台。通过云计算和大数据，快速精准的匹配企业家需要的资源。打造新时代的经济共享平台。">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<meta name="format-detection" content="telephone=no">
-		<script type="text/javascript" src="http://img.daodaoclub.com/public/baiduTotal.js"></script>
-		<script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/joinfriend.css">
+		<link rel="stylesheet" type="text/css" href="css/joinfriend.css"/>
+
 	</head>
 	<script type="text/javascript">
 		//rem适配方案
@@ -25,18 +18,18 @@
 		})()
 	</script>
 	<body>
-		<div class="beta-bac">
-			<div class="beta-word">
-				<p class="word-bottom"></p>
-				<p class="word-top">
-					<span id="college"></span>
-					<span id="major"></span>
-					<span id="grade"></span>
-				</p>
-			</div>
-			<div style="height: 0;width: 0;display: inline;background: url('img/pressed.png') no-repeat"></div>
-			<div class="beta-button" ></div>
+	<div class="beta-bac">
+		<div class="beta-word">
+			<p class="word-bottom"></p>
+			<p class="word-top">
+				<span id="college"></span>
+				<span id="major"></span>
+				<span id="grade"></span>
+			</p>
+			<p>诚挚邀请您</p>
 		</div>
+		<div class="beta-button" ></div>
+	</div>
 	</body>
 </html>
 <script type="text/javascript" src="js/getUserid.js"></script>
@@ -44,22 +37,16 @@
 <script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script>
-    document.body.addEventListener('touchstart', function () { });
-
-        window.onload=function(){
+	window.onload=function(){
 		var sharerid = new Object(); 
-		sharerid = getUserid();
+		sharerid = getUserid()
 		var route = '';
+        var downUrl = '/app/common/download/index.html'; //下载页
 		route = myRoutes();
-		//分享
-        getWxShare();
-        //获取数据
 		getData();
-
-		var downUrl = '/app/common/download/index.html'; //下载页
-		function getData(){
-			if(!sharerid.sharerid){
-				window.location = downUrl;
+		function getData(){ 	
+			if(sharerid == {} || !sharerid){
+				window.location.href = downUrl;
 				return
 			}
 			 $.ajax({			 	
@@ -76,7 +63,7 @@
                 		$('.word-bottom').html(userData.sharerRealName); 
              		
                 	}else{
-                		window.location = downUrl
+                		window.location.href = downUrl;
                 	}
                  },
                  error:function(err){
@@ -85,41 +72,43 @@
                
             });
 				
-		}
+		};
 		
 		
 		//joindaodao
 		$('.beta-button').click(function(){
 			if($('.word-top')!="" && $('word-bottom')!=""){
-                var tencentUrl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.daodaoclub.costin';
-                window.location.href=tencentUrl;
-            }
+			    var tencentUrl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.daodaoclub.costin';
+				window.location.href=tencentUrl;
+			}  
 		})
 
-		var wxShareObj={
-            link:'http://m.daodaoclub.com/user/joinfriend.html',
-            title:'想找靠谱的人，来道道试试',
-            desc:'诚邀您体验道道内测',
-            imgUrl:'http://img.daodaoclub.com/daodao_logo/daodao_logo_100.png',
-			success:function () {
-            },
-            cancel:function () {
-            }
-		}
-		//微信分享
-		function wechatShare(config,data) {
+
+        //分享
+        getWxShare();
+        //微信分享
+        function wechatShare(config,data) {
             wx.config(config);
             wx.ready(function () {
                 wx.onMenuShareAppMessage(data);
                 wx.onMenuShareTimeline(data);
             })
-		}
+        }
+        var wxShareObj={
+            link:'http://test.m.daodaoclub.com/user/joinfriend.html',
+            title:'想找靠谱的人，来道道试试',
+            desc:'诚邀您体验道道内测',
+            imgUrl:'http://img.daodaoclub.com/daodao_logo/daodao_logo_100.png',
+            success:function () {
+            },
+            cancel:function () {
+            }
+        }
 
-
-		function getWxShare() {
+        function getWxShare() {
             $.ajax({
                 type: "GET",
-                url: 'http://m.daodaoclub.com/wx/api/oauth/wxshare',
+                url: 'http://test.m.daodaoclub.com/wx/api/oauth/wxshare',
                 success: function(res){
                     console.log(res)
                     if(res.code==1){
@@ -134,7 +123,7 @@
         }
 
 
-	}
+    }
 
 
 

@@ -94,7 +94,7 @@ function renderData(data) {
     $('.info-name').text(data.userName);
     $('.headurl').css({'background-image':headurl});
     $('.info-post').text(data.job);
-    $('.info-company').text(data.company);
+    $('.info-company').text(data.companyName);
     $('.info-class').text(data.className);
     $('.need-typeName').text(data.typeName);
     $('.need-detail').text(data.description);

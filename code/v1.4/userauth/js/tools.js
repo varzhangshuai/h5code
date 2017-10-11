@@ -302,7 +302,6 @@ function toast(tip) {
     setTimeout(function () {
         $('#toast').css('display','none').html()
     },2000)
-
 }
 
 //loading

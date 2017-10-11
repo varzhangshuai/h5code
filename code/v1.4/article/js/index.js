@@ -25,6 +25,7 @@ if(search.type){
     var daodaoclub = os.daodaoclub;
     if(daodaoclub){
         $('.inApp').css('display','block')
+        appObj.isApp=1;
         OCJSJAVA(ajaxurl,getData,appObj)
     }else{
         getData(appObj);
@@ -223,6 +224,7 @@ function getData(data) {
                 $('#subtitle').html(data.subTitle) //副标题
                 var content = data.content;//内容
                 $('#content').html(content);
+                $('#viewCount').html(data.viewCount);
 
                 var articleid = data.articleid; //文章id
 
@@ -305,9 +307,10 @@ function renderList(data){
     if(data.length>0){
         var lis=''
         for(var i=0;i<data.length;i++){
-            lis+='<li class="list" id='+data[i].articleidStr+'><img class="list-img" src='+data[i].imageUrl+' alt=""><div class="list-r"> <p class="els3"> '+data[i].title+'</p></div> </li>'
+            lis+='<li class="list" id='+data[i].articleidStr+'><img class="list-img" src='+data[i].imageUrl+' alt=""><div class="list-r"> <p class="els2"> '+data[i].title+'</p></div><div class="page-bottom"><span class="page-time">'+data[i].utime+'</span><span class="page-count">'+data[i].viewCount+'浏览</span></div></div>  </li>'
         }
-        $('#lis').html(lis)
+        $('#lis').html(lis);
+        $('#lis li').last().css('border-bottom','none');
     }
 
     $('#lis li').click(function () {

@@ -10,7 +10,7 @@ window.onload=function () {
     var daodaoclub = os.daodaoclub;
     if(!daodaoclub){
         $('.float-bottom').css('display','block')
-        $('body').css('padding-bottom','2rem')
+        // $('body').css('padding-bottom','2rem')
     }else{
         $('.float-bottom').css('display','none')
     }
@@ -166,7 +166,7 @@ window.onload=function () {
         if(data.length>0){
             var lis=''
             for(var i=0;i<data.length;i++){
-                lis+='<li class="page" id='+data[i].articleidStr+'><img class="page-img" src='+data[i].imageUrl+' alt=""><div class="page-r"><div class="page-title"><p class="els2">'+data[i].title+'</p></div><div class="page-time">'+data[i].utime+'</div></div> </li>'
+                lis+='<li class="page" id='+data[i].articleidStr+'><img class="page-img" src='+data[i].imageUrl+' alt=""><div class="page-r"><div class="page-title"><p class="els2">'+data[i].title+'</p></div><div class="page-bottom"><span class="page-time">'+data[i].utime+'</span><span class="page-count">'+data[i].viewCount+'浏览</span></div></div> </li>'
             }
             $('#page-list').html(lis)
         }

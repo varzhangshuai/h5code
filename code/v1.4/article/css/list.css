@@ -40,11 +40,17 @@ ul {
 .page-title {
   height: 1.54666667rem;
 }
-.page-time {
+.page-bottom {
   height: 0.32rem;
   color: #999999;
   font-size: 0.32rem;
   line-height: 0.32rem;
+}
+.page-time {
+  float: left;
+}
+.page-count {
+  float: right;
 }
 .pagation {
   margin-top: 0.66666667rem;

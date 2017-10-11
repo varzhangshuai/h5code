@@ -118,6 +118,9 @@ body {
 .conone-list li {
   line-height: 0.37333333rem;
   padding-bottom: 0.6rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .conone-list li > span:first-child {
   padding: 0 0.26666667rem 0 0.6rem;
@@ -160,15 +163,6 @@ body {
 .contwo-case-word .case-word {
   display: inline-block;
   width: 6.34666667rem;
-}
-.contwo-dynamic-word .dynamic-word span,
-.contwo-case-word .dynamic-word span,
-.contwo-dynamic-word .case-word span,
-.contwo-case-word .case-word span {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
 }
 .contwo-dynamic-word .dynamic-icon,
 .contwo-case-word .dynamic-icon {

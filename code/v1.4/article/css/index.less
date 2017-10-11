@@ -53,7 +53,21 @@ a,img,button,input,textarea,div{
 #content{
   width: 100%;
   box-sizing: border-box;
-  padding: 20/@rem 40/@rem 60/@rem;
+  padding: 20/@rem 40/@rem 40/@rem;
+}
+//浏览数量
+.count{
+  width: 140/@rem;
+  height: 50/@rem;
+  line-height: 50/@rem;
+  margin-bottom: 100/@rem;
+  border-radius: 25/@rem;
+  color: #999999;
+  font-size: 24/@rem;
+  border: 1/@rem solid #999999;
+  text-align: center;
+  float: right;
+  margin-right: 50/@rem;
 }
 
 
@@ -190,15 +204,26 @@ a,img,button,input,textarea,div{
   height: 140/@rem;
 
 }
-.els3{
+.els2{
   text-overflow:ellipsis;
   display:-webkit-box;
   -webkit-box-orient:vertical;
-  -webkit-line-clamp:3;
+  -webkit-line-clamp:2;
   overflow:hidden;
 }
 
-
+.page-bottom{
+  height: 24/@rem;
+  color: #999999;
+  font-size: 24/@rem;
+  line-height: 24/@rem;
+}
+.page-time{
+  float: left;
+}
+.page-count{
+  float: right;
+}
 //content
 .ql-align-center{
   text-align: center;

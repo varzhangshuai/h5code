@@ -33,55 +33,69 @@
 	</body>
 </html>
 <script type="text/javascript" src="js/getUserid.js"></script>
+<script type="text/javascript" src="js/cookies.js"></script>
 <script src="js/route.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script>
 	window.onload=function(){
-		var sharerid = new Object(); 
-		sharerid = getUserid()
-		var route = '';
+        var search = getUserid()
         var downUrl = '/app/common/download/index.html'; //下载页
-		route = myRoutes();
+        var route = myRoutes();
 		getData();
-		function getData(){ 	
-			if(sharerid == {} || !sharerid){
+		function getData(){
+		    //如果没有search跳转到下载页面
+			if(search == {} || !search || !search.sharerid){
 				window.location.href = downUrl;
 				return
 			}
-			 $.ajax({			 	
-               type: "GET",
-               data: sharerid,
-               url: route+'apply/classes',
-               success: function(data){               	
-                	if(data.code==1){
-                		//console.log(data)
-                		var userData = data.original
-                		$('#college').html(userData.college);
-                		$('#major').html(userData.major);
-                		$('#grade').html(userData.grade);
-                		$('.word-bottom').html(userData.sharerRealName); 
-             		
-                	}else{
-                		window.location.href = downUrl;
-                	}
-                 },
-                 error:function(err){
-                 	console.log('err',err)
-                 }
-               
-            });
-				
-		};
+			//如果没有code
+			if(!search.code){
+			    var uri = window.location.href;
+                WxtoSign(uri)
+				return
+			}
+//			var _unionid = getCookies('_unionid')
+			if(search.code){
+                getUnionid(search)
+			    return
+			}
+		}
 		
-		
+		//获取数据接口
+		function Datas() {
+			var data = {
+                sharerid:search.sharerid
+			}
+            $.ajax({
+                type: "GET",
+                data: data,
+                url: route+'/costin/mapi/apply/classes',
+                success: function(data){
+                    if(data.code==1){
+                        var userData = data.original
+                        $('#college').html(userData.college);
+                        $('#major').html(userData.major);
+                        $('#grade').html(userData.grade);
+                        $('.word-bottom').html(userData.sharerRealName);
+
+                    }else{
+                        window.location.href = downUrl;
+                    }
+                },
+                error:function(err){
+                    console.log('err',err)
+                }
+
+            })
+        }
 		//joindaodao
 		$('.beta-button').click(function(){
 			if($('.word-top')!="" && $('word-bottom')!=""){
 			    var tencentUrl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.daodaoclub.costin';
 				window.location.href=tencentUrl;
 			}  
-		})
+		});
 
 
         //分享
@@ -108,7 +122,7 @@
         function getWxShare() {
             $.ajax({
                 type: "GET",
-                url: 'http://test.m.daodaoclub.com/wx/api/oauth/wxshare',
+                url: route+'/wx/api/oauth/wxshare',
                 success: function(res){
                     console.log(res)
                     if(res.code==1){
@@ -121,10 +135,117 @@
 
             });
         }
+        //微信认证跳转
+		function WxtoSign(uri) {
+            var data={
+                uri:uri
+            }
+            $.ajax({
+                type: "GET",
+                url: route+'/wx/api/oauth/wxoauth',
+                data:data,
+                success: function(res){
+                    console.log(res)
+                    if(res.code==1){
+                        window.location.href = res.data
+                    }
+                },
+                error:function(err){
+                    console.log('err',err)
+                }
 
+            });
+        }
+        //微信认证获取unionid
+        function getUnionid(uri) {
+            $.ajax({
+                type: "GET",
+                url:route+ '/wx/api/oauth/wxoauth' ,
+                //目标地址
+                data:uri,
+                success: function (res){
+                    if(res.code==1){
+						var unionid=res.data.unionid;
+						setCookie('_unionid',res.data.unionid)
+                        wxsign(res.data)
+                    }else{
+                        toast('认证失败')
+                    }
+                },
+                error:function(err){
+                    console.log(err)
+                }
+            });
+        }
+        //java认证
+        function wxsign(data) {
+            if(!data){
+                return
+            }
+            data.from = 'app_share';
+            data.sharerid = search.sharerid;
+            $.ajax({
+                type: "POST", //用POST方式传输
+                url:route+ '/costin/mapi/wechat/auth' ,
+                //目标地址
+                data:data,
+                success: function (res){
+                    if(res.code==1){
+                        var data = res.original
+                        if(data&&data!=null){
+                            if(data.enid){
+                                setCookie('_enid',data.enid)
+                            }
+                            if(data.status){
+                                setCookie('_status',data.status)
+                            }
+                            if(data.userid){
+                                setCookie('_userid',data.userid)
+                            }
+                        }
+                        Datas()
+                    }else if(res.code==10016){
+
+                    }else{
+                        toast(res.msg)
+                    }
+                },
+                error:function(err){
+                    console.log(err)
+                }
+            });
+        }
+
+        //toast弹窗
+        function toast(tip) {
+            var $toast = $("<div id='toast'></div>")
+            $("body").append($toast);
+            var obj= {
+                "display": "none",
+                "background": "rgba(0, 0, 0, 0.7)",
+                "position": "fixed",
+                "z-index": "10",
+                "width": "4rem",
+                "line-height": "0.8rem",
+                "left": "3rem",
+                "top": "50%",
+                "margin-top":" -0.66666667rem",
+                "border-radius":" 0.16rem",
+                "font-size": "0.4rem",
+                "color": "white",
+                "text-align":" center",
+                "padding": "0.26666667rem 0.13333333rem"
+            }
+            $('#toast').css(obj);
+
+            $('#toast').css('display','block').html(tip)
+            setTimeout(function () {
+                $('#toast').css('display','none').html()
+            },2000)
+
+        }
 
     }
-
 
 
 </script>

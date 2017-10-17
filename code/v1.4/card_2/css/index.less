@@ -121,6 +121,9 @@ html,body{
   li{
     line-height: 28/@rem;
     padding-bottom: 45/@rem;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
   }
   li>span:first-child{
     padding:0 20/@rem 0 45/@rem ;
@@ -129,6 +132,8 @@ html,body{
     padding-left: 20/@rem ;
   }
 }
+//公司太长省略号
+
 
 //公司信息
 .contwo{
@@ -165,12 +170,6 @@ html,body{
   .dynamic-word,.case-word{
     display: inline-block;
     width: 476/@rem;
-    span{
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      overflow: hidden;
-    }
   }
   .dynamic-icon{
     display: inline-block;

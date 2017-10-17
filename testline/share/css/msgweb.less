@@ -1,0 +1,120 @@
+//适配基值
+@rem:75rem;
+
+html,body{width:100%;}
+html,body,p,form,ul,li{margin:0;padding:0;list-style:none}
+
+//遮罩
+  #mask{
+         z-index:3;
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         background: black;
+         opacity: 0.5;
+         filter: alpha(opacity=30);
+         display: none;
+}
+#box { 
+        z-index: 4;
+        top: 100/@rem;
+        right: 20/@rem;
+        position: absolute; 
+        display: none;
+        color: white;       
+        height: 200/@rem;
+        width: 350/@rem;
+        text-decoration: none; 
+        font-size:28/@rem ;
+}
+#jiantou{
+    position: absolute;
+    top: -100/@rem;
+    left: 150/@rem;
+    width: 180/@rem;
+    height: 120/@rem;
+}
+
+
+/*清默认样式*/
+    html,body,h1,h2,h3,h4,ul,li,p{
+        margin: 0;
+        padding: 0;
+        font-family: helvetica;//这个字体是移动端设备通用的西方字体
+    }
+    img{
+        display: block;
+    }
+    a{
+        text-decoration: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);//解决a标签高亮问题
+    }
+    ul{
+        list-style: none;
+    }
+    input,select{
+        outline: none;//去除边框高亮
+        -moz-appearance:none;    /*for firefox*/    
+        -webkit-appearance: none;
+        appearance:none;  
+    }
+    
+    
+    //bac
+    body{
+        background: black;
+    }
+    .bac{
+        position: relative;
+        width: 750/@rem;
+        height: 1206/@rem;
+        background: url(../img/bac_msgweb.jpg);
+        background-size: 750/@rem ;
+    }
+    .button-go{
+        width: 344/@rem;
+        height: 83/@rem;
+        position: absolute;
+        top: 965/@rem;
+        left: 50%;
+        margin-left:-172/@rem;
+        
+    }
+    .word{
+        position: absolute;
+        width: 530/@rem;
+        height: 274/@rem;
+        box-sizing: border-box;
+        padding: 30/@rem ;
+        top: 340/@rem;
+        left: 110/@rem;
+        
+    }
+    .word-top{
+        font-size: 32/@rem;
+        color: #ffaa3c;
+        padding-bottom: 20/@rem;
+    }
+    .word-bottom{
+        font-size: 27/@rem;
+        color: #f8d694;
+        line-height: 42/@rem;
+        
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+    }
+    .operating{
+        width: 750/@rem;
+        text-align: center;
+        position: absolute;
+        top:826/@rem ;
+        left: 0;
+        padding-bottom: 30/@rem;
+        font-size:36/@rem ;
+        font-family: "微软雅黑";
+        color: white;
+    }

@@ -1,0 +1,52 @@
+/*清默认样式*/
+html {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    font-family: helvetica;
+}
+img {
+    display: block;
+}
+a,
+img,
+button,
+input,
+textarea,
+div {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+ul {
+    list-style: none;
+}
+input,
+select {
+    outline: none;
+    -moz-appearance: none;
+    /*for firefox*/
+    -webkit-appearance: none;
+    appearance: none;
+}
+.clearfix:before {
+    content: '';
+    display: block;
+    clear: both;
+}
+.overHide{overflow: hidden}
+b{display: inline-block;}
+.fl{float:left; }
+.fr{float:right; }
+.cl{clear: both}

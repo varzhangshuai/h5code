@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>校友证明人信息</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="Keywords" content="道道，企业家社群，企业家社交，企业家平台，长江互助，中大互助">
+    <meta name="Description" content="北京道同网络信息技术有限公司，是服务于企业家人群的信息技术平台。通过云计算和大数据，快速精准的匹配企业家需要的资源。打造新时代的经济共享平台。">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="http://img.daodaoclub.com/app/userauth/./css/reset-dde3d14bf0.css">
+    <link rel="stylesheet" href="http://img.daodaoclub.com/app/userauth/./css/form-6770b18b63.css">
+    <script type="text/javascript" src="http://img.daodaoclub.com/public/baiduTotal.js"></script>
+    <script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>
+    <script>
+        //rem适配方案
+        (function () {
+            var width = document.documentElement.clientWidth / 10;
+            var styleNode = document.createElement("style");
+            styleNode.innerHTML = "html{font-size:" + width + "px!important}"
+            document.head.appendChild(styleNode);
+        })()
+    </script>
+</head>
+<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+<script src="http://img.daodaoclub.com/app/userauth/js/zeptodetect-8637ea0814.js"></script>
+<script src="http://img.daodaoclub.com/app/userauth/js/tools-6a60d02f06.js"></script>
+<script>
+//    getMajors(appData)
+    function postButton() {
+        OCJSJAVA('/costin/mapi/authentication/later',postDataLast);
+    }
+</script>
+<body>
+    <div class="whole">
+        <div class="top top2">
+            填写您的两个校友证明人信息,包括：姓名、手机、学院、届别。
+        </div>
+        <div class="alumnus bac-white">
+            <div class="small-title flex">
+                <img src="http://img.daodaoclub.com/app/userauth/./img/icon-title.png" alt=""><span class="small-title-name">校友证明人1</span>
+            </div>
+            <ul>
+                <li class="form-list flex">
+                    <img src="http://img.daodaoclub.com/app/userauth/./img/icon_name.png" alt="">
+                    <input id="alumni1Name" type="text" class="form-content" placeholder="姓名">
+                </li>
+                <li class="form-list flex">
+                    <img src="http://img.daodaoclub.com/app/userauth/./img/icon_phone.png" alt="">
+                    <input id="alumni1Phone" type="text" class="form-content" placeholder="手机号">
+                </li>
+            </ul>
+        </div>
+        <div class="school-info bac-white">
+            <ul>
+                <li class="form-list flex">
+                    <img src="http://img.daodaoclub.com/app/userauth/./img/icon_major.png" alt="">
+                    <input id="alumni1Major" type="text" class="form-content" placeholder="学院(如长江商学院)">
+                    <!--<select id="alumni1Major" name="major" class="select-style"></select>-->
+                </li>
+                <li class="form-list flex">
+                    <img src="http://img.daodaoclub.com/app/userauth/./img/icon_grade.png" alt="">
+                    <input id="alumni1Classes" type="text" class="form-content" placeholder="届别(如EMBA25期)">
+                </li>
+            </ul>
+        </div>
+
+        <div class="alumnus bac-white">
+            <div class="small-title flex">
+                <img src="http://img.daodaoclub.com/app/userauth/./img/icon-title.png" alt=""><span class="small-title-name">校友证明人2</span>
+            </div>
+            <ul>
+                <li class="form-list flex">
+                    <img src="http://img.daodaoclub.com/app/userauth/./img/icon_name.png" alt="">
+                    <input id="alumni2Name" type="text" class="form-content" placeholder="姓名">
+                </li>
+                <li class="form-list flex">
+                    <img src="http://img.daodaoclub.com/app/userauth/./img/icon_phone.png" alt="">
+                    <input id="alumni2Phone" type="text" class="form-content" placeholder="手机号">
+                </li>
+            </ul>
+        </div>
+        <div class="school-info bac-white">
+            <ul>
+                <li class="form-list flex">
+                    <img src="http://img.daodaoclub.com/app/userauth/./img/icon_major.png" alt="">
+                    <input id="alumni2Major" type="text" class="form-content" placeholder="学院(如长江商学院)">
+
+                    <!--<select id="alumni2Major" name="major" class="select-style">-->
+
+                    <!--</select>-->
+                </li>
+                <li class="form-list flex">
+                    <img src="http://img.daodaoclub.com/app/userauth/./img/icon_grade.png" alt="">
+                    <input id="alumni2Classes" type="text" class="form-content" placeholder="届别(如EMBA25期)">
+                </li>
+            </ul>
+        </div>
+
+        <div class="next-button" onclick="postButton()">提交</div>
+    </div>
+</body>
+</html>
+<script src="http://img.daodaoclub.com/app/userauth/./js/formtwo-b9703b8646.js"></script>
+<script>
+    var shareObj={
+        topName:document.title
+    }
+    appShareWX(shareObj)
+</script>

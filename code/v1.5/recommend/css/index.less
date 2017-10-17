@@ -1,0 +1,164 @@
+@rem:75rem;
+*{
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: #0C1C2B;
+  font-size: 30/@rem;
+  font-family: helvetica;//这个字体是移动端设备通用的西方字体
+}
+.whole{
+  width: 100%;
+  height: 100%;
+  background: url("../img/background.png") no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.top{
+  width: 512/@rem;
+  height: 664/@rem;
+  position: absolute;
+  top: 178/@rem;
+  left: 120/@rem;
+  //background: rgba(255,0,0,0.2);
+}
+.bold-title{
+  font-size: 36/@rem;
+  color: #d6ab6f;
+  text-align: center;
+  font-weight:bold ;
+  margin: 74/@rem 0 60/@rem;
+}
+.float{
+  margin: 0 auto;
+}
+.float:after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.float>div{
+  float: left;
+}
+.follower-width{
+  width: 420/@rem;
+}
+
+
+//目标用户
+.follower{
+  width: 240/@rem;
+  font-size: 30/@rem;
+  color: #f0f0f2;
+  text-align: right;
+  margin-top: 30/@rem;
+  .name{
+    font-size: 32/@rem;
+  }
+  .sex{
+    width: 32/@rem;
+    height: 32/@rem;
+    margin:  0 10/@rem;
+  }
+  .auth{
+    width: 28/@rem;
+    height: 35/@rem;
+  }
+}
+//水平垂直居中
+.flex-center{
+  align-items:center;//子元素垂直居中
+  display:-webkit-flex;
+}
+
+.follower-head{
+  width: 142/@rem;
+  height: 142/@rem;
+  margin-left: 20/@rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+  border: 4/@rem solid #cccccc;
+}
+
+
+//target部分
+.middle{
+  position: absolute;
+  top: 862/@rem;
+  left: 130/@rem;
+  width: 600/@rem;
+  color: #fbfbfc;
+  .name{
+    font-size: 36/@rem;
+  }
+  .sex{
+    width: 32/@rem;
+    height: 32/@rem;
+    margin:  0 10/@rem;
+  }
+  .auth{
+    width: 28/@rem;
+    height: 35/@rem;
+  }
+}
+.target-head{
+  width: 180/@rem;
+  height: 180/@rem;
+  margin-right: 30/@rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+  border: 4/@rem solid #cccccc;
+}
+
+.target{
+  margin-top: 40/@rem;
+}
+
+.bottom{
+  background-image: url("../img/button.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 311/@rem;
+  height: 88/@rem;
+  position: absolute;
+  top: 1148/@rem;
+  left: 50%;
+  margin-left: -156/@rem;
+}
+.bottom_active{
+  background-image: url("../img/button_active.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 337/@rem;
+  height: 88/@rem;
+  position: absolute;
+  top: 1148/@rem;
+  left: 50%;
+  margin-left: -169/@rem;
+}
+
+//用户状态
+.women{
+  background-image: url("../img/women.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.men{
+  background-image: url("../img/men.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.authed{
+  background: url("../img/auth.png") no-repeat;
+  background-size: cover;
+}
+.unauthed{
+  background: url("../img/unauth.png") no-repeat;
+  background-size: cover;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>邀请您加入道道</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no, email=no"/>
+		<link rel="stylesheet" type="text/css" href="css/joinfriend.css"/>
+
+	</head>
+	<script type="text/javascript">
+		//rem适配方案
+		(function(){
+			var width =document.documentElement.clientWidth/10;
+			var styleNode = document.createElement("style");
+				styleNode.innerHTML="html{font-size:"+width+"px!important}"
+				document.head.appendChild(styleNode);
+		})()
+	</script>
+	<body>
+	<div class="beta-bac">
+		<div class="beta-word">
+			<p class="word-bottom"></p>
+			<p class="word-top">
+				<span id="college"></span>
+				<span id="major"></span>
+				<span id="grade"></span>
+			</p>
+			<p>诚挚邀请您</p>
+		</div>
+		<div class="beta-button" ></div>
+	</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/getUserid.js"></script>
+<script src="js/route.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script>
+	window.onload=function(){
+		var sharerid = new Object(); 
+		sharerid = getUserid()
+		var route = '';
+        var downUrl = '/app/common/download/index.html'; //下载页
+		route = myRoutes();
+		getData();
+		function getData(){ 	
+			if(sharerid == {} || !sharerid){
+				window.location.href = downUrl;
+				return
+			}
+			 $.ajax({			 	
+               type: "GET",
+               data: sharerid,
+               url: route+'apply/classes',
+               success: function(data){               	
+                	if(data.code==1){
+                		//console.log(data)
+                		var userData = data.original
+                		$('#college').html(userData.college);
+                		$('#major').html(userData.major);
+                		$('#grade').html(userData.grade);
+                		$('.word-bottom').html(userData.sharerRealName); 
+             		
+                	}else{
+                		window.location.href = downUrl;
+                	}
+                 },
+                 error:function(err){
+                 	console.log('err',err)
+                 }
+               
+            });
+				
+		};
+		
+		
+		//joindaodao
+		$('.beta-button').click(function(){
+			if($('.word-top')!="" && $('word-bottom')!=""){
+			    var tencentUrl = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.daodaoclub.costin';
+				window.location.href=tencentUrl;
+			}  
+		})
+
+
+        //分享
+        getWxShare();
+        //微信分享
+        function wechatShare(config,data) {
+            wx.config(config);
+            wx.ready(function () {
+                wx.onMenuShareAppMessage(data);
+                wx.onMenuShareTimeline(data);
+            })
+        }
+        var wxShareObj={
+            link:'http://test.m.daodaoclub.com/user/joinfriend.html',
+            title:'想找靠谱的人，来道道试试',
+            desc:'诚邀您体验道道内测',
+            imgUrl:'http://img.daodaoclub.com/daodao_logo/daodao_logo_100.png',
+            success:function () {
+            },
+            cancel:function () {
+            }
+        }
+
+        function getWxShare() {
+            $.ajax({
+                type: "GET",
+                url: 'http://test.m.daodaoclub.com/wx/api/oauth/wxshare',
+                success: function(res){
+                    console.log(res)
+                    if(res.code==1){
+                        wechatShare(res.data,wxShareObj)
+                    }
+                },
+                error:function(err){
+                    console.log('err',err)
+                }
+
+            });
+        }
+
+
+    }
+
+
+
+</script>

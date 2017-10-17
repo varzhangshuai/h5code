@@ -1,0 +1,232 @@
+//适配基值
+@rem:75rem;
+
+/*清默认样式*/
+    html{
+        -moz-user-select: none; 
+        -webkit-user-select: none; 
+        -ms-user-select: none; 
+        -khtml-user-select: none; 
+        user-select: none; 
+    }
+    body,h1,h2,h3,h4,ul,li{
+        margin: 0;
+        padding: 0;
+        font-family: helvetica;//这个字体是移动端设备通用的西方字体
+    }
+    img{
+        display: block;
+    }
+    a{
+        text-decoration: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);//解决a标签高亮问题
+    }
+    ul{
+        list-style: none;
+    }
+    input,select{
+        outline: none;//去除边框高亮
+        -moz-appearance:none;    /*for firefox*/    
+        -webkit-appearance: none;
+        appearance:none;  
+    }
+
+
+//公用css
+.shan-class{
+    -webkit-tap-highlight-color:transparent;
+    }
+.i-xing{
+    color: red;
+}
+//整体页面
+.home{
+    margin:24/@rem;
+    background: #fff;
+    position: relative;
+}
+//头部
+.invate{  
+    width: 100%;
+    height: 255/@rem;
+    background: url(../img/bg_yaoqingma@2x.png)  no-repeat ;
+    background-size: contain;
+    background-repeat:no-repeat ;
+}
+.invite-content div{
+    font-size: 24/@rem;
+    color: #9e9e9e;
+}
+.invite-content{
+    margin:0 34/@rem ;
+    padding-top:38/@rem ;
+}
+
+//表单
+.normal{
+   height: 120/@rem; 
+   width: 100%;
+   margin-bottom: 14/@rem;  
+}
+.normal2{
+   height: 220/@rem; 
+   width: 100%;
+   margin-bottom: 14/@rem;  
+}
+.form-name{
+    //padding: 0 22/@rem;
+    padding-left: 14/@rem;
+    padding-right: 66/@rem;
+    font-size:28/@rem;
+    color: #3f2622;
+    margin-bottom: -20/@rem;
+}
+.form-input{
+    border-style: none;
+    box-sizing: border-box;
+    width: 686/@rem;    
+    height: 70/@rem;
+    border: 1px #dadada solid;
+    border-radius: 10/@rem;   
+    padding: 16/@rem 14/@rem 20/@rem;
+    font-size: 34/@rem;  
+    color: #9e9e9e;
+    background: #f8f8f8;
+    margin-left: 12/@rem;
+    margin-bottom: -20/@rem;
+}
+.form-phone{
+    width: 533/@rem;    
+    height: 70/@rem;
+    padding: 18/@rem 14/@rem;
+    font-size: 34/@rem;  
+    color: #9e9e9e;
+}
+
+//性别
+.radio{
+    display: inline-block;
+     font-size: 34/@rem;
+    color: #9e9e9e;
+}
+label {                 /*设置label的样式*/   
+    display: inline-block;
+    position: relative;    
+}
+.radio .option {      /*把优化后的按钮图片设置为该div的背景图片，把该div定位到原生样式的上方，遮盖住原生样式。*/
+    width: 44/@rem;
+    height: 44/@rem;
+    position: absolute;
+    top: 10/@rem;
+    left: 24/@rem;
+    background: url(../img/profile_radio@2x.png) no-repeat;
+    background-size: contain;
+}
+.radio input[type="radio"] {  /*为了保险起见，把原生样式隐藏掉*/
+    display: inline-block ;
+    margin-right: 40/@rem ;
+    opacity: 0 ;
+    
+}
+input[type="radio"]:checked+div {  /*当radiuo被选中时，把input下边的div标签的背景图片替换掉*/
+    background: url(../img/profile_radio_sel@2x.png) no-repeat;
+    background-size: contain;
+}
+.radio-woman{
+   margin-left: 38/@rem; 
+}
+
+
+//班级信息
+.form-class{
+    padding-left: 14/@rem;
+    font-size:28/@rem ;
+    color: #3f2622;   
+    margin-bottom: -20/@rem;
+}
+.fourword{
+    padding-right: 9/@rem;
+}
+.threeword{
+    padding-right: 38/@rem;
+}
+.twoword{
+    padding-right: 66/@rem;
+}
+.zeroword{
+    padding-right: 154/@rem;
+}
+.select-school{
+    
+    border-style: none;
+    box-sizing: border-box;
+    width: 533/@rem;    
+    height: 70/@rem;
+    border-radius: 10/@rem;   
+    border: 1px #dadada solid;
+    padding: 7/@rem 14/@rem;
+    font-size: 28/@rem;  
+    color: #9e9e9e; 
+   
+  
+    //background-position-x: 100%;
+}
+.selectOne{
+    background: url(../img/btn_xiala@2x.png)  no-repeat  right center ;
+    background-size:contain ; 
+}
+.selectTwo{
+    background: url(../img/btn_shouqi@2x.png)  no-repeat  right center ;
+    background-size:contain ;
+    //background-position-x: 100%;
+}
+
+.select-number{
+   border-style: none;
+    box-sizing: border-box;
+    width: 686/@rem;    
+    height: 70/@rem;
+    border: 1px #dadada solid;
+    border-radius: 10/@rem;   
+    padding: 7/@rem 14/@rem;
+    font-size: 28/@rem;  
+    color: #9e9e9e;  
+    margin-left: 12/@rem;
+    
+}
+
+
+
+.select-class{
+    margin-top:17/@rem;
+    position: absolute;
+    left: 167/@rem;    
+}
+
+//提交
+.postButton{
+    background: #3F2622;
+    border:none ;
+    width: 702/@rem;
+    height: 88/@rem;
+    color: #FFFFFF;
+    margin-top: 46/@rem;
+    font-size:34/@rem;
+}
+.select-city{
+    border-style: none;
+    box-sizing: border-box;
+    width: 327/@rem;    
+    height: 70/@rem;
+    border: 1px #dadada solid;
+    border-radius: 10/@rem;   
+    padding: 7/@rem 14/@rem;
+    font-size: 28/@rem;  
+    color: #9e9e9e; 
+}
+#province{
+    margin-right: 8/@rem;
+    margin-left: 12/@rem;
+}
+
+

@@ -1,0 +1,1282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bbe6114f-5d58-4e9e-9877-36bc40a08815" name="Default" comment="userauth 1.4 修改">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/v1.5/recommend/img/auth.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/v1.5/recommend/img/background.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/v1.5/recommend/img/button.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/v1.5/recommend/img/men.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/v1.5/recommend/img/unauth.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/v1.5/recommend/img/women.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/demo/layout/index_0.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/demo/openApp.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/v1.2/star/css/wuting.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/v1.2/star/person_wuting.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/v1.5/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/v1.5/recommend/css/index.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/v1.5/recommend/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/v1.5/recommend/js/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/v1.5/recommend/js/route.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/v1.5/recommend/js/tools.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/code/v1.5/recommend/js/zeptodetect.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/v1.4/news/css/index-172b33e177.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/v1.4/news/detail.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/v1.4/news/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/v1.4/news/js/index-4cdf578d62.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/v1.2/share/joinfriend.html" afterPath="$PROJECT_DIR$/code/v1.2/share/joinfriend.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/v1.4/card_2/js/index.js" afterPath="$PROJECT_DIR$/code/v1.4/card_2/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/online/v1.4/article/index.html" afterPath="$PROJECT_DIR$/online/v1.4/article/index.html" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.4276808">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="index.less" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/code/v1.5/recommend/css/index.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-373">
+                  <caret line="84" column="30" lean-forward="true" selection-start-line="84" selection-start-column="30" selection-end-line="84" selection-end-column="30" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="auth.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/code/v1.4/userauth/auth.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="735">
+                  <caret line="49" column="19" lean-forward="false" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="auth.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/code/v1.4/userauth/js/auth.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="761">
+                  <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/code/v1.5/recommend/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="301">
+                  <caret line="95" column="10" lean-forward="true" selection-start-line="95" selection-start-column="10" selection-end-line="95" selection-end-column="10" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tools.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/code/v1.5/recommend/js/tools.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="267">
+                  <caret line="95" column="26" lean-forward="true" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="XSLT Stylesheet" />
+        <option value="HTML File" />
+        <option value="mobile" />
+        <option value="Copy of Less File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>successful</find>
+      <find>need</find>
+      <find>.w</find>
+      <find>dynamic</find>
+      <find>img</find>
+      <find>mask</find>
+      <find>drag</find>
+      <find>conHeight</find>
+      <find>company_logo</find>
+      <find>scrollBar</find>
+      <find>share</find>
+      <find>getWxShare</find>
+      <find>getData</find>
+      <find>route</find>
+      <find>getImgUrl</find>
+      <find>mine</find>
+      <find>sex</find>
+      <find>auth</find>
+      <find>follower</find>
+      <find>timeLine</find>
+      <find>timeLin</find>
+      <find>timeLi</find>
+      <find>timeL</find>
+      <find>time</find>
+      <find>webCallApp</find>
+      <find>target</find>
+      <find>a_obj</find>
+      <find>flex-center</find>
+      <find>recommendStatus</find>
+      <find>loadingGif</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>http://img.daodaoclub.com/app/gifts/img</replace>
+      <replace>gifts</replace>
+      <replace />
+      <replace>,</replace>
+      <replace>class</replace>
+      <replace>src</replace>
+      <replace>buttonChange2</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/dist</dir>
+      <dir>$PROJECT_DIR$/node_modules</dir>
+      <dir>$PROJECT_DIR$/src/css</dir>
+      <dir>$PROJECT_DIR$/src/js</dir>
+      <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/gifts</dir>
+      <dir>$PROJECT_DIR$/star</dir>
+      <dir>$PROJECT_DIR$/need</dir>
+      <dir>$PROJECT_DIR$/common/download</dir>
+      <dir>$PROJECT_DIR$/code/need</dir>
+      <dir>$PROJECT_DIR$/code/userauth</dir>
+      <dir>$PROJECT_DIR$/code/gifts</dir>
+      <dir>$PROJECT_DIR$/code/headline</dir>
+      <dir>$PROJECT_DIR$/userauth</dir>
+      <dir>$PROJECT_DIR$/src</dir>
+      <dir>$PROJECT_DIR$/online</dir>
+      <dir>$PROJECT_DIR$/code/v1.4</dir>
+      <dir>$PROJECT_DIR$/code/v1.4/article</dir>
+      <dir>$PROJECT_DIR$/code/v1.4/card_2</dir>
+      <dir>$PROJECT_DIR$/code</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/code/download/list.html" />
+        <option value="$PROJECT_DIR$/code/download/index.html" />
+        <option value="$PROJECT_DIR$/common/download/list.html" />
+        <option value="$PROJECT_DIR$/code/version/download.html" />
+        <option value="$PROJECT_DIR$/src/css/common.less" />
+        <option value="$PROJECT_DIR$/src/js/index.js" />
+        <option value="$PROJECT_DIR$/src/css/index.less" />
+        <option value="$PROJECT_DIR$/code/download/css/index.less" />
+        <option value="$PROJECT_DIR$/code/download/update.html" />
+        <option value="$PROJECT_DIR$/common/download/update.html" />
+        <option value="$PROJECT_DIR$/code/version/mv.html" />
+        <option value="$PROJECT_DIR$/code/download/css/index.css" />
+        <option value="$PROJECT_DIR$/article/detail.html" />
+        <option value="$PROJECT_DIR$/code/v1.4/article/css/list.css" />
+        <option value="$PROJECT_DIR$/code/demo/proxy/test1.html" />
+        <option value="$PROJECT_DIR$/code/v1.2/share/css/joinfriend.less" />
+        <option value="$PROJECT_DIR$/src/js/tool.js" />
+        <option value="$PROJECT_DIR$/src/detail.html" />
+        <option value="$PROJECT_DIR$/code/v1.3/need/css/index.css" />
+        <option value="$PROJECT_DIR$/code/spread/mid-autumn.html" />
+        <option value="$PROJECT_DIR$/code/spread/mid-autumn2.html" />
+        <option value="$PROJECT_DIR$/online/download/list.html" />
+        <option value="$PROJECT_DIR$/code/v1.2/share/js/route.js" />
+        <option value="$PROJECT_DIR$/code/v1.4/article/js/cookies.js" />
+        <option value="$PROJECT_DIR$/code/v1.4/userauth/js/tools.js" />
+        <option value="$PROJECT_DIR$/code/v1.4/article/css/list.less" />
+        <option value="$PROJECT_DIR$/code/v1.4/article/detail.html" />
+        <option value="$PROJECT_DIR$/code/v1.4/article/js/route.js" />
+        <option value="$PROJECT_DIR$/code/v1.4/article/js/list.js" />
+        <option value="$PROJECT_DIR$/code/v1.4/article/list.html" />
+        <option value="$PROJECT_DIR$/code/v1.4/article/js/index.js" />
+        <option value="$PROJECT_DIR$/code/v1.4/card_2/detail.html" />
+        <option value="$PROJECT_DIR$/code/v1.4/card_2/js/route.js" />
+        <option value="$PROJECT_DIR$/code/v1.4/card_2/css/index.less" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/src/js/route.js" />
+        <option value="$PROJECT_DIR$/code/v1.2/share/joinfriend.html" />
+        <option value="$PROJECT_DIR$/code/v1.2/star/wuting.html" />
+        <option value="$PROJECT_DIR$/code/v1.2/star/person_wuting.html" />
+        <option value="$PROJECT_DIR$/code/v1.4/card_2/js/index.js" />
+        <option value="$PROJECT_DIR$/code/v1.2/star/join/person_wuting.html" />
+        <option value="$PROJECT_DIR$/code/demo/layout/index_0.html" />
+        <option value="$PROJECT_DIR$/code/v1.5/README.md" />
+        <option value="$PROJECT_DIR$/code/v1.4/article/css/index.less" />
+        <option value="$PROJECT_DIR$/code/v1.5/recommend/js/route.js" />
+        <option value="$PROJECT_DIR$/code/v1.5/recommend/js/index.js" />
+        <option value="$PROJECT_DIR$/code/v1.5/recommend/js/tools.js" />
+        <option value="$PROJECT_DIR$/code/v1.5/recommend/css/index.less" />
+        <option value="$PROJECT_DIR$/code/demo/openApp.html" />
+        <option value="$PROJECT_DIR$/code/v1.5/recommend/index.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>true</other-services-enabled>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <gulpfiles>
+      <GulpfileState>
+        <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
+        <tasks>
+          <GulpTaskState>
+            <dependencies>
+              <dependency value="testLess" />
+              <dependency value="minifyCss" />
+              <dependency value="minifyJs" />
+              <dependency value="minifyImg" />
+            </dependencies>
+            <task-name>default</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>testLess</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>browserSync</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>minifyJs</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>minifyImg</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>minifyCss</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>testHtmlmin</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>clean:dist</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>cache:clear</task-name>
+          </GulpTaskState>
+        </tasks>
+      </GulpfileState>
+    </gulpfiles>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1475" />
+    <option name="y" value="-69" />
+    <option name="width" value="1946" />
+    <option name="height" value="971" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="h5code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="h5code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="h5code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="h5code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="h5code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="h5code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v1.4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="h5code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="h5code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v1.4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="userauth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="h5code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="h5code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v8.1.0/bin/node" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/node_modules/gulp" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/code/v1.2/share/js" />
+      <recent name="$PROJECT_DIR$/v1.4" />
+      <recent name="$PROJECT_DIR$/online/v1.4" />
+      <recent name="$PROJECT_DIR$/code" />
+      <recent name="$PROJECT_DIR$/code/demo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/code/v1.5/recommend/js" />
+      <recent name="$PROJECT_DIR$/code/v1.5" />
+      <recent name="$PROJECT_DIR$/code/v1.5/recommend/img" />
+      <recent name="$PROJECT_DIR$/code/v1.2/star/css" />
+      <recent name="$PROJECT_DIR$/code/v1.2/star" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="false" name="testLess (1)" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>testLess</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="default (1)" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>default</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="minifyCss" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>minifyCss</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="minifyJs" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>minifyJs</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="minifyImg" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/gulpfile.js</gulpfile>
+      <tasks>
+        <task>minifyImg</task>
+      </tasks>
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Gulp.js.testLess (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Gulp.js.default (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Gulp.js.minifyCss" />
+      <item index="3" class="java.lang.String" itemvalue="Gulp.js.minifyJs" />
+      <item index="4" class="java.lang.String" itemvalue="Gulp.js.minifyImg" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Gulp.js.testLess (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Gulp.js.minifyImg" />
+        <item index="2" class="java.lang.String" itemvalue="Gulp.js.minifyJs" />
+        <item index="3" class="java.lang.String" itemvalue="Gulp.js.minifyCss" />
+        <item index="4" class="java.lang.String" itemvalue="Gulp.js.default (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bbe6114f-5d58-4e9e-9877-36bc40a08815" name="Default" comment="" />
+      <created>1500452575656</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1500452575656</updated>
+      <workItem from="1500452578551" duration="521000" />
+      <workItem from="1500453130303" duration="2249000" />
+      <workItem from="1500513325645" duration="9791000" />
+      <workItem from="1500606500429" duration="21704000" />
+      <workItem from="1500784275058" duration="37148000" />
+      <workItem from="1500947521241" duration="22346000" />
+      <workItem from="1501041343467" duration="11247000" />
+      <workItem from="1501058818837" duration="7219000" />
+      <workItem from="1501123404329" duration="21138000" />
+      <workItem from="1501232960017" duration="158000" />
+      <workItem from="1501385896168" duration="760000" />
+      <workItem from="1501567293387" duration="5347000" />
+      <workItem from="1501827368750" duration="13877000" />
+      <workItem from="1502105037809" duration="45000" />
+      <workItem from="1502105120467" duration="7000" />
+      <workItem from="1502105160413" duration="138000" />
+      <workItem from="1502163175645" duration="5617000" />
+      <workItem from="1502698629152" duration="2744000" />
+      <workItem from="1502703678074" duration="15239000" />
+      <workItem from="1502847010788" duration="7137000" />
+      <workItem from="1502869047179" duration="588000" />
+      <workItem from="1503038484353" duration="1018000" />
+      <workItem from="1503399632527" duration="8137000" />
+      <workItem from="1503625353124" duration="13238000" />
+      <workItem from="1503737299732" duration="9022000" />
+      <workItem from="1503924859903" duration="690000" />
+      <workItem from="1503928845294" duration="945000" />
+      <workItem from="1503972122381" duration="8880000" />
+      <workItem from="1504004143562" duration="1234000" />
+      <workItem from="1504057269886" duration="7169000" />
+      <workItem from="1504071890164" duration="994000" />
+      <workItem from="1504074761479" duration="45000" />
+      <workItem from="1504076958808" duration="110000" />
+      <workItem from="1504081748828" duration="3555000" />
+      <workItem from="1504143106400" duration="12794000" />
+      <workItem from="1504663958050" duration="6521000" />
+      <workItem from="1504684142907" duration="3819000" />
+      <workItem from="1504690136239" duration="7665000" />
+      <workItem from="1504757171744" duration="81521000" />
+      <workItem from="1505205911010" duration="221000" />
+      <workItem from="1505210765240" duration="457000" />
+      <workItem from="1505211696488" duration="38318000" />
+      <workItem from="1505358676618" duration="1965000" />
+      <workItem from="1505370032202" duration="1272000" />
+      <workItem from="1505372274652" duration="26615000" />
+      <workItem from="1505462450123" duration="11962000" />
+      <workItem from="1505545036978" duration="4724000" />
+      <workItem from="1505560965209" duration="9727000" />
+      <workItem from="1505706914818" duration="24107000" />
+      <workItem from="1505788828726" duration="30000" />
+      <workItem from="1505789849114" duration="18713000" />
+      <workItem from="1505871671079" duration="7477000" />
+      <workItem from="1505957824216" duration="9866000" />
+      <workItem from="1506330014036" duration="4456000" />
+      <workItem from="1506388250082" duration="912000" />
+      <workItem from="1506411235603" duration="2586000" />
+      <workItem from="1506565779190" duration="799000" />
+      <workItem from="1506571547142" duration="1755000" />
+      <workItem from="1507599042115" duration="28315000" />
+      <workItem from="1507944582614" duration="21374000" />
+    </task>
+    <task id="LOCAL-00001" summary="code v1.0">
+      <created>1505465246614</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1505465246614</updated>
+    </task>
+    <task id="LOCAL-00002" summary="gulpfile">
+      <created>1505465286813</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1505465286813</updated>
+    </task>
+    <task id="LOCAL-00003" summary="userauth 1.4 修改">
+      <created>1505469539064</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1505469539064</updated>
+    </task>
+    <task id="LOCAL-00004" summary="版本划分">
+      <created>1505702517679</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1505702517679</updated>
+    </task>
+    <task id="LOCAL-00005" summary="daodaov1.4上线准备">
+      <created>1505706139732</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1505706139732</updated>
+    </task>
+    <task id="LOCAL-00006" summary="userauth 1.4 修改">
+      <created>1505707044079</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1505707044079</updated>
+    </task>
+    <task id="LOCAL-00007" summary="v1.4 article 点赞toast取消、列表滑动问题优化">
+      <created>1505715918477</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1505715918477</updated>
+    </task>
+    <task id="LOCAL-00008" summary="v1.4 上线版终结版">
+      <created>1505786429084</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1505786429084</updated>
+    </task>
+    <task id="LOCAL-00009" summary="userauth 1.4 修改终结版">
+      <created>1505819291250</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1505819291250</updated>
+    </task>
+    <task id="LOCAL-00010" summary="article修改、添加点赞终结版 1.4 ，更新说明list修改">
+      <created>1505886893193</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1505886893193</updated>
+    </task>
+    <task id="LOCAL-00011" summary="userauth 1.4 修改">
+      <created>1505887163073</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1505887163073</updated>
+    </task>
+    <task id="LOCAL-00012" summary="article，视频和文章图片优化，新增update页面替换注册页">
+      <created>1506044179530</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1506044179530</updated>
+    </task>
+    <task id="LOCAL-00013" summary="need字段改动、shareUI改动">
+      <created>1506417335371</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1506417335371</updated>
+    </task>
+    <task id="LOCAL-00014" summary="中秋活动页">
+      <created>1506566767726</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1506566767726</updated>
+    </task>
+    <task id="LOCAL-00015" summary="card修改、文章优化（浏览次数）">
+      <created>1507709304815</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1507709304815</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="568028000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1475" y="-69" width="1946" height="971" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23309353" sideWeight="0.4851632" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16675325" sideWeight="0.5148368" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32561728" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21160409" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32789317" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24943481" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3811966" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2140884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31008902" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23309353" sideWeight="0.4851632" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23165467" sideWeight="0.5148368" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32596686" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964029" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="code v1.0" />
+    <MESSAGE value="gulpfile" />
+    <MESSAGE value="版本划分" />
+    <MESSAGE value="daodaov1.4上线准备" />
+    <MESSAGE value="v1.4 article 点赞toast取消、列表滑动问题优化" />
+    <MESSAGE value="v1.4 上线版终结版" />
+    <MESSAGE value="userauth 1.4 修改终结版" />
+    <MESSAGE value="article修改、添加点赞终结版 1.4 ，更新说明list修改" />
+    <MESSAGE value="userauth 1.4 修改" />
+    <MESSAGE value="article，视频和文章图片优化，新增update页面替换注册页" />
+    <MESSAGE value="need字段改动、shareUI改动" />
+    <MESSAGE value="中秋活动页" />
+    <MESSAGE value="card修改、文章优化（浏览次数）" />
+    <option name="LAST_COMMIT_MESSAGE" value="card修改、文章优化（浏览次数）" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/js/wxshare.js</url>
+          <line>11</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/code/spread/js/index.js</url>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/js/route.js</url>
+          <line>4</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/js/route.js</url>
+          <line>10</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="9" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="26" column="37" lean-forward="false" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/star/person_tianyingxiong.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2985">
+          <caret line="199" column="35" lean-forward="true" selection-start-line="199" selection-start-column="35" selection-end-line="199" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/star/person_wuting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-113">
+          <caret line="177" column="43" lean-forward="false" selection-start-line="177" selection-start-column="43" selection-end-line="177" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/star/css/person.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/star/join/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/star/person_wuting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="29" column="44" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/star/join/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/gifts/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="101" column="9" lean-forward="false" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/star/join/person_huangzhenglin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="211" column="19" lean-forward="false" selection-start-line="211" selection-start-column="12" selection-end-line="211" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/star/person_panqin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="220" column="17" lean-forward="false" selection-start-line="220" selection-start-column="13" selection-end-line="220" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/star/css/person.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/star/js/jquery.imgbox.pack.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/star/js/touch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3195">
+          <caret line="213" column="13" lean-forward="false" selection-start-line="213" selection-start-column="9" selection-end-line="213" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/star/css/wuting.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="289" column="0" lean-forward="false" selection-start-line="289" selection-start-column="0" selection-end-line="293" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/star/css/wuting.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4260">
+          <caret line="284" column="10" lean-forward="false" selection-start-line="284" selection-start-column="1" selection-end-line="284" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/star/person_fengguoxin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="201" column="13" lean-forward="true" selection-start-line="195" selection-start-column="11" selection-end-line="201" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.4/card_2/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/star/join/person_wuting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="251" column="44" lean-forward="true" selection-start-line="251" selection-start-column="44" selection-end-line="251" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.4/card_2/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="136" column="21" lean-forward="false" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.4/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.5/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/demo/layout/index_0.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.4/article/css/common.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.4/article/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="43" lean-forward="false" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.4/article/css/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.5/recommend/img/button.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/share/clubweb.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/share/js/phone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/gifts/js/tools.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/share/js/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/share/js/jquery.validate.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.2/share/js/getUserid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.4/card_2/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.3/card/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.3/need/js/tool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2418">
+          <caret line="46" column="10" lean-forward="true" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.3/need/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="65" column="12" lean-forward="false" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.5/recommend/js/zeptodetect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.5/recommend/js/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.5/recommend/img/unauth.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.5/recommend/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.4/article/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="268" column="52" lean-forward="false" selection-start-line="268" selection-start-column="44" selection-end-line="268" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.4/userauth/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.4/userauth/auth.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="19" lean-forward="false" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.4/userauth/js/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="761">
+          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/demo/openApp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.5/recommend/css/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-373">
+          <caret line="84" column="30" lean-forward="true" selection-start-line="84" selection-start-column="30" selection-end-line="84" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.4/userauth/js/tools.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="619" column="28" lean-forward="true" selection-start-line="619" selection-start-column="28" selection-end-line="619" selection-end-column="28" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.4/userauth/formone.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#input#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.5/recommend/js/tools.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="95" column="26" lean-forward="true" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/v1.5/recommend/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="95" column="10" lean-forward="true" selection-start-line="95" selection-start-column="10" selection-end-line="95" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

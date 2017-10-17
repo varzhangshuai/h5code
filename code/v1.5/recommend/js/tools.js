@@ -18,7 +18,6 @@ function getUserid(){
 		}
 
 //截取uri
-
 　function getUri(url){
 　　　　
 　　　　var arrUrl = url.split("//");
@@ -32,12 +31,6 @@ function getUserid(){
 　　　　return relUrl;
 　　}
 
-//路由
-function myRoutes(){
-    var route = 'http://m.daodaoclub.com';
-    return route
-}
-var route = myRoutes()
 // var appData={_time:"1504858925",_sign:"11d7b6d300b58e72735ad8a26d03d2d9",_d:"oPaTTuHVRNxooCNQzSkvlQImzqxSS+xAx+7IfBoQDc0="}
 //是否为空对象
 function isEmptyObject(e) {
@@ -60,7 +53,6 @@ function isEmptyObject(e) {
 
 
 //bridge
-
 
 var ua = this.navigator.userAgent;
 var platform =  this.navigator.platform;
@@ -95,6 +87,12 @@ function setupWebViewJavascriptBridge(callback) {
 }
 
 var index=0;
+/*
+* uri:api路径
+* callback：回调函数
+* obj:回调函数的参数
+* childcall：回调函数执行完成后的执行函数
+*/
 function OCJSJAVA(uri,callback,obj,childcall) {
     var appObj = new Object()
     var time = new Date().getDate()
@@ -159,6 +157,20 @@ function iosTitle(obj) {
     }
     setupWebViewJavascriptBridge(function (bridge) {
         bridge.callHandler('webCallApp',{'topName':obj.topName,'topShare':obj.topShare,'topCloseButton':obj.topCloseButton},function (response) {
+            var res = JSON.stringify(response)
+        })
+    })
+}
+//调用 认证toast
+function appAuthToast(obj) {
+    if(!obj.toast || obj.toast==''){
+        obj.toast=''
+    }
+    if(!obj.enid || obj.enid==''){
+        obj.enid=0
+    }
+    setupWebViewJavascriptBridge(function (bridge) {
+        bridge.callHandler('webCallApp',{'toast':obj.toast,'enid':obj.enid},function (response) {
             var res = JSON.stringify(response)
         })
     })
@@ -231,51 +243,6 @@ function gettimestamp() {
     return time;
 }
 
-
-//复制
-
-//复制
-function copyToClipboard(elementId) {
-
-
-    if(os.ios){
-        var copyDOM = document.querySelector('#');  //要复制文字的节点
-        var range = document.createRange();
-        // 选中需要复制的节点
-        range.selectNode(copyDOM);
-        // 执行选中元素
-        window.getSelection().addRange(range);
-        // 执行 copy 操作
-        var successful = document.execCommand('copy');
-        try {
-            var msg = successful ? 'successful' : 'unsuccessful';
-
-            console.log('copy is' + msg);
-        } catch(err) {
-            console.log('Oops, unable to copy');
-        }
-        // 移除选中的元素
-        window.getSelection().removeAllRanges();
-    }else if(os.android){
-
-        // 创建元素用于复制
-        var aux = document.createElement("input");
-        // 获取复制内容
-        var content = document.getElementById(elementId).innerHTML || document.getElementById(elementId).value;
-        // 设置元素内容
-        aux.setAttribute("value", content);
-        // 将元素插入页面进行调用
-        document.body.appendChild(aux);
-        // 复制内容
-        aux.select();
-        // 将内容复制到剪贴板
-        document.execCommand("copy");
-        toast( document.execCommand("copy"))
-        // 删除创建元素
-        document.body.removeChild(aux);
-    }
-}
-
 //toast弹窗
 function toast(tip) {
     var $toast = $("<div id='toast'></div>")
@@ -340,337 +307,5 @@ function loadingGif(boolean) {
 }
 
 
-//获取表单数据
-function getFormData(data,callback) {
-    $.ajax({
-        type: "GET", //用POST方式传输
-        url:route+ '/costin/mapi/authentication/after',
-        //目标地址
-        data:data,
-        success: function (res){
-            if(res.code==1){
-                callback(res.original)
-            } else{
-                toast(res.msg)
-            }
-        },
-        error:function(err){
-            console.log(err)
-        }
-    });
-}
 
-
-//手机验证 button变色
-/**
- * 生成文件名
- * @returns
- */
-
-function timestamp(){
-    var time = new Date();
-    var y = time.getFullYear();
-    var m = time.getMonth()+1;
-    var d = time.getDate();
-    var h = time.getHours();
-    var mm = time.getMinutes();
-    var s = time.getSeconds();
-    return ""+y+add0(m)+"/"+add0(d)+add0(h)+add0(mm)+add0(s);
-}
-function add0(m){
-    return m<10?'0'+m : m;
-}
-function times(){
-    var time = new Date();
-    var y = time.getFullYear();
-    var m = time.getMonth()+1;
-    var d = time.getDate();
-    var h = time.getHours();
-    var mm = time.getMinutes();
-    var s = time.getSeconds();
-    return add0(d)+add0(h)+add0(mm)+add0(s);
-}
-
-//formtwo 初始数据渲染
-//        表单认证，所有state
-//表单认证
-var head_state = false;//头像状态
-var name_state = false;//姓名状态
-var company_state = false;//公司状态
-// var commercial_state = false;//商学院状态
-//2页
-var phone_state1 = false;//手机状态
-var phone_state2 = false;//手机状态
-var name_state1 = false;//姓名状态
-var name_state2 = false;//姓名状态
-var major_state1 = false;//商学院状态
-var major_state2 = false;//商学院状态
-var classes_state1 = false;//班级状态
-var classes_state2 = false;//班级状态
-function renderLast(data) {
-    if(data.alumni1Name!=''){
-        $('#alumni1Name').val(data.alumni1Name)
-        name_state2 = true;
-    }
-    // if(data.alumni1Major!=''){
-    //     $('#alumni1Major').val(data.alumni1Major)
-    //     major_state1 = true;
-    // }
-    if(data.alumni1Classes!=''){
-        if(data.alumni1Classes.indexOf(',')!=-1){
-           var arr = data.alumni1Classes.split(',')
-            $('#alumni1Classes').val(arr[1])
-            classes_state1 = true;
-            $('#alumni1Major').val(arr[0])
-            major_state1 = true;
-        }else{
-            $('#alumni1Classes').val(data.alumni1Classes)
-            classes_state1 = true;
-        }
-    }
-    if(data.alumni1Phone!=''){
-        $('#alumni1Phone').val(data.alumni1Phone)
-        phone_state1 = true;
-    }
-    if(data.alumni2Name!=''){
-        $('#alumni2Name').val(data.alumni2Name)
-        name_state2 = true;
-    }
-    if(data.alumni2Phone!=''){
-        $('#alumni2Phone').val(data.alumni2Phone)
-        phone_state2 = true;
-    }
-    // if(data.alumni2Major!=''){
-    //     $('#alumni2Major').val(data.alumni2Major)
-    //     major_state2 = true;
-    // }
-    if(data.alumni2Classes!=''){
-
-        if(data.alumni2Classes.indexOf(',')!=-1){
-            var arr = data.alumni2Classes.split(',')
-            $('#alumni2Classes').val(arr[1])
-            classes_state2 = true;
-            $('#alumni2Major').val(arr[0])
-            major_state2 = true;
-        }else{
-            $('#alumni2Classes').val(data.alumni2Classes)
-            classes_state2 = true;
-        }
-    }
-    buttonChange2()
-}
-//设置img样式
-function imgCss(url) {
-    url = 'url("'+url+'")'
-    var obj = { 'background': url+' no-repeat center center','background-size': 'cover'}
-    return obj
-}
-//获取css的背景 url
-function getImgUrl(url) {
-    if(url.indexOf('("')>-1){
-        url = url.split('("')[1].split('")')[0]
-    }else if(url.indexOf('(')>-1){
-        url = url.split("(")[1].split(")")[0]
-    }
-    return url
-}
-// button 样式改变
-function buttonChange2() {
-    if(phone_state1 && phone_state2 && major_state1 && major_state2 &&classes_state1 &&classes_state2 &&name_state1 &&name_state2){
-        $('.next-button').css('background','#cb9555')
-    }else{
-        $('.next-button').css('background','#cccccc')
-    }
-}
-function buttonChange() {
-    console.log('head_state:'+head_state, 'name_state:'+name_state,  'company_state:'+company_state )
-    if(head_state && name_state && company_state ){
-        $('.next-button').css('background','#cb9555')
-    }else{
-        $('.next-button').css('background','#cccccc')
-    }
-}
-
-//formone 初始数据渲染
-function renderAfter(data) {
-    if(data.name!=''){
-        $('#name').val(data.name)
-        name_state = true;
-    }
-    if(data.headUrl!=''){
-        var url = imgCss(data.headUrl)
-        $('#headUrl').css(url)
-        head_state = true;
-
-    }
-    if(data.companyImg!=''){
-        $('#companyImg').css('background-image','url('+data.companyImg+')').removeClass('bac-after').addClass('bac-before')
-        $('#companyImg').parents('label').next().css('display','block');
-        company_state = true
-
-    }
-
-    if(data.collegeImg!=''){
-        $('#collegeImg').css('background-image','url('+data.collegeImg+')').removeClass('bac-after').addClass('bac-before')
-        $('#collegeImg').parents('label').next().css('display','block')
-    }
-
-    buttonChange()
-}
-
-
-
-//提交表单
-//提交表单1
-function postDataFirst(data) {
-    var name = $('#name').val()
-    if(name==''){
-        toast('请输入姓名！')
-        return
-    }
-    var url = $('#headUrl').css('background-image')
-    var headUrl = getImgUrl(url)
-
-    if(headUrl=='none'||headUrl==null){
-        toast('请选择头像')
-        return
-    }
-
-    var companyImg = getImgUrl($('#companyImg').css('background-image'))
-    if(companyImg==null || companyImg.indexOf('img/upload.png')>-1){
-        toast('请选择照片')
-        return
-    }
-    var collegeImg = getImgUrl($('#collegeImg').css('background-image'))
-    if(collegeImg==null || collegeImg.indexOf('img/upload.png')>-1){
-        collegeImg=''
-    }
-    var form = {
-        headUrl: headUrl,
-        name:name,
-        companyImg: companyImg,
-        collegeImg: collegeImg
-    }
-    // data = Object.assign(data,form)
-    $.extend(data,form)
-    $.ajax({
-        type: "POST", //用POST方式传输
-        url:route+ '/costin/mapi/authentication',
-        //目标地址
-        data:data,
-        success: function (res){
-            if(res.code==1){
-                window.location.href='/app/userauth/formtwo.html?_t='+times();
-            }else{
-                toast(res.msg)
-            }
-        },
-        error:function(err){
-            console.log(err)
-        }
-    });
-}
-//提交表单2
-function postDataLast(data) {
-    var alumni1Name=$('#alumni1Name').val(),
-        alumni1Major=$('#alumni1Major').val(),
-        alumni1Classes=$('#alumni1Classes').val(),
-        alumni1Phone=$('#alumni1Phone').val(),
-        alumni2Name=$('#alumni2Name').val(),
-        alumni2Phone=$('#alumni2Phone').val(),
-        alumni2Major=$('#alumni2Major').val(),
-        alumni2Classes=$('#alumni2Classes').val();
-    if(alumni1Name==''||alumni1Major==''||alumni1Classes==''||alumni1Phone==''||alumni2Name==''||alumni2Phone==''||alumni2Major==''||alumni2Classes==''){
-        toast('请填写完全部内容')
-        return
-    }
-    var form = {
-        alumni1Name:alumni1Name,
-        alumni1Phone:alumni1Phone,
-        alumni1Classes:alumni1Major+','+alumni1Classes,
-        alumni2Name:alumni2Name,
-        alumni2Phone:alumni2Phone,
-        alumni2Classes:alumni2Major+','+alumni2Classes,
-    }
-    $.extend(data,form)
-    // data = Object.assign(data,form)
-    $.ajax({
-        type: "POST", //用POST方式传输
-        url:route+ '/costin/mapi/authentication/later',
-        //目标地址
-        data:data,
-        success: function (res){
-            if(res.code==1){
-                window.location.href='/app/userauth/success.html';
-            } else{
-                toast(res.msg)
-            }
-        },
-        error:function(err){
-            console.log(err)
-        }
-    });
-}
-
-//上传图片
-var client = new OSS.Wrapper({
-    region: 'oss-cn-shanghai',
-    accessKeyId : 'LTAIQXyCzQ8P9jEC',
-    accessKeySecret : 'XUt1mgNViGNq2hPGISX8klqreWgxEb',
-    bucket : 'daodao-upload'
-});
-function postPhoto(dom,callback){
-    loadingGif(true)
-    var imgReplace = dom.parent().find('label .oss');
-    var closebtn = dom.parent().find('.close-img');
-    var f = dom[0].files[0];
-    var val= dom.val();
-    //上传图片为空
-
-    if(f.size==0||!f.size){
-        loadingGif(false)
-        return
-    }
-    //判断文件类型
-    // var type=(f.substr(f.lastIndexOf("."))).toLowerCase();
-    var type = f.type;
-
-    if(!(/(?:jpg|gif|png|jpeg)$/i.test(type))){
-        loadingGif(false)
-        toast("您上传图片的类型不符合(.jpg|.jpeg|.gif|.png)！");
-        return;
-    }
-
-    if(f.size>6*1024*1024){
-        loadingGif(false)
-        toast('上传的图片的大于6M,请重新选择')
-        return
-    }
-    var suffix = val.substr(val.indexOf("."));
-    var obj=timestamp();  // 这里是生成文件名
-    var storeAs = "user/apply/"+obj+suffix;  //命名空间
-    client.multipartUpload(storeAs, f).then(function (result) {
-        var imgUrl = 'http://img.daodaoclub.com/' + result.name ;
-        var url = 'url('+imgUrl+')'
-        var imgObj={
-            'background-image': url,
-            'background-repeat': 'no-repeat',
-            'background-position': 'center center',
-            'background-size': 'cover',
-            'border':'none'
-        }
-        imgReplace.removeClass('bac-after').addClass('bac-before').css('background-image',url)
-        // imgReplace.css(imgObj); //添加图片
-        closebtn.css('display','block');
-        if(callback){
-            callback()
-        }
-        setTimeout(function () {
-            loadingGif(false)
-        },1000)
-
-    }).catch(function (err) {
-        console.log(err);
-    });
-}
 

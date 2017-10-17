@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>邀请您加入道道来和同学聚集</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no, email=no"/>
+		<link rel="stylesheet" type="text/css" href= "css/joinclass.css"/>
+	</head>
+	<script>
+		(function(){
+			var width =document.documentElement.clientWidth/10;
+			var styleNode = document.createElement("style");
+				styleNode.innerHTML="html{font-size:"+width+"px!important}"
+				document.head.appendChild(styleNode);
+		})()
+	</script>
+	<body>
+		<div class="join-back">
+			
+		</div>
+		<div class="join-content">
+			<div class="join-class">
+				<span id="college">长江商学院</span>
+				<span id="major">EMBA</span>
+				<span id="grade">25期</span>
+			</div>
+			<div class="join-img" >
+				
+			</div>
+			<div class="join-name" >
+				
+			</div>
+			<div class="join-add">
+				
+			</div>
+		</div>
+		
+		
+	</body>
+</html>
+
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script src="js/getUserid.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/route.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	window.onload=function(){
+
+		var sharerid = new Object(); 
+		sharerid = getUserid() 	
+		//console.log(sharerid)
+		var route = ''
+		route = myRoutes();
+
+		//发送请求获取数据
+		getData();
+		
+		function getData(){ 	
+			if(sharerid == {} || !sharerid){
+				window.location = 'clubweb.html'
+				return
+			}
+			
+			
+			 $.ajax({			 	
+               type: "GET",
+               data: sharerid,
+               url: route+'apply/classes',
+               success: function(data){               	
+                	if(data.code==1){
+                		//console.log(data)
+                		var userData = data.original
+                		$('#college').html(userData.college);
+                		$('#classes').html(userData.classes);
+                		$('#grade').html(userData.grade);
+                		$('.join-name').html(userData.sharerRealName); 
+                		//console.log(userData.sharerRealName.length)
+                		
+                		//头像单独处理 
+                		var url = 'url(' +userData.headUrl+ ')' ;                		
+                		$('.join-img').css("background-image",url)                		
+                	}else{
+                		window.location = 'clubweb.html'
+                	}
+                 },
+                 error:function(err){
+                 	console.log('err',err)
+                 }
+               
+            });
+			
+				
+		};
+		
+		//joindaodao
+		$('.join-add').click(function(){
+			if($('.join-name')!="" && $('#college')!="" &&$('#grade')!=""  ){
+				window.location="validate.html"  
+			}  
+		})
+		
+		
+				
+	}
+</script>

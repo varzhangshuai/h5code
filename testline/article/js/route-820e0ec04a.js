@@ -1,0 +1,1 @@
+function myRoutes(){return"http://test.m.daodaoclub.com"}

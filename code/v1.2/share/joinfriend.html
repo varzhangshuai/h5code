@@ -63,9 +63,9 @@
 		}
 		
 		//获取数据接口
-		function Datas(data) {
-            if(!data.sharerid){
-                data.sharerid=search.sharerid
+		function Datas() {
+			var data = {
+                sharerid:search.sharerid
 			}
             $.ajax({
                 type: "GET",
@@ -167,7 +167,7 @@
                     if(res.code==1){
 						var unionid=res.data.unionid;
 						setCookie('_unionid',res.data.unionid)
-                        wxsign(res.data,Datas)
+                        wxsign(res.data)
                     }else{
                         toast('认证失败')
                     }
@@ -178,11 +178,12 @@
             });
         }
         //java认证
-        function wxsign(data,callback) {
+        function wxsign(data) {
             if(!data){
                 return
             }
             data.from = 'app_share';
+            data.sharerid = search.sharerid;
             $.ajax({
                 type: "POST", //用POST方式传输
                 url:route+ '/costin/mapi/wechat/auth' ,
@@ -202,7 +203,7 @@
                                 setCookie('_userid',data.userid)
                             }
                         }
-                        callback(data)
+                        Datas()
                     }else if(res.code==10016){
 
                     }else{

@@ -1,0 +1,80 @@
+/*清默认样式*/
+body,
+h1,
+h2,
+h3,
+h4,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  font-family: helvetica;
+}
+img {
+  display: block;
+}
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+ul {
+  list-style: none;
+}
+input,
+select {
+  outline: none;
+  -moz-appearance: none;
+  /*for firefox*/
+  -webkit-appearance: none;
+  appearance: none;
+}
+.shan-class {
+  -webkit-tap-highlight-color: transparent;
+}
+.join-back {
+  background: url(../img/bg_h5_CLASSshare.jpg);
+  background-size: 10rem 16.24rem;
+  width: 10rem;
+  height: 16.24rem;
+}
+.join-content {
+  position: absolute;
+  top: 8.69333333rem;
+  left: 3.36rem;
+}
+.join-class {
+  position: absolute;
+  font-size: 0.4rem;
+  color: #a78843;
+  text-align: center;
+  width: 7.4rem;
+  top: -2.18666667rem;
+  left: -2.06666667rem;
+}
+.join-img {
+  margin: 0 1.02666667rem;
+  width: 1.24rem;
+  height: 1.24rem;
+  background-image: url(../img/profile_radio@2x.png);
+  background-size: contain ;
+  border-radius: 100%;
+}
+.join-name {
+  width: 3.41333333rem;
+  margin-top: 0.06666667rem;
+  text-align: center;
+  color: #3F2622;
+  font-size: 0.50666667rem;
+  font-family: "微软雅黑";
+}
+.join-add {
+  position: absolute;
+  top: 5.45333333rem;
+  left: -2.06666667rem;
+  width: 7.4rem;
+  height: 1rem;
+  color: white;
+  font-size: 0.50666667rem;
+  text-align: center;
+  line-height: 0.92rem;
+}

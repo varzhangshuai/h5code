@@ -1,0 +1,66 @@
+//适配基值
+@rem:75rem;
+
+/*清默认样式*/
+    body,h1,h2,h3,h4,ul,li,p{
+        margin: 0;
+        padding: 0;
+        font-family: helvetica;//这个字体是移动端设备通用的西方字体
+    }
+    img{
+        display: block;
+    }
+    a{
+        text-decoration: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);//解决a标签高亮问题
+    }
+    ul{
+        list-style: none;
+    }
+    input,select{
+        outline: none;//去除边框高亮
+        -moz-appearance:none;    /*for firefox*/    
+        -webkit-appearance: none;
+        appearance:none;  
+    }
+    
+body{
+    background: black;
+}    
+
+.beta-bac{
+    width: 750/@rem;
+    height: 1206/@rem;
+    background: url(../img/bac_beta.jpg);
+    background-size: 750/@rem;
+    position: relative;
+}
+.beta-button{
+    position: absolute;
+    height:83/@rem ;
+    width: 223/@rem;
+    top: 399/@rem;
+    left: 50%;
+    margin-left: -111.5/@rem;
+}
+.beta-word{
+    position: absolute;
+    top: 112/@rem;
+    width: 100%;
+}
+.word-top{
+    font-size: 30/@rem;
+    color: #f9fdff;
+    text-align: center;
+    margin-bottom: 10/@rem;
+    text-shadow: -2px 2px 3px rgba(0,0,0,0.5);
+}
+.word-top span{
+    margin:0 8/@rem;
+}
+.word-bottom{   
+    font-size: 36/@rem;
+    color: #f9fdff;
+    text-align: center;
+    text-shadow: -2px 2px 4px rgba(0,0,0,0.5);
+}

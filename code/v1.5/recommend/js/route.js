@@ -1,3 +1,6 @@
-/**
- * Created by shuaizhang on 2017/10/16.
- */
+function myRoutes(){
+
+    var route = 'http://test.m.daodaoclub.com';
+
+    return route
+}

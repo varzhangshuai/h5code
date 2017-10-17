@@ -1,0 +1,406 @@
+/*头部的固定定位*/
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #F2F2F2;
+  font-size: 0.4rem;
+  -webkit-overflow-scrolling: touch;
+}
+#wrap {
+  height: 100%;
+  overflow: auto;
+}
+.clearfix:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+.wrap {
+  padding-bottom: 0.26666667rem;
+}
+.wrap > div,
+article {
+  padding: 0.26666667rem;
+  box-sizing: border-box;
+  margin: 0.26666667rem;
+}
+.wrap > div h3,
+article h3 {
+  line-height: 0.88rem;
+  color: #333;
+  padding-left: 0.26666667rem;
+  background: url("http://img.daodaoclub.com/app/star/img/item_bg2.png") no-repeat;
+  background-position: 0 0.16rem;
+  background-size: 0.05333333rem 0.42666667rem;
+}
+#head {
+  width: 10rem;
+  height: 5.28rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.wrap article {
+  background: url("http://img.daodaoclub.com/app/star/img/content_bg.png") repeat;
+  background-size: contain;
+  width: 9.45333333rem;
+  box-sizing: border-box;
+}
+.brife > div {
+  margin-bottom: 0.13333333rem;
+}
+.brife {
+  position: relative;
+}
+.brife h2 {
+  font-size: 0.64rem;
+  color: #282828;
+  font-weight: bold;
+  padding-bottom: 0.18666667rem;
+}
+.brife p {
+  color: #333;
+  line-height: 0.66666667rem;
+}
+.brife p b {
+  font-weight: 600;
+}
+.brife .brife-button {
+  position: absolute;
+  top: 0.26666667rem;
+  right: 0.26666667rem;
+}
+.brife .brife-button .follow {
+  width: 2.13333333rem;
+  height: 0.88rem;
+  border: 1px solid #cb9555 ;
+  border-radius: 0.10666667rem;
+  text-align: center;
+  line-height: 0.88rem;
+  color: #cb9555;
+  margin-bottom: 0.26666667rem;
+}
+.brife .brife-button .followed {
+  background: #cb9555;
+  color: #FFF;
+  display: none;
+}
+.brife .brife-button .followers {
+  width: 2.13333333rem;
+  font-size: 0.32rem;
+  color: #cb9555;
+  line-height: 0.32rem;
+  text-align: center;
+}
+.brife .post div,
+.brife .school div {
+  vertical-align: top;
+  display: inline-block;
+}
+.brife .post span,
+.brife .school span {
+  display: block;
+}
+.personal li {
+  background: url("http://img.daodaoclub.com/app/star/img/item_bg.png") no-repeat;
+  background-position-y: 0.2rem;
+  -webkit-background-size: 0.28rem 0.25333333rem;
+  background-size: 0.28rem 0.25333333rem;
+  line-height: 0.66666667rem;
+  padding-left: 0.56rem;
+  color: #333;
+}
+.combrife {
+  line-height: 0.56rem;
+}
+.combrife img {
+  float: left;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 100%;
+}
+.dynamic,
+.successful {
+  overflow: hidden;
+}
+.dynamic .item,
+.successful .item {
+  float: left;
+  font-size: 0;
+  white-space: nowrap;
+}
+.dynamic .item li,
+.successful .item li {
+  vertical-align: top;
+  display: inline-block;
+  width: 7.26666667rem;
+  height: 4.6rem;
+  background: #fff;
+  margin: 0.26666667rem;
+  box-sizing: border-box;
+  padding: 0.21333333rem;
+  font-size: 0.34666667rem;
+  white-space: normal;
+  line-height: 0.58666667rem;
+  -webkit-border-radius: 0.10666667rem;
+  -moz-border-radius: 0.10666667rem;
+  border-radius: 0.10666667rem;
+}
+.dynamic .item li b,
+.successful .item li b {
+  font-size: 0.4rem;
+  line-height: 0.72rem;
+  font-weight: 500;
+}
+#successfullist li {
+  width: 8.53333333rem;
+  height: 4rem;
+}
+.photo {
+  overflow: hidden;
+}
+.photo .item {
+  float: left;
+  font-size: 0;
+  white-space: nowrap;
+}
+.photo .item li {
+  display: inline-block;
+  border: 0.05333333rem solid #CB9555;
+  margin: 0.26666667rem 0.26666667rem 0.26666667rem 0;
+}
+.photo img {
+  width: 3.8rem;
+  height: 3.22666667rem;
+}
+.label ul li {
+  padding: 0 0.37333333rem;
+  display: inline-block;
+  font-size: 0.34666667rem;
+  line-height: 2em;
+  border: 1px solid #CB9555;
+  border-radius: 0.36rem;
+  color: #CB9555;
+  margin-left: 0.13333333rem;
+  margin-top: 0.37333333rem;
+}
+.need {
+  overflow: hidden;
+}
+.need .item {
+  float: left;
+  font-size: 0;
+  white-space: nowrap;
+}
+.need .item #typeName {
+  color: #CB9555;
+}
+.need .item li {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  width: 8.53333333rem;
+  height: 2.93333333rem;
+  background: #fff;
+  margin: 0.26666667rem;
+  box-sizing: border-box;
+  padding: 0.26666667rem;
+  font-size: 0.37333333rem;
+  white-space: normal;
+  line-height: 0.61333333rem;
+  -webkit-border-radius: 0.10666667rem;
+  -moz-border-radius: 0.10666667rem;
+  border-radius: 0.10666667rem;
+}
+.need .item li .needDesc {
+  height: 1.70666667rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.need .item li .label {
+  margin-top: 0.26666667rem;
+  font-size: 0.26666667rem;
+  color: #CB9555;
+  padding-left: 0.53333333rem;
+  background: url("http://img.daodaoclub.com/app/star/img/tag.png") no-repeat;
+  background-size: 0.37333333rem 0.28rem;
+  background-position: 0 0.16rem;
+  max-width: 2.66666667rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 0.42666667rem;
+  display: inline-block;
+}
+.need .item li .interested {
+  position: absolute;
+  right: 0.26666667rem;
+  bottom: 0.26666667rem;
+  width: 2.13333333rem;
+  height: 0.8rem;
+  border: 1px solid #CB9555;
+  border-radius: 0.10666667rem;
+  text-align: center;
+  line-height: 0.8rem;
+  color: #CB9555;
+}
+.more {
+  width: 1.6rem;
+  height: 3.22666667rem;
+  vertical-align: bottom;
+  color: black;
+  display: none;
+  background: url("http://img.daodaoclub.com/app/star/img/photomore.png") no-repeat center;
+  background-size: 0.96rem;
+}
+#photomore {
+  border: none;
+}
+.scrollBar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  opacity: 0;
+  background: gray;
+  transition: 0.5s opacity;
+  z-index: 1000;
+}
+/*  新增  ——qiuliming */
+.comp-head {
+  display: block;
+  height: 1.55rem;
+}
+/*  新增  ——wuting */
+.head-wuting {
+  background: url("http://img.daodaoclub.com/app/star/img/bann_wuting.png") no-repeat;
+  background-size: contain;
+}
+.img-jzzb {
+  width: 4.55rem;
+  margin: 0.2rem auto;
+}
+.compro {
+  line-height: 0.56rem;
+}
+.company_logo {
+  width: 2.21333333rem;
+  height: 2.21333333rem;
+  margin: 0.2rem auto;
+}
+#mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(0);
+  transition: 0.4s transform;
+}
+#mask a {
+  float: right;
+  text-decoration: none;
+  color: #fff;
+  margin-right: 5px;
+  margin-left: -5px;
+  padding: 0 10px;
+}
+#mask img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8rem;
+  /*height: 8rem;*/
+  margin: -4rem 0 0 -4rem;
+}
+.pan-succe {
+  padding: 0.5rem;
+}
+.img-jzzb {
+  width: 4.55rem;
+  margin: 0.2rem auto;
+}
+.compro {
+  line-height: 0.56rem;
+}
+.pan-compost {
+  display: inline-block;
+  float: left;
+}
+.pan-width-b {
+  display: inline-block;
+  float: left;
+  width: 6.66666667rem;
+}
+#star_float {
+  display: none;
+  width: 2.85333333rem;
+  height: 2.45333333rem;
+  background: url("http://img.daodaoclub.com/app/star/img/start_float.png");
+  background-size: contain;
+  position: fixed;
+  right: 0;
+  top: 60%;
+}
+#star_float img {
+  width: 0.58666667rem;
+  height: 0.58666667rem;
+  position: absolute;
+  top: -0.58666667rem;
+  right: 0.13333333rem;
+}
+.two-width {
+  width: 2rem;
+  display: inline-block;
+}
+/*   新增黄正林*/
+.head-hzl {
+  background: url("http://img.daodaoclub.com/app/person/huangzhenglin/hzl_01.jpg") no-repeat;
+  background-size: contain;
+}
+.mt10 {
+  margin-top: 0.13333333rem;
+}
+.dynamic-hzl .item li {
+  vertical-align: top;
+  display: inline-block;
+  width: 7.26666667rem;
+  background: #fff;
+  margin: 0.26666667rem;
+  box-sizing: border-box;
+  padding: 0.21333333rem;
+  font-size: 0.34666667rem;
+  white-space: normal;
+  line-height: 0.58666667rem;
+  -webkit-border-radius: 0.10666667rem;
+  -moz-border-radius: 0.10666667rem;
+  border-radius: 0.10666667rem;
+}
+/*  新增 宋秀娟 */
+.head-sxj {
+  background: url("http://img.daodaoclub.com/app/person/songxiujuan/sxj_01.jpg") no-repeat;
+  background-size: contain;
+}
+/*  新增 田应雄  */
+.head-tyx {
+  background: url("http://img.daodaoclub.com/app/person/tianyingxiong/tyx_01.jpg") no-repeat;
+  background-size: contain;
+}
+.college-from {
+  width: 2rem;
+  display: inline-block;
+}
+.img-tyx-logo {
+  width: 2.55rem;
+  display: inline-block;
+}
+/*  新增 冯国馨    */
+.head-fgx {
+  background: url("http://img.daodaoclub.com/app/person/fengguoxin/fgx_01.jpg") no-repeat;
+  background-size: contain;
+}

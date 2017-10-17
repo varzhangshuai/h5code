@@ -1,0 +1,1 @@
+function myRoutes(){return"http://m.daodaoclub.com"}function getUri(t){var n=t.split("//"),e=n[1].indexOf("/"),i=n[1].substring(e);return-1!=i.indexOf("?")&&(i=i.split("?")[0]),i}function timeJson(t){var n=new Date;return n.setTime(t),n.toLocaleDateString()}

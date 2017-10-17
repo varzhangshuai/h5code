@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #3D224E;
+  font-family: helvetica, "宋体";
+}
+.beta-bac {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("../img/join_baground.png") no-repeat;
+  background-size: 10rem;
+  font-weight: 100;
+}
+.beta-word {
+  text-align: center;
+  font-family: "\5B8B\4F53";
+  width: 100%;
+  font-size: 0.64rem;
+  position: absolute;
+  top: 11.28rem;
+  color: #f2f2f2;
+}
+.beta-word .word-bottom {
+  line-height: 0.66666667rem;
+  margin-bottom: 0.24rem;
+}
+.word-top {
+  font-size: 0.48rem;
+  line-height: 0.50666667rem;
+  margin-bottom: 0.24rem;
+}
+.beta-button {
+  width: 4.77333333rem;
+  height: 0.94666667rem;
+  background: url("../img/join_button.jpg") no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 50%;
+  margin-left: -2.38666667rem;
+  top: 14.08rem;
+}

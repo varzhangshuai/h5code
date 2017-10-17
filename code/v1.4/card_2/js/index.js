@@ -157,7 +157,6 @@ window.onload=function () {
             wxShareObj.desc=share.subtitle;
             wxShareObj.imgUrl= (share.imgurl&&share.imgurl!='')?share.imgurl:'http://img.daodaoclub.com/daodao_logo/daodao_logo_100.png';
             getWxShare();
-
         }
 
     }

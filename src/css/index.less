@@ -1,0 +1,355 @@
+@rem:75rem;
+
+/*清默认样式*/
+*{
+  margin: 0;
+  padding: 0;
+  font-family: helvetica;//这个字体是移动端设备通用的西方字体
+
+}
+img{
+  display: block;
+}
+a,h1,h2,h3,h4,ul,li{
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);//解决a标签高亮问题
+}
+ul{
+  list-style: none;
+}
+input{
+  outline: none;//去除边框高亮
+  -webkit-appearance: none;
+}
+
+html,body{
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: #ffffff;
+  font-size: 28/@rem;
+  color: white;
+}
+.whole{
+  width: 100%;
+  height: 100%;
+  background-repeat:no-repeat ;
+  background-size: contain;
+}
+.bg-green{background: green}
+.bg-red{background: red}
+.bg-blue{background: blue}
+
+
+//导航轮播
+#swiper-nav{
+  width:113/@rem;
+  height: 82/@rem;
+  padding: 25/@rem 300/@rem 0 ;
+  line-height: 82/@rem;
+  .swiper-slide{
+    text-align: center;
+  }
+}
+
+//导航栏当前状态
+.nav-center{
+  width: 150/@rem;
+  height: 81/@rem;
+  background: url("../img/card_active_nav.png") no-repeat;
+  background-size: 150/@rem 81/@rem;
+  position: absolute;
+  top: 34/@rem;
+  left: 50%;
+  margin-left: -75/@rem;
+}
+
+
+//内容导航
+.middle-con{
+  width: 600/@rem;
+  margin-top: 35/@rem;
+  .swiper-slide{
+    margin: 0 auto;
+    height: 860/@rem;
+    background-repeat: no-repeat;
+    background-size: 600/@rem 860/@rem;
+    border-radius:30/@rem;
+    position: relative;
+  }
+  .swiper-slide>div{
+    margin: 0 auto;
+  }
+  .swiper-slide>.conone-headimg{
+    margin-top: 56/@rem;
+  }
+}
+
+//底部logo 点击区域 弹层
+.toast-show{
+  position: absolute;
+  bottom: 0;
+  height: 84/@rem;
+  width: 100%;
+}
+//个人信息
+.conone-headimg{
+  width: 234/@rem;
+  height: 234/@rem;
+  border: 8/@rem solid #ffffff;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.conone-name{
+  text-align: center;
+  font-size: 40/@rem;
+  line-height: 40/@rem;
+  padding: 36/@rem 0 42/@rem;
+  img{
+    font-size: 0;
+    width: 26/@rem;
+    height: 32/@rem;
+    display: inline;
+    margin-left: 20/@rem;
+    position: relative;
+    top: 2/@rem;
+  }
+}
+.conone-list{
+  li{
+    line-height: 28/@rem;
+    padding-bottom: 45/@rem;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+  li>span:first-child{
+    padding:0 20/@rem 0 45/@rem ;
+  }
+  li>span:last-child{
+    padding-left: 20/@rem ;
+  }
+}
+//公司太长省略号
+
+
+//公司信息
+.contwo{
+  width: 100%;
+  height: 776/@rem;
+  box-sizing: border-box;
+  padding: 32/@rem;
+  overflow-y: auto;
+  .contwo-item{
+    padding-bottom: 46/@rem;
+  }
+}
+.contwo-item-top{
+  height: 40/@rem;
+  padding-bottom: 30/@rem;
+  span{
+    vertical-align: middle;
+  }
+  .contwo-item-logo{
+    width: 6/@rem;
+    height: 40/@rem;
+    display: inline-block;
+    background: url("../img/card_rectangle.png") no-repeat;
+    background-size: contain;
+  }
+  .contwo-item-title{
+    padding-left: 20/@rem;
+    font-size: 34/@rem;
+    line-height: 40/@rem;
+  }
+}
+//公司动态
+.contwo-dynamic-word,.contwo-case-word{
+  .dynamic-word,.case-word{
+    display: inline-block;
+    width: 476/@rem;
+  }
+  .dynamic-icon{
+    display: inline-block;
+    vertical-align: top;
+    width: 24/@rem;
+    height: 20/@rem;
+    margin-top: 6/@rem;
+    padding-right: 20/@rem;
+    background: url("../img/card_list_icon.png") no-repeat;
+    background-size: contain;
+  }
+}
+
+//silder3 商业经历
+.conthree{
+  width: 100%;
+  height: 776/@rem;
+}
+.conthree-company{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 48/@rem 48/@rem 10/@rem 48/@rem;
+  li{
+    position: relative;
+  }
+  li>div{
+    padding-bottom: 26/@rem ;
+    line-height: 28/@rem;
+  }
+  .conthree-name{
+    font-size: 30/@rem;
+    line-height: 30/@rem;
+  }
+  .conthree-dashed{
+    height: 1/@rem;
+    width: 100%;
+    margin: 10/@rem 0;
+    background: url("../img/card_xuxian.png") no-repeat;
+    background-size: contain;
+  }
+
+  //图标
+  .conthree-icon{
+    position: absolute;
+    left: -20/@rem;
+    top: -8/@rem;
+    display: inline-block;
+    width: 6/@rem;
+    height: 40/@rem;
+    background: url("../img/card_rectangle.png") no-repeat;
+    background-size: contain;
+  }
+}
+//查看更多
+.conthree-more{
+  display: none;
+  color: #ffbc6d;
+  font-size: 30/@rem;
+  text-align: center;
+  img{
+    width: 17/@rem;
+    height: 21/@rem;
+    display: inline;
+  }
+}
+
+
+//提供服务
+.confour{
+  text-align: center;
+  div{
+    margin: 0 auto;
+  }
+  .confour-top{
+    font-size: 36/@rem;
+    margin: 46/@rem 0 28/@rem;
+  }
+  .confour-logo{
+    width: 457/@rem;
+    height: 532/@rem;
+    background:url("../img/card_need.png") no-repeat ;
+    background-size: contain;
+  }
+}
+//按钮
+.confour-button, .toast-button{
+  width: 328/@rem;
+  height: 72/@rem;
+  border: 1/@rem solid rgba(255,255,255,0.8);
+  line-height: 72/@rem;
+  border-radius: 10/@rem;
+}
+
+
+
+.ft100{
+  font-weight: 100;
+}
+#mask{
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.7);
+  z-index: 99;
+  position: absolute;
+  top:0;
+  left: 0;
+}
+
+//弹窗
+.toast-download{
+  width: 600/@rem;
+  height: 690/@rem;
+  background: url("../img/bg_smal.png") no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -345/@rem;
+  margin-left: -300/@rem;
+
+  text-align: center;
+  .toast-word{
+    font-size: 36/@rem;
+    padding: 70/@rem 0 110/@rem;
+  }
+  .toast-logo{
+    width: 144/@rem;
+    height: 260/@rem;
+    background: url("../img/card_logo_shadow.png") no-repeat;
+    background-size: contain;
+  }
+  .toast-close{
+    position: absolute;
+    right: 0;
+    top: -94/@rem ;
+    width: 68/@rem;
+    height: 94/@rem;
+    background: url("../img/card_close.png") no-repeat;
+    background-size: contain;
+  }
+}
+.toast-download>div{
+  margin: 0 auto;
+}
+
+
+
+//底部fix按钮
+.bottom-fixed{
+  width: 100%;
+  height: 100/@rem;
+  position: fixed;
+  bottom: 0;
+  background:rgba(255,255,255,0.15);
+  font-size: 34/@rem;
+  span{
+    display: inline-block;
+    width: 49%;
+    line-height: 100/@rem;
+    text-align: center;
+    img{
+      display: inline-block;
+      width: 32/@rem;
+      height: 32/@rem;
+      font-size: 0;
+      margin: 0 19/@rem;
+      position: relative;
+      top: 3/@rem;
+    }
+  }
+  .bottom-btn-left{
+    border-right: 1/@rem solid rgba(255,255,255,0.1);
+  }
+
+}
+//一行省略号
+.els1{
+  overflow: hidden;/*超出部分隐藏*/
+  white-space: nowrap;/*不换行*/
+  text-overflow:ellipsis;/*超出部分文字以...显示*/
+}
+

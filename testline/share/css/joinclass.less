@@ -1,0 +1,85 @@
+//适配基值
+@rem:75rem;
+
+/*清默认样式*/
+    body,h1,h2,h3,h4,ul,li{
+        margin: 0;
+        padding: 0;
+        font-family: helvetica;//这个字体是移动端设备通用的西方字体
+    }
+    img{
+        display: block;
+    }
+    a{
+        text-decoration: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);//解决a标签高亮问题
+    }
+    ul{
+        list-style: none;
+    }
+    input,select{
+        outline: none;//去除边框高亮
+        -moz-appearance:none;    /*for firefox*/    
+        -webkit-appearance: none;
+        appearance:none;  
+    }
+
+//公用css
+.shan-class{
+    -webkit-tap-highlight-color:transparent;
+    }
+    
+.join-back{
+    background: url(../img/bg_h5_CLASSshare.jpg)  ;
+    background-size: 750/@rem 1218/@rem;
+    width: 750/@rem;
+    height: 1218/@rem;
+  
+}
+.join-content{
+    position: absolute;
+    top: 652/@rem;
+    left: 252/@rem;
+}
+
+.join-class{
+     position: absolute;
+    font-size: 30/@rem;
+    color: #a78843;
+    text-align: center;
+    
+    width: 555/@rem;
+    top: -164/@rem;
+    left: -155/@rem;
+}
+
+.join-img{
+    margin:0 77/@rem ;
+    width: 93/@rem;
+    height: 93/@rem;
+    background-image: url(../img/profile_radio@2x.png);
+    background-size:contain ;
+    border-radius: 100%;
+}
+.join-name{
+    width: 256/@rem;
+    margin-top:5/@rem ;
+    text-align: center;
+    color: #3F2622;
+    font-size: 38/@rem;
+    font-family:"微软雅黑";
+}   
+.join-add{
+   // opacity: 0;
+    position: absolute;
+    top: 409/@rem;
+    left: -155/@rem;
+   // background: green;
+    width: 555/@rem;
+    height: 75/@rem;
+    color: white;
+    font-size: 38/@rem;
+    text-align: center;
+    line-height: 69/@rem;
+    
+}

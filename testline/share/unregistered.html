@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>最佳人选</title>
+		 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no, email=no"/>
+		<link rel="stylesheet" type="text/css" href="css/msgweb.css?1.0"/>
+	</head>
+	<script type="text/javascript">
+		//rem适配方案
+		(function(){
+			var width =document.documentElement.clientWidth/10;
+			var styleNode = document.createElement("style");
+				styleNode.innerHTML="html{font-size:"+width+"px!important}"
+				document.head.appendChild(styleNode);
+		})()
+	</script>
+	<body>
+		
+		<div id="mask"></div>
+		<div id="box">
+			1.点击 <br />
+			2.选择在Safari中打开<br />
+			3.点击“下载道道iOS版”
+			<img id="jiantou" src="img/jiantou.png"/>
+		</div>
+		
+		<div class="bac">		
+			<div class="button-go"></div>
+			<div class="word">
+				<div class="word-top">
+					<span id="className"></span>校友 求助
+				</div>
+				<div class="word-bottom" id="description">
+
+				</div>
+			</div>
+			<div class="operating">
+				经过 <span id="caclCount">10000+</span> 次运算
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/getUserid.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/phone.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/route.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	window.onload=function(){
+		var rec = new Object(); 
+		rec = getUserid() 	
+		//console.log(rec)
+		//console.log(sharerid)
+		var route = ''
+		route = myRoutes();
+		
+		
+		
+		
+		getData();
+		function getData(){ 	
+			if(rec == {} || !rec){
+				window.location = 'clubweb.html'
+				return
+			}
+			 $.ajax({			 	
+               type: "GET",
+               data: rec,
+               url: route+'unregistered',
+               success: function(data){               	
+                	if(data.code==1){
+                		//console.log(data)
+                		var userData = data.original
+                		$('#className').html(userData.className);
+                		$('#description').html(userData.description);
+                		$('#caclCount').html(userData.caclCount);               		
+                	}else{
+                		window.location = 'clubweb.html'
+                	}
+                 },
+                 error:function(err){
+                 	console.log('err',err)
+                 }
+               
+            });
+			
+				
+		};
+
+		//button-go
+		$('.button-go').click(function(){
+			var oMask = document.getElementById('mask');
+			var oBox = document.getElementById('box');
+			
+			var iphone = ismobile();
+			var weixin = isWeiXin();
+			
+				
+		
+
+			if(weixin===1){
+				alert(weixin)
+				oMask.style.display = 'block';
+				oBox.style.display = 'block';
+				
+				oMask.onclick = function() {
+					oMask.style.display = 'none';
+					oBox.style.display = 'none';
+				}
+			}else{
+				var userAgent= navigator.userAgent
+				
+				if(iphone==1) {
+					window.location.href='https://itunes.apple.com/cn/app/dao-dao/id1178312611?l=zh&ls=1&mt=8';
+					
+			    }else{
+			    	window.location.href='http://m.daodaoclub.com'
+			    }
+			}
+			
+			//判断浏览器
+			
+
+			
+
+			
+
+			
+			
+		})
+
+		
+	}
+</script>

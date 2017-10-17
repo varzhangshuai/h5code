@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>产品故事</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <link rel="stylesheet" href="../storystyle-0aeb09b773.css">
+    <script type="text/javascript">
+        //rem适配方案
+        (function(){
+            var width =document.documentElement.clientWidth/10;
+            var styleNode = document.createElement("style");
+            styleNode.innerHTML="html{font-size:"+width+"px!important}"
+            document.head.appendChild(styleNode);
+        })()
+    </script>
+</head>
+<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+<script src="../../js/zeptodetect-8637ea0814.js"></script>
+<script src="../../js/tools-7dea01c426.js"></script>
+<script src="../../js/index-8fd3244813.js"></script>
+<script>
+
+    //分享
+    appShareWX(shareObj);
+</script>
+<body>
+    <div>
+        <ul id="image"></ul>
+    </div>
+</body>
+</html>
+
+<script>
+
+window.onload=function () {
+
+
+    var aliImgurl='http://img.daodaoclub.com/app/gifts/production/drugs/'
+
+    var list = document.querySelector("#image");
+    var lis = list.getElementsByTagName("li");
+    var start = 1;
+    var length =18;
+
+    var urlArr =[];
+    for(var i=0;i<length+1;i++){
+        urlArr.push(aliImgurl+i+".png");
+    }
+    createLi();
+
+    function createLi() {
+        var end = start + length;
+        end = end > urlArr.length ? urlArr.length : end;
+        for(var i=start;i<end;i++) {
+            var li = document.createElement("li");
+            li.src = urlArr[i];
+            list.appendChild(li);
+        }
+        showImg();
+    }
+
+
+//加载图片（懒加载）
+    function showImg(){
+        for(var i=0;i<lis.length;i++){
+            creatImg(lis[i]);
+        }
+    }
+
+    //创建img标签
+    //transtion在元素没有完全渲染完的情况下是不会被触发的
+    function creatImg(li){
+        var img = new Image();
+        img.src=li.src;
+        li.appendChild(img);
+        img.onload=function(){
+            img.style.opacity="1";
+        }
+    }
+
+
+}
+
+
+
+</script>

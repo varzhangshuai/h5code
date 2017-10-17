@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>礼尚往来</title>
+</head>
+<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+<script src="js/zeptodetect-8637ea0814.js"></script>
+<script src="js/tools-7dea01c426.js"></script>
+<script>
+    var route=myRoutes();
+    var uri =route+'/app/gifts/index.html';
+    var _unionid=getCookies('_unionid'); //获取cookie的_unionid
+    var search = getUserid();
+
+    var count=search.count || 0;
+    //判断微信 app
+    if(isWechat){
+        count++;
+        uri+= "?count="+count;
+        if(search.sharerid){
+            uri+= "&sharerid="+search.sharerid;
+        }
+        nodewxsign(uri)
+    }else if(isApp){
+        uri+='?enid='+search.enid;
+        if(count){
+            uri+="&count="+count;
+        }
+        window.location.href = uri;
+    }else{
+        var url = '/app/gifts/index.html'
+        window.location.href = route+url
+    }
+
+    function nodewxsign(uri) {
+        var data={
+            uri:uri
+        }
+//        if(count){
+//            toast('认证失败')
+//            return
+//        }
+        $.ajax({
+            type: "GET", //用POST方式传输
+            url:route+ '/wx/api/oauth/wxoauth' ,
+            //目标地址
+            data:data,
+            success: function (res){
+                if(res.code==1){
+                    window.location.href = res.data
+                }else{
+                    alert(res.msg)
+                }
+            },
+            error:function(err){
+
+            }
+        });
+    }
+
+    //分享
+    appShareWX(shareObj);
+</script>
+<body>
+</body>
+</html>

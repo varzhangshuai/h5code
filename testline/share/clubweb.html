@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>下载道道</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+		<meta name="format-detection" content="telephone=no, email=no"/>
+		<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+		<link rel="stylesheet" type="text/css" href="css/clubweb.css?1.0"/>
+	</head>
+	<script type="text/javascript">
+			(function(){
+				var width =document.documentElement.clientWidth/10;
+				var styleNode = document.createElement("style");
+					styleNode.innerHTML="html{font-size:"+width+"px!important}"
+					document.head.appendChild(styleNode);
+			})()
+	</script>
+	<body>
+		<div id="mask"></div>
+		<div id="box">
+			1.点击 <br />
+			2.选择在Safari中打开<br />
+			3.点击“下载道道iOS版”
+			<img id="jiantou" src="img/jiantou.png"/>
+		</div>
+		<div>
+			<!--<header>
+				<div class="logo"><img src="img/logo_web1@2x.png"></div>
+				<div class="header_line"></div>
+		  	</header>-->
+		  	<!--以下是第1部分-->
+			<div id="main01">
+				<div class="main01_bg"><img src="img/main01_bg@2x.png"></div>
+				<div class="btn_down"><a href="https://itunes.apple.com/cn/app/dao-dao/id1178312611?l=zh&ls=1&mt=8"><img src="img/btn_down@2x.png"></a></div>
+			</div>
+			<!--以下是第2部分-->
+			<div id="main02">
+				<div class="zuoshang"><img src="img/zuoshang@2x.png"></div>
+				<div class="main02_bg">
+					<table id="main02_content">	
+						<tr>
+							<th>道道——全球华人企业家最为精准高效地移动社交平台。</th></tr>
+							<tr>
+						<td>一个基于全球EMBA企业家圈层的一站式移动社交网络，<br/>目标和意图是以企业家声誉为驱动，<br/>以信任为基础，以互联网为手段，<br/>为后EMBA阶段的企业家提供深度社交和商业要素数字化服务的专业平台。</td>
+						</tr>						
+					</table>			
+				</div>
+				<div class="youxia"><img src="img/youxia@2x.png"></div>
+			</div>
+			<!--以下footer-->
+			<div id="footer">
+				<div class="footer_main">
+					<table class="banquan">
+						<tr>
+							<td>道同网络版权所有Copyright ©️2015-2016<br/>京ICP备16052827号-1<br/>&nbsp;</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
+<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+		window.onload = function() {
+			
+		
+			
+
+			var oMask = document.getElementById('mask');
+			var oBox = document.getElementById('box');
+			
+			//判断浏览器
+			var userAgent= navigator.userAgent
+
+			if (userAgent.indexOf("Safari") > -1) {
+		        oMask.style.display = 'none';
+				oBox.style.display = 'none';
+		    }
+			
+
+			oMask.onclick = function() {
+				
+				oMask.style.display = 'none';
+				oBox.style.display = 'none';
+				
+			}
+			
+			
+		}
+	
+</script>

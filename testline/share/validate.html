@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入手机号</title>
+	<link rel="stylesheet" type="text/css" href="css/validate.css?1.1"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  	<meta name="format-detection" content="telephone=no, email=no"/>
+</head>
+<script type="text/javascript">
+	//rem适配方案
+			(function(){
+				var width =document.documentElement.clientWidth/10;
+				var styleNode = document.createElement("style");
+					styleNode.innerHTML="html{font-size:"+width+"px!important}"
+					document.head.appendChild(styleNode);
+			})()
+</script>
+<body>
+<div class="wholepage" >
+	<div class="validate-logo">
+		参与内测请验证您的手机号，系统会以短信的方式告知您内测邀请码。
+	</div>
+	<div class="normal">
+    	<label class="form-namephone">手机</label>
+    	<input type="number" class="form-input" id="phone" name="phone" />
+   </div>
+	<span class="phone_msg" ></span>
+    <div class="normal">
+    	<label class="form-namecode ">验证码</label>
+    	<input type="number" class="form-input form-code" name="code" id="code" />
+    	<input type="button" name="getCode" class="getCode" value="获取邀请码" id="getCode"   />
+    </div>
+    <div class="normal">
+    	<input type="submit" name="submit" class="submit" id="submit"  value="提交" />
+    </div>
+    <!--弹出层-->
+    
+    <div id="mask">
+    	
+    </div>
+    <div id="layer">
+    		  	 	
+    </div>
+    
+</div>
+   	 
+</body>
+<script type="text/javascript" src="js/getUserid.js"></script>
+<script src="js/route.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script>
+window.onload=function(){
+			
+			
+	var phone = document.getElementById('phone')
+	var phone_msg = document.querySelector('.phone_msg')
+	var phone_state = false;//验证码状态
+	//路由
+	var route = ''
+	route = myRoutes();
+	
+	phone.onblur = function() {
+        //含有非法字符 不能为空 长度超25 长度少于6个字符
+        var re = /[^\w\u4e00-\u9fa5]/g;
+        if (re.test(this.value)) {
+            phone_msg.innerHTML = "<i class='msg-tip'>含有非法字符</i>";
+            phone_state = false;
+        } else if (this.value == "") {
+            phone_msg.innerHTML = "<i class='msg-tip'>手机号不能为空</i>";
+            phone_state = false;
+        } else if (this.value.length > 11) {
+            phone_msg.innerHTML = "<i class='msg-tip'>手机号太长了，请检查</i>";
+            phone_state = false;
+        } else if (this.value.length < 11) {
+            phone_msg.innerHTML = "<i class='msg-tip'>手机号太短了，请检查</i>";
+            phone_state = false;
+        } else {
+            phone_msg.innerHTML = "<i class='msg-tip'></i>";
+            phone_state = true;
+        }
+       
+    }
+	
+	//发送验证码
+	var InterValObj; //timer变量，控制时间  
+	var count = 20; //间隔函数，1秒执行  
+	var curCount;//当前剩余秒数  
+	  
+	
+	
+	$('#getCode').click(sendCode)
+	function sendCode(){
+		curCount = count;  		
+		if(phone_state === true){
+				
+			 //启动计时器，1秒执行一次  
+			var phoneVal = $('#phone').val()//手机号码	
+			
+			 $.ajax({  
+	            type: "POST", //用POST方式传输   
+	            url: route+'share/code', //目标地址  
+	            data: { mobilePhone:phoneVal } ,  
+	            success: function (res){ 
+	            	if(res.code==1){
+	            		$("#getCode").attr("disabled", "true");  
+						$("#getCode").val( curCount + "秒");  
+	            		InterValObj = window.setInterval(SetRemainTime,1000);
+	            	}else{
+	            		alert(res.msg)
+	            	}
+	            },
+	            error:function(err){
+	            	console.log(err)
+	            }
+       		 });  
+		}else{
+			alert('请输入正确的手机号码')
+		}
+		
+	}
+	//timer处理函数  
+	
+	function SetRemainTime() {  
+	    if (curCount == 0) {                  
+	        window.clearInterval(InterValObj);//停止计时器  
+	        $("#getCode").removeAttr("disabled");//启用按钮  
+	        $("#getCode").val("重新发送");     
+	    }  
+	    else {  
+	        curCount--;  
+	        $("#getCode").val( + curCount + "秒");  
+	    }  
+	}  
+	
+	//提交表单
+	$('#submit').click(postSubmit)
+	function layerLocal(){
+			$('#layer').css("display","block");
+			$('#mask').css("display","block");
+			setTimeout(function(){
+				window.location = 'clubweb.html'
+			},2000)
+		}
+	
+	
+	function postSubmit(){
+		var phone = $('#phone').val()
+		var code = $('#code').val()//邀请码								
+		if(code!="" && phone_state == true){
+			//alert('验证成功！')
+			console.log('yanzheng')
+			 $.ajax({  
+	            type: "POST", //用POST方式传输   
+	            url: route+'share/mobile', //目标地址  
+	            data: {mobilePhone:phone , verifyCode:code},  
+	            success: function (res){
+	            	
+	            	
+	            	if(res.code==1){
+	            		var status = res.original.shareStatus
+	            		console.log(status)
+	            		if(status==='1'){
+	            			window.location = "form.html"
+	            		}else if(status=='2'){
+	            			//加弹窗
+	            			$('#layer').html('此手机号已被邀请，<br /> 请下载App直接登录！ ');            			
+	            			layerLocal();	            				            			
+	            		}else if(status=='3'){
+	            			$('#layer').html('此手机号已注册，<br /> 请下载App直接登录！ ')  ;	            			
+	            			layerLocal();
+	            		}	            
+	            		
+	            	}else if(res.code=='20007'){
+	            		alert('短信验证码错误')
+	            	}else if(res.code=='20010'){
+	            		alert('验证码已过期')
+	            	}else{
+	            		alert(res.msg)
+	            	}
+	            }
+       		 });  
+		}else {
+			alert('请重新输入手机号，获取验证码')
+		}
+		
+	}
+	
+}
+
+
+</script>
+</html>

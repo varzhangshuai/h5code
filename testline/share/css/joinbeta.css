@@ -1,0 +1,70 @@
+/*清默认样式*/
+body,
+h1,
+h2,
+h3,
+h4,
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
+  font-family: helvetica;
+}
+img {
+  display: block;
+}
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+ul {
+  list-style: none;
+}
+input,
+select {
+  outline: none;
+  -moz-appearance: none;
+  /*for firefox*/
+  -webkit-appearance: none;
+  appearance: none;
+}
+body {
+  background: black;
+}
+.beta-bac {
+  width: 10rem;
+  height: 16.08rem;
+  background: url(../img/bac_beta.jpg);
+  background-size: 10rem;
+  position: relative;
+}
+.beta-button {
+  position: absolute;
+  height: 1.10666667rem;
+  width: 2.97333333rem;
+  top: 5.32rem;
+  left: 50%;
+  margin-left: -1.48666667rem;
+}
+.beta-word {
+  position: absolute;
+  top: 1.49333333rem;
+  width: 100%;
+}
+.word-top {
+  font-size: 0.4rem;
+  color: #f9fdff;
+  text-align: center;
+  margin-bottom: 0.13333333rem;
+  text-shadow: -2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+.word-top span {
+  margin: 0 0.10666667rem;
+}
+.word-bottom {
+  font-size: 0.48rem;
+  color: #f9fdff;
+  text-align: center;
+  text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>礼尚往来</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <link rel="stylesheet" href="css/reset-d972eecc8d.css">
+    <link rel="stylesheet" href="css/index-3962efee73.css?v=1.0.2">
+    <link rel="stylesheet" href="css/home-box-prize-cdc6f73013.css?v=1.0.0">
+    <script>
+        //rem适配方案
+        (function(){
+            var width = document.documentElement.clientWidth/10;
+            var styleNode = document.createElement("style");
+            styleNode.innerHTML="html{font-size:"+width+"px!important}"
+            document.head.appendChild(styleNode);
+        })()
+    </script>
+</head>
+<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+<script src="js/zeptodetect-8637ea0814.js"></script>
+<script src="js/tools-7dea01c426.js?v=2.0.14"></script>
+<script src="js/index-8fd3244813.js?v=1.0.17"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="js/wxshare-44f1d1020b.js?v=1.0.17"></script>
+<script>
+    var uri= '/costin/mapi/lottery/gifts/index';
+    var search = getUserid()
+    if(isWechat){
+        deleteOs(getData,uri);
+    }else if(isApp){
+        if(search.enid){
+            data = {enid:search.enid}
+            setCookie('_enid',search.enid)
+            getData(data)
+
+        }else if(!search.enid){
+            var enid = getCookies('_enid')
+            if(enid && enid!=''){
+                data={enid:enid}
+                getData(data)
+            }else{
+                toast('请在app内打开此活动')
+            }
+
+        }
+    }
+
+    //share
+    appShareWX(shareObj);
+
+
+</script>
+<body>
+    <div id="log0" style="font-size: 10px;color: white;"></div>
+    <div id="mask-bac">
+        <div id="mask">
+            <div id="click-area"></div>
+        </div>
+    </div>
+    <div class="home-whole">
+        <div class="home-cont">
+            <div class="home-empty-heig"></div>
+            <!-- 抽奖  -->
+            <div class="home-active">
+                <!-- 跑马灯  -->
+                <div class=" home-race-lamp" id="lottery">
+                    <ul class="home-li-gold">
+                        <li class="lottery-unit lottery-unit-0 active"><img src=""/><div class="mask"></div></li>
+                        <li class="lottery-unit lottery-unit-1 active"><img src=""/><div class="mask"></div></li>
+                        <li class="lottery-unit lottery-unit-2 active"><img src=""/><div class="mask"></div></li>
+                    </ul>
+                    <ul class="home-li-gold">
+                        <li class="lottery-unit lottery-unit-7 active"><img src="http://img.daodaoclub.com/app/gifts/img/home-lamp4.png"/><div class="mask lottery-mask-1"></div></li>
+                        <li class="lottery-unit-8">
+                            <a class="home-enjoy-key ">
+                                <div class="lottery-button"></div>
+                            </a>
+                        </li>
+                        <li class="lottery-unit lottery-unit-3 active"><img src="http://img.daodaoclub.com/app/gifts/img/home-lamp4.png"/><div class="mask lottery-mask-1"></div></li>
+                    </ul>
+                    <ul class="home-li-gold">
+                        <li class="lottery-unit lottery-unit-6 active"><img src=""/><div class="mask"></div></li>
+                        <li class="lottery-unit lottery-unit-5 active"><img src=""/><div class="mask"></div></li>
+                        <li class="lottery-unit lottery-unit-4 active"><img src=""/><div class="mask"></div></li>
+                    </ul>
+                    <!--多次机会-->
+                    <div class="home-counts" style="display: none">
+                        您还剩余<span id="frequency"></span>次抽奖机会
+                    </div>
+
+                </div>
+                <!-- 跑马灯  End-->
+                <div class="home-actDescrip clearfix">
+                    <span class="fl home-butt-desc"></span>
+                    <span class="fr home-butt-rect"></span>
+                </div>
+            </div>
+            <!--抽奖  end  -->
+        </div>
+
+
+
+        <!--  奖品  -->
+        <div class="home-prize">
+            <!--我的奖品-->
+            <div class="prize-header"></div>
+            <div id="express">
+                <div class="home-center ">
+                    <ul id="home-ul-none" style="display: none">
+                        <li class=" prize-count0-cont">
+                        您还没有奖品，赶紧抽奖去吧！
+                        </li>
+                    </ul>
+                    <ul class="home-ul-cont" id="home-ul" style="display: block">
+                        <li class="home-center home-express-item clearfix">
+                            <div class="home-shop fl"><img src="http://img.daodaoclub.com/app/gifts/img/home-adver.png" class="item-img"/></div>
+                            <div class="fl colf express-data-width" >
+                                <p class="fs30 colf wd400 item-prize"></p>
+                                <p class="fs24">
+                                    <span class="item-patron"></span><span class="fs32 bold500 c-orange pad4 item-name"></span>赠送
+                                </p>
+
+                            </div>
+                            <div class="fr prize-item-right toWinning" >
+                                <span class="item-statusing"></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!--  奖品   End-->
+        <!--  说明弹框  -->
+        <div class="desc-cont home-box-act">
+            <div class="desc-act-whole">
+                <b class="desc-ic-key"></b>
+                <div class="desc-logo"></div>
+                <div class="fs28 desc-data">
+                    <p  class="fs28">1.此次活动仅限长江校友参与。</p>
+                    <p  class="fs28">2.每位校友限领一份。</p>
+                    <p  class="fs28">3.领取奖品可自由添加收货地址，寄送给自己或他人。</p>
+                    <p  class="fs28">4.本次活动抽奖人完全免费，无需支付奖品及快递费用。</p>
+                    <p  class="fs28">5.填写地址后未收到奖品的可联系道道客服查询。</p>
+                    <p class="mt50 fs28">客服电话：010-67880529</p>
+                    <p class="mt50 fs28">以上活动最终解释权归北京道同网络信息技术有限公司所有</p>
+                </div>
+            </div>
+        </div>
+        <!--   说明弹框 End    -->
+        <!--  招募弹框  -->
+        <div class="desc-cont home-box-rect">
+            <div class="desc-act-whole ">
+                <b class="desc-ic-key"></b>
+                <div class="home-rect-logo"></div>
+                <div class="desc-data">
+                    <p class="fs34 ">加入道道“礼尚往来”，为校友送好礼，为同学送祝福。</p>
+                    <div class="mt30 fs28">
+                        <p>1.精准传播，人群均为长江校友。</p>
+                        <p>2.简单高效，道道全程免费策划。</p>
+                        <p>3.匠心展示，充分发掘产品背后的故事。</p>
+                        <p>4.多维推荐，对品牌形成立体认知。 </p>
+                        <p>5.后台管理，礼品寄送清清楚楚。  </p>
+                        <p class="mt10">具体要求：</p>
+                        <p>（1）礼品市场价不低于200元。</p>
+                        <p>（2）保证产品质量。</p>
+                        <p>（3）安排专人负责，确认页面信息、保证发货及时。</p>
+                    </div>
+                    <p class=" fs28">客服电话：010-67880529</p>
+                    <p class=" fs28">以上活动最终解释权归北京道同网络信息技术有限公司所有</p>
+                </div>
+            </div>
+        </div>
+        <!--   招募弹框 End    -->
+        <!--  分享机会弹框 -->
+        <div class="desc-cont home-share" >
+            <div class="home-enjoy-cont">
+                <b class="desc-ic-key"></b>
+                <h5 class="home-enjoy-logo"></h5>
+                <div class="desc-data">
+                    <p class="fs36">每个同学经由您分享首次激活道道，你将再获得一次抽奖机会。 </p>
+                    <div class="home-enjoy-button" id="add_share"><b class="fs42 text-center">马上分享</b></div>
+                </div>
+            </div>
+        </div>
+        <!--  分享机会弹框   End-->
+        <!--  中奖礼盒 -->
+        <div class="desc-cont home-prize-gift">
+            <div class="open-has">
+                <h3 class="title-open"><p>恭喜</p><p>您中奖了</p></h3>
+                <div class="mod-chest">
+                    <div class="chest-close show">
+                        <div class="gift"></div>
+                    </div>
+                    <div class="chest-open ">
+                        <div class="mod-chest-cont open-cont">
+                            <div class="content">
+                                <img src="http://img.daodaoclub.com/app/gifts/img/home-box-top.png" class="home-box-top"/>
+                                <img src="http://img.daodaoclub.com/app/gifts/img/home_box_flow.png" class="home-box-flow"/>
+                                <img src="http://img.daodaoclub.com/app/gifts/img/home_prize.png" class="home-prize-box"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--抽奖时的透明遮罩-->
+        <div class="desc-cont mask-lamp" style="display: none;background: rgba(0,0,0,0)"> </div>
+        <!--  中奖礼盒  End-->
+
+    </div>
+</body>
+<script src="js/lottery-1b5498e2d7.js"></script>
+<script>
+
+    //share
+
+    $(function(){
+//        deleteOs(getData,uri);
+        $('.desc-ic-key').on('click',function() {
+            $(".home-box-rect").hide();
+            $(".home-box-act").hide();
+//            $(".home-share").hide();
+            var bIsLayerOpen = false;// 标志弹出层是否打开，如果弹出层打开，则为true，否则为false
+//           window.onscroll = function(){
+//               bIsLayerOpen && window.scrollTo(0,0);
+//           }
+        });
+        $('.home-butt-desc').on('click',function() {
+            $(".home-box-act").show();
+            var bIsLayerOpen = true;// 标志弹出层是否打开，如果弹出层打开，则为true，否则为false
+//           window.onscroll = function(){
+//               bIsLayerOpen && window.scrollTo(0,0);
+//           }
+        });
+        $('.home-butt-rect').on('click',function(ev) {
+            $(".home-box-rect").show();
+            var bIsLayerOpen = true;// 标志弹出层是否打开，如果弹出层打开，则为true，否则为false
+//           window.onscroll = function(){
+//               bIsLayerOpen && window.scrollTo(0,0);
+//           }
+        });
+
+
+        lottery.init('lottery');
+        $(".home-enjoy-key").click(function () {
+            $('#log0').html('点击isApp'+isApp)
+            if($(this).hasClass('count-0')){
+                return
+//                $('.home-share').show();
+            }
+
+            if(isWechat){
+                if(!_unionid){
+                    var _unionid = getCookies('_unionid');
+                }
+                var dataLottery={
+                    _unionid :_unionid
+                }
+                clickLottery(dataLottery,animatLottery)
+            }else if(isApp){
+                var uri = '/costin/mapi/lottery/gifts/lottery';
+                var obj={};
+
+                OCJSJAVA(uri,clickLottery,obj,animatLottery)
+                appShareWX(shareObj);
+            }
+
+        });
+
+
+       //
+
+       //去领奖页面
+        $('.home-ul-cont').bind('click',function (ev) {
+
+            var name = ev.target.className;
+            var target = ev.target;
+            console.log($(target).parents('.home-express-item').find('.toWinning').attr('id'))
+            var id = target.id || $(target).find('.toWinning').attr('id') || $(target).siblings('.toWinning').attr('id') ||$(target).parents('.home-express-item').find('.toWinning').attr('id');
+
+            if(!id&&name.indexOf('toWinning')){
+                id=ev.target.parentNode.id;
+            }
+            console.log(id)
+            if(id){
+                var status0 = $('#'+id).hasClass('status0');
+                var status1 = $('#'+id).hasClass('status1');
+                var status10 = $('#'+id).hasClass('status10')
+                var statusErr = $('#'+id).hasClass('status-10');
+
+                var len=id.length;
+                var recordid=id.substring(8,len);
+
+
+                if(recordid!=''){
+                    if(status0){
+                        toWinning(recordid);
+                    }else if(status1||status10){
+                        toAddress(recordid)
+                    }else if(statusErr){
+                        //错误状态处理
+                    }
+                }
+            }
+        })
+
+        //toast share
+        appShareToast()
+        closeShareToast()
+
+
+       //wxshaere
+        getWxShare();
+
+    })
+
+
+
+
+
+</script>
+</html>

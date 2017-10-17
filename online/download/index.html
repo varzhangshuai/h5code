@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>道道</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <link rel="stylesheet" href="http://img.daodaoclub.com/app/common/download/css/reset-cd2a001860.css">
+    <link rel="stylesheet" href="http://img.daodaoclub.com/app/common/download/css/index-9d32bd050c.css">
+    <script>
+        //rem适配方案
+        (function(){
+            var width = document.documentElement.clientWidth/10;
+            var styleNode = document.createElement("style");
+            styleNode.innerHTML="html{font-size:"+width+"px!important}"
+            document.head.appendChild(styleNode);
+        })()
+    </script>
+</head>
+<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+<body>
+    <div class="wechat-whole ">
+        <div class="wechat-cont mt60">
+            <!--   已安装    -->
+            <div class="daodao-already-installed">
+                <div class="wechat-dd-logo"><img class="safire_logo" src="http://img.daodaoclub.com/app/common/download/./img/daodao_safira.png"></div>
+                <p class="fs30 mt50 text-center">若已安装道道</p>
+                <p class="fs30 text-center">请点击右上角用【safira】打开</p>
+                <p class="fs28 col9 text-center"><b class="line_b01"></b>还没有安装App?<b class="line_b01"></b></p>
+                <p class="fs30 mt50 text-center">请点击右上角【safari】打开点击“立即下载”</p>
+            </div>
+            <!--   已安装    end-->
+
+            <!--   未安装   -->
+            <div class="daodao-not-installed">
+                <div class="wechat-dd-logo mt30"><img class="daodao_logo" src="http://img.daodaoclub.com/app/common/download/./img/daodao_logo_new.png"> </div>
+                <p class="fs30 text-center" style="margin: 0">道道-最懂你的智能找人专家</p>
+                <a class="text-center daodao-load-btn">立即下载</a>
+            </div>
+            <!--   未安装 End   -->
+        </div>
+             
+    </div>
+</body>
+<script>
+    $(function(){
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            setTimeout(function () {
+//                window.location = 'daodao://';
+                setTimeout(function(){window.location = 'http://t.cn/RXqwmmO'},25);
+            },500)
+        }else if (/(Android)/i.test(navigator.userAgent)) {
+            //android
+            $(".daodao-already-installed").hide();
+            androidDown();
+        }
+
+
+        $('.daodao-load-btn').click(function () {
+            if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+                window.location = 'http://t.cn/RXqwmmO'
+            }else if (/(Android)/i.test(navigator.userAgent)) {
+                androidDown();
+            }
+        })
+
+        function androidDown() {
+            if(/(micromessenger)/i.test(navigator.userAgent)){
+                //微信
+                setTimeout(function () {
+//                $('body').append("<iframe spread='costin://' style='display:none' target='' ></iframe>");
+                    //没有安装应用会执行下面的语句
+                    setTimeout(function(){window.location = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.daodaoclub.costin'},300);
+                },500)
+            }else{
+                //此操作会调起app并阻止接下来的js执行
+                setTimeout(function(){window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.daodaoclub.costin'},300)
+            }
+        }
+   })
+
+</script>
+</html>

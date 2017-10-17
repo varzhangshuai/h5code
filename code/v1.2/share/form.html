@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>申请内测</title>
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+   
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no, email=no"/>
+</head>
+<script type="text/javascript">
+	//rem适配方案
+		(function(){
+			var width =document.documentElement.clientWidth/10;
+			var styleNode = document.createElement("style");
+				styleNode.innerHTML="html{font-size:"+width+"px!important}"
+				document.head.appendChild(styleNode);
+		})()
+</script>
+<body>
+<div class="home" >
+    <div class="invate">
+    	<div class="invite-content">
+    		<div>
+    			请认真填写以下信息，带<i class="i-xing">*</i>为必填项，我们会保护您的隐私，
+    			为您提供更优质的服务
+    		</div>
+    		<div>
+    			<p>申请提交后，我们会进行审核，审核通过后邀请码将以短信的形式发送到您的手机</p>
+    		</div>    		
+    	</div>
+    </div>
+    <div class="form">
+
+    	<div class="normal">
+    		<span class="form-name">您的手机号：</span>
+    		<span class="form-phone" id="phone" ></span>
+    	</div>
+    	
+    	<div class="normal">
+    		<div class="form-name">姓名<i class="i-xing">*</i></div>
+    		<input type="text" class="form-input" name="userName" id="userName"  />
+    	</div>
+    	
+    	<div class="normal">   
+    		<span class="form-name">性别<i class="i-xing">*</i></span>
+    		<div class="radio" > 
+			    <label class="shan-class">
+			        <input type="radio" name="sex" value="1" />
+			        <div class="option"></div>
+			        <span class="opt-text">先生</span>
+			    </label>
+			     
+			</div>
+			<div class="radio radio-woman" > 
+			    <label class="shan-class ">
+			        <input type="radio" name="sex" value="2" />
+			        <div class="option"></div>
+			        <span class="opt-text">女士</span>
+			    </label>   
+			</div>
+			
+    	</div>
+    	<div class="normal">
+			<div class="form-class threeword ">商学院<i class="i-xing">*</i></div>
+			<select name="college" class="select-number   selectOne"  id='college'>	</select>							
+	    </div>
+	    <div class="normal2">
+	    	<div class="form-class twoword">届别<i class="i-xing">*</i></div>
+	    	<select name="major" class="select-number selectOne"  id='major'></select>
+	    	<select name="grade" class="select-number selectOne"  id='grade'></select>
+	    </div>
+
+	    <div class="normal">
+	    	<div class="form-class twoword">班级<i class="i-xing">*</i></div>
+	    	<select name="classes" class="select-number selectOne"  id='classes'></select>
+	    </div>
+	    
+		<div class="normal">
+	    	<div class="form-name">公司<i class="i-xing">*</i></div>
+	    	<input type="text" class="form-input" name="company" id="company" />
+	   </div>  
+	   
+		<div class="normal">
+	    	<div class="form-name">职务<i class="i-xing">*</i></div>
+	    	<input type="text" class="form-input" name="office"  id="office" />
+	    </div>  
+	    	
+	    <div class="normal form-office">
+			<div class="form-class fourword">所在城市<i class="i-xing">*</i></div>
+			<select name="province"  class="select-city selectOne " id="province"> </select>  
+            <select name="city" class="select-city selectOne " id="city"> </select>  
+	    </div>
+	    
+	    <div class="button">
+	    	<input type="submit" class="postButton" value="提交审核" id="submit" />
+	    </div>
+    </form>
+
+    
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script src="js/route.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	window.onload=function(){
+		
+			
+		
+		
+		
+	}
+	//路由
+		var route = ''
+		route = myRoutes();
+
+	//获取数据
+	//getData()
+	function getData(){
+		
+			$.ajax({  
+	            type: "GET", //用POST方式传输   
+	            url: route+'share/output/temporary', //目标地址  
+	            success: function (res){ 
+	            	$('#phone').text(res.data)
+	            }
+       		 });  
+	}
+	
+	//班级和省市列表
+	getClassList()
+	function getClassList(){			
+		//省市
+		var province = $("#province");  
+   		var city = $("#city");  
+		var preProvince = "<option value=\"\">选择省（市）</option>";  
+   		var preCity = "<option value=\"\">选择市（区）</option>";  
+   		var areaData = new Array();
+   		var citylist = new Object();
+   		
+ 		//班级  	
+ 		var college = new Array();
+		var majors = new Array(); 
+		var grades = new Array();
+		
+		
+		var college=$('#college')
+		var major = $('#major');
+		var grade = $('#grade');
+		var classes = $('#classes');
+		
+		
+		var preCollege ="<option value=\"\">请选择商学院</option>";  
+		var preMajor = "<option value=\"\">请选择届别</option>";  
+   		var preGrade = "<option value=\"\">请选择期数</option>";  
+   		var preClasses = "<option value=\"\">请选择班级</option>";
+
+		//初始化数据
+		province.html(preProvince);  
+	    city.html(preCity);  
+	    
+	    
+	    college.html(preCollege);
+	    major.html(preMajor);  
+	    grade.html(preGrade); 
+	    classes.html(preClasses); 
+	    
+	    
+	    //文档加载完毕
+		$.ajax({  
+	        type: "GET", //用GET方式传输   
+	        url: route+'share/temporary', //目标地址  
+	        success: function (data){ 
+	            if(data.code==1){	
+	            	
+	            	$('#phone').html(data.original.mobilePhone)
+	            	
+	            	//地区数据
+	            	//areaData = [{id:1,name:'北京'},{id:2,name:'上海'},{id:3,name:'广东'}]  	
+	            	areaData = data.original.area
+	            	$.each(areaData,function(index,obj) {  
+	            		//alert(index + "..." + obj.name+"..."+obj.id)
+	            		
+			            province.append("<option  value=" +obj.id + ">"  
+			                    + obj.name + "</option>");  
+			        });   
+			        
+			        
+			        colleges = data.original.college
+			        $.each(colleges,function(index,obj){
+			        	college.append("<option  value=" +obj.id + ">"  
+			                    + obj.name + "</option>");  
+			        })
+			        
+			        //班级数据
+//			        var college = data.original.college[0]				        			  			        
+//			        majors = college.majors;
+//
+//			        $.each(majors,function(index,obj){
+//			        	major.append("<option  value=" +obj.id + ">"  
+//			                    + obj.name + "</option>");  
+//			        })	
+
+       			}
+       		}	
+        })
+			//省份 城市
+		
+		//遍历函数
+		function forEach(arr,needid){
+					for(var i=0;i<arr.length;i++){
+						if(arr[i].id == needid ){
+							return arr[i]
+						}
+					}
+			}	
+       	province.change(function() {
+       		var needid = province.val()	
+       		
+
+	        if (needid != "") {  
+	        	
+	        	
+		        	 city.html(preCity);  	              
+		            //根据下拉得到的省对于的下标序号,动态从areaData获取数据,成功之后采用  
+		             //遍历地址
+	
+		            var obj =forEach(areaData,needid)	
+		            
+			        $.each(obj.children,function(index,obj) {  
+			        	
+			            city.append("<option  value=" + obj.id + ">"  
+			                    + obj.name + "</option>");  
+			        }); 	
+	        	
+	        	
+	        	
+	                         
+	        }
+	        	        
+	    });  
+	    
+			//方向 届别 班级
+		college.change(function(){
+				var needid = college.val()
+				console.log(needid)
+				if(needid!=1){
+					alert('请尽请期待我们开放！')
+				}
+				
+				if ( needid!= "") {  
+					
+	            major.html(preMajor);  	              
+	            //根据下拉得到的major对于的下标序号,动态从majors获取数据,成功之后采用  
+	             //遍历地址
+
+	            majors =forEach(colleges,needid).majors	
+	            
+		        $.each(majors,function(index,obj) {  
+		            major.append("<option  value=" + obj.id + ">"  
+		                    + obj.name + "</option>");  
+		        }); 	              
+	        }	
+		})
+		
+			
+			
+		major.change(function() {
+			var needid = major.val()
+	        if ( needid!= "") {  
+	            grade.html(preGrade);  	              
+	            //根据下拉得到的major对于的下标序号,动态从majors获取数据,成功之后采用  
+	             //遍历地址
+
+	            grades =forEach(majors,needid).grades	
+	            
+		        $.each(grades,function(index,obj) {  
+		            grade.append("<option  value=" + obj.id + ">"  
+		                    + obj.name + "</option>");  
+		        }); 	              
+	        }	        	        
+	    }); 
+	    
+	    grade.change(function(){
+	    	var needid = grade.val()
+	    	if( needid != ""){
+	    		classes.html(preClasses);
+	    		
+	    		var classlist = forEach(grades,needid).classes	
+	    		
+	    		$.each(classlist,function(index,obj){
+	    			classes.append("<option value="+obj.id + ">"+ obj.name +"</option>")
+	    		})
+	    		
+	    	}
+	    })
+       	
+       	
+
+       	
+		
+	}
+
+	
+	//提交表单
+	var timestamp = new Date().getTime()
+	console.log(timestamp)
+	
+	$('#submit').click(postForm);
+	function postForm(){
+		var obj = {
+			mobilePhone:$('#phone').text(),
+			realName:$('#userName').val(),
+			gender:$('input:radio:checked').val(),
+			collegeid:$('#college').val(),						
+			gradeid:$('#grade').val(),
+			classesid:$('#classes').val(),
+			companyName:$('#company').val(),
+			job:$('#office').val(),
+			cityid:$('#city').val(),
+			timestamp:timestamp
+		}
+		if(obj.realName==''){
+			return alert('请输入您的姓名')
+		}
+		if(obj.gender==undefined){
+			return alert('请选择性别')
+		}
+		if(obj.collegeid==''){
+			return alert('请选择学校信息')
+		}
+		
+		if(obj.classid==''){
+			return alert('请选择班级信息')
+		}
+		if(obj.companyName==''){
+			return alert('请输入公司名称')
+		}
+		if(obj.job==''){
+			return alert('请输入您的职务')
+		}
+		if(obj.cityid==''){
+			return alert('请选择所在城市')
+		}
+		
+		//console.log(obj)
+		
+		$.ajax({  
+	            type: "POST", //用POST方式传输   
+	            url: route+'share/detail' , //目标地址 
+	            data:obj,
+	            success: function (res){ 
+	            	if(res.code==1){
+	            		window.location = "success.html"	            		
+	            	}
+	            	else{
+	            		alert(res.msg)
+	            	}
+	            },
+	            error:function(err){
+	            	console.log(err)
+	            }
+	            
+       		});  		
+	}
+	
+
+	
+</script>
+</html>

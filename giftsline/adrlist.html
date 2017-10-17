@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>礼尚往来</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <link rel="stylesheet" href="css/reset-d972eecc8d.css">
+    <link rel="stylesheet" href="css/adrlist-67de41814b.css?v=1.0.5">
+</head>
+<script type="text/javascript">
+    //rem适配方案
+    (function(){
+        var width =document.documentElement.clientWidth/10;
+        var styleNode = document.createElement("style");
+        styleNode.innerHTML="html{font-size:"+width+"px!important}"
+        document.head.appendChild(styleNode);
+    })()
+</script>
+<body>
+<div id="whole">
+    <div id="wrap">
+        <div class="add-title">请选择收货地址</div>
+        <ul class="address-list" style="display: block">
+            <li class="item" >
+                <div class="word">
+                    <div class="top">
+                        <span>收货人：</span><span class="name ellilsis"></span><span class="phone"></span>
+                    </div>
+                    <div class="address ell3">
+                        <span>地址：</span><span class="addressdetail"></span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="bottom">
+            <div class="addAddr">新建地址</div>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+<script src="js/zeptodetect-8637ea0814.js?v=1.0.2"></script>
+<script src="js/tools-7dea01c426.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/index-8fd3244813.js?v=1.0.2"></script>
+<script src="js/wxshare-44f1d1020b.js?v=1.0.17"></script>
+
+<script>
+    //分享
+    appShareWX(shareObj);
+
+    window.onload=function () {
+
+        var route = myRoutes();
+        var uri = '/costin/mapi/address'
+
+        var ua = this.navigator.userAgent;
+        var platform =  this.navigator.platform
+        detect(ua, platform);
+        os = JSON.stringify(os.daodaoclub);
+
+        deleteOs(getAddress,'/costin/mapi/address')
+
+        function getAddress(appObj) {
+            var obj = appObj
+            $.ajax({
+                type: "GET", //用POST方式传输
+                url: route+'/costin/mapi/address' , //目标地址
+                data:obj,
+                success: function (res){
+
+                    if(res.code==1){
+                        var len = res.original.length;
+                        if(len!=0){
+                            renderAdrlist(res.original);
+                            OCJSJAVA('/costin/mapi/address/default',postDefault);
+//                            OCJSJAVA('/costin/mapi/address/delete',deleteItem);
+//                            goEdit();
+
+                        }else if(len==0){
+//                            $('#newLog').html('2'+JSON.stringify(res))
+                            window.location.href ="/giftsline/add.html";
+                        }
+                    }else{
+//                        alert(res.msg)
+                    }
+                },
+                error:function(err){
+//                    $('#newLog').html(err+'<br >'+JSON.stringify(err))
+                    console.log(err)
+                }
+            });
+        }
+
+
+        function renderAdrlist(data){
+            if(data){
+                $('.address-list').css('display','block')
+            }
+            var item = $('.address-list').html();
+            var newItem='';
+            for(var i=0;i<data.length;i++){
+                newItem+=item;
+            }
+            $('.address-list').html(newItem);
+            $('.item').each(function (i) {
+                if(data[i].isdefault==1){
+                    $(this).find('.default').addClass('undefault')
+                }
+                $(this).find('.name').text(data[i].name);
+                $(this).find('.phone').text(data[i].phone);
+                $(this).find('.addressdetail').text(data[i].addr);
+                $(this).attr('id','addressid'+data[i].id)
+            })
+
+            toAppAdrdetail();
+
+        }
+
+
+
+        postDefault();
+        function postDefault(appObj) {
+
+            $('.default').click(function () {
+
+                var isDefault =$(this).hasClass('undefault')
+                var length = $('.default').length
+                var obj = appObj
+
+                if(isDefault){
+                    if(length<2){
+                        return
+                    }
+                    $(this).removeClass('undefault')
+                }else {
+                    $('.undefault').removeClass('undefault')
+                    $(this).addClass(' undefault')
+                    var id = $(this).parent('.item').attr("id")
+                    obj.addressid = id
+
+                    $.ajax({
+                        type: "POST",
+                        url: route+'/costin/mapi/address/default' ,
+                        data:obj,
+                        success:function (res) {
+//                            $('#newLog').html('default2'+JSON.stringify(res))
+                        },
+                        error:function (err) {
+//                            $('#newLog').html('err3'+JSON.stringify(err))
+                        }
+
+                    })
+                }
+            });
+        }
+
+
+
+        addAddr();
+        function addAddr() {
+            //跳转新地址
+            $('.addAddr').click(function () {
+                var time = new Date().getTime()
+                window.location.href ="/app/gifts/add.html?_time:"+time;
+            })
+        }
+
+
+
+
+        //选择地址
+
+        function toAppAdrdetail() {
+
+            $('.address-list li').click(function () {
+                $(this).css('background','background: rgba(255,255,255,0.8)')
+                var time = new Date().getTime()
+                var id=$(this).attr('id');
+                var len = id.length
+                id=id.substring(9,len)
+
+
+                var data={
+                    addressid:id,
+                    recordid:getCookies('_recordid')
+                }
+
+                setTimeout(function () {
+                    deleteOs(selectAdd,'/costin/mapi/lottery/gifts/address',data)
+                },300)
+            })
+        }
+
+
+        //删除
+
+
+        function deleteItem(appObj) {
+
+            $('.delete').click(function () {
+                var obj = appObj
+                var id = $(this).parents('.item').attr('id')
+                obj.addressid = id
+//                $('#newLog').html("delete=2"+JSON.stringify(obj))
+                $.ajax({
+                    type: "POST", //用POST方式传输
+                    url: route+'/costin/mapi/address/delete' , //目标地址
+                    data:obj,
+                    success:function (res) {
+//                        $('#newLog').html('delete=3'+JSON.stringify(res))
+                        if(res.code==1){
+                            OCJSJAVA('/costin/mapi/address/default',getAddress);
+                        }
+                    },
+                    error:function(err){
+//                        $('#newLog').html('delete=4'+JSON.stringify(err))
+                        console.log(err)
+                    }
+                })
+            })
+        }
+        //编辑
+
+        function goEdit() {
+
+            $('.edit').click(function () {
+                var id = $(this).parents('.item').attr('id')
+                if(id){
+                    window.location.href ="/app/gifts/add.html?id="+id
+                }
+            })
+        }
+
+
+        //wxshaere
+        getWxShare();
+       
+    }
+</script>

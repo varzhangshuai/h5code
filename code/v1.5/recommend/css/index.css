@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: #0C1C2B;
+  font-size: 0.4rem;
+  font-family: helvetica;
+}
+.whole {
+  width: 100%;
+  height: 100%;
+  background: url("../img/background.png") no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.top {
+  width: 6.82666667rem;
+  height: 8.85333333rem;
+  position: absolute;
+  top: 2.37333333rem;
+  left: 1.6rem;
+}
+.bold-title {
+  font-size: 0.48rem;
+  color: #d6ab6f;
+  text-align: center;
+  font-weight: bold ;
+  margin: 0.98666667rem 0 0.8rem;
+}
+.float {
+  margin: 0 auto;
+}
+.float:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.float > div {
+  float: left;
+}
+.follower-width {
+  width: 5.6rem;
+}
+.follower {
+  width: 3.2rem;
+  font-size: 0.4rem;
+  color: #f0f0f2;
+  text-align: right;
+  margin-top: 0.4rem;
+}
+.follower .name {
+  font-size: 0.42666667rem;
+}
+.follower .sex {
+  width: 0.42666667rem;
+  height: 0.42666667rem;
+  margin: 0 0.13333333rem;
+}
+.follower .auth {
+  width: 0.37333333rem;
+  height: 0.46666667rem;
+}
+.flex-center {
+  align-items: center;
+  display: -webkit-flex;
+}
+.follower-head {
+  width: 1.89333333rem;
+  height: 1.89333333rem;
+  margin-left: 0.26666667rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+  border: 0.05333333rem solid #cccccc;
+}
+.middle {
+  position: absolute;
+  top: 11.49333333rem;
+  left: 1.73333333rem;
+  width: 8rem;
+  color: #fbfbfc;
+}
+.middle .name {
+  font-size: 0.48rem;
+}
+.middle .sex {
+  width: 0.42666667rem;
+  height: 0.42666667rem;
+  margin: 0 0.13333333rem;
+}
+.middle .auth {
+  width: 0.37333333rem;
+  height: 0.46666667rem;
+}
+.target-head {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-right: 0.4rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+  border: 0.05333333rem solid #cccccc;
+}
+.target {
+  margin-top: 0.53333333rem;
+}
+.bottom {
+  background-image: url("../img/button.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 4.14666667rem;
+  height: 1.17333333rem;
+  position: absolute;
+  top: 15.30666667rem;
+  left: 50%;
+  margin-left: -2.08rem;
+}
+.bottom_active {
+  background-image: url("../img/button_active.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 4.49333333rem;
+  height: 1.17333333rem;
+  position: absolute;
+  top: 15.30666667rem;
+  left: 50%;
+  margin-left: -2.25333333rem;
+}
+.women {
+  background-image: url("../img/women.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.men {
+  background-image: url("../img/men.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.authed {
+  background: url("../img/auth.png") no-repeat;
+  background-size: cover;
+}
+.unauthed {
+  background: url("../img/unauth.png") no-repeat;
+  background-size: cover;
+}

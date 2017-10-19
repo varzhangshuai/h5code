@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>引荐</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="Keywords" content="道道，企业家社群，企业家社交，企业家平台，长江互助，中大互助">
+    <meta name="Description" content="北京道同网络信息技术有限公司，是服务于企业家人群的信息技术平台。通过云计算和大数据，快速精准的匹配企业家需要的资源。打造新时代的经济共享平台。">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="http://img.daodaoclub.com/public/baiduTotal.js"></script>
+    <script>
+        //rem适配方案
+        (function () {
+            var width = document.documentElement.clientWidth / 10;
+            var styleNode = document.createElement("style");
+            styleNode.innerHTML = "html{font-size:" + width + "px!important}"
+            document.head.appendChild(styleNode);
+        })()
+    </script>
+</head>
+<script src="http://img.daodaoclub.com/public/jquery-3.1.1.min.js"></script>
+<body>
+    <div class="whole">
+        <div class="top">
+            <div class="bold-title">
+                <p>我想结识</p>
+                <p class="top-follower"></p>
+                <p>希望您帮忙引荐一下</p>
+            </div>
+            <div class="float follower-width">
+                <div class="follower">
+                    <div class="flex-center" style="justify-content:center">
+                        <span class="name"></span>
+                        <span class="sex"></span>
+                        <span class="auth"></span>
+                    </div>
+                    <div class="major"></div>
+                </div>
+                <div class="follower-head"></div>
+            </div>
+        </div>
+        <div class="middle float">
+            <div class="target-head"></div>
+            <div class="target">
+                <div class="flex-center" style="justify-content:left">
+                    <span class="name"></span>
+                    <span class="sex"></span>
+                    <span class="auth"></span>
+                </div>
+                <div class="major"></div>
+            </div>
+        </div>
+        <div class="bottom" id="recommend-button"></div>
+    </div>
+   
+</body>
+</html>
+<script src="js/zeptodetect.js"></script>
+<script src="js/route.js"></script>
+<script src="js/tools.js?v=1"></script>
+<script>
+    window.onload=function () {
+        var route = myRoutes();
+        //引荐页数据
+        var search = getUserid();
+        OCJSJAVA('/costin/mapi/relation/recommend/page',getData,search);
+        /*
+        var appData={_time:"1508141540020",_sign:"96690447380af93dced29d41b2d727d1",_d:"9VkRyxSFww4SeM/tt/6cSaz7nMU59x2HVYD+iQ07Ln8="}
+        search = $.extend(search,appData)
+        console.log(search)
+        getData(search);
+        */
+        iosTitle({topName:'测试测试！！'}) 
+        // $('#recommend-button').click(function(){
+        //     $('#log').text(JSON.stringify(search.enid))
+        //     iosTitle({topName:'测试！'}) 
+        //     appAuthToast({toast:'auth',enid:search.enid})
+        // })
+        
+        function getData(data) {
+            $.ajax({
+                type: 'POST',
+                url:route+'/costin/mapi/relation/recommend/page',
+                data:data,
+                success: function (data){
+                    if(data.code==="1"){
+                        var res = data.original;
+                        renderData(res)
+                    }else{
+                        console.log(data.msg)
+                    }
+                },
+                error:function (err) {
+                    console.log(err)
+                }
+            })
+        }
+
+        //渲染数据
+        /*
+         *  A: follower发起者
+         *  B: target想要认识的人
+         *  C:操作者
+         */
+        function renderData(data) {
+            var c_status=data.authenticationStatus;//用户状态是否认证
+            var recommendStatus=data.recommendStatus;//引荐状态
+            if(recommendStatus==0){
+                if(!$('.recommend-button').hasClass('bottom')){
+                    $('.recommend-button').addClass('bottom')
+                }
+            }else if(recommendStatus==1){
+                //按钮css是bottom_active，且不可点击
+                $('.recommend-button').addClass('.bottom_active').removeClass('bottom')
+            }
+
+            var a_obj= data.target; //a的数据
+            var b_obj= data.follower; //b的数据
+
+            //FOLLOWER
+            $('.top-follower').text(a_obj.className+a_obj.realName)
+            $('.follower .name').text(a_obj.realName);//姓名
+            $('.follower .major').text(a_obj.className);//届别
+            //性别
+            if(a_obj.gender==1){
+                $('.follower .sex').addClass('men');
+            }else if(a_obj.gender==2){
+                $('.follower .sex').addClass('women');
+            }
+            //认证
+            if(a_obj.authenticationStatus==1){
+                $('.follower .auth').addClass('authed');
+            }else if(a_obj.authenticationStatus==0){
+                $('.follower .auth').addClass('unauthed');
+            }
+            $('.follower-head').css('background-image', 'url('+a_obj.headUrl+')')//头像
+
+            //TARGET
+            $('.target .name').text(b_obj.realName);//姓名
+            $('.target .major').text(b_obj.className);//届别
+            //性别
+            if(b_obj.gender==1){
+                $('.target .sex').addClass('men');
+            }else if(b_obj.gender==2){
+                $('.target .sex').addClass('women');
+            }
+            //认证
+            if(b_obj.authenticationStatus==1){
+                $('.target .auth').addClass('authed');
+            }else if(b_obj.authenticationStatus==0){
+                $('.target .auth').addClass('unauthed');
+            }
+            $('.target-head').css('background-image', 'url('+b_obj.headUrl+')')//头像
+
+            var obj={
+                c_status:c_status,
+                recommendStatus:recommendStatus,
+                post:{
+                    followerUserid:b_obj.enid,
+                    targetUserid:a_obj.enid
+                }
+            };
+            toRecommend(obj);
+        }
+
+        //确认引荐
+        function toRecommend(obj) {
+            $('#recommend-button').click(function () {
+                console.log('toRecommend',obj);
+                if(obj.recommendStatus==1){
+                    return
+                }
+                if(obj.c_status==0){
+                    //未认证 调用app认证
+                    toast('请完成用户认证！')
+                    appAuthToast({toast:'auth',enid:search.enid})
+                }else if(obj.c_status==1){
+                    //调用确认引荐接口
+                    var data = $.extend(obj.post,appData);
+                    // rencommendAjax(data);
+                    OCJSJAVA('/costin/mapi/relation/consent/recommend',rencommendAjax,obj.post);
+                }
+            });
+        }
+
+        //引荐接口
+        function rencommendAjax(data) {
+            $.ajax({
+                type: 'POST',
+                url:route+'/costin/mapi/relation/consent/recommend',
+                data:data,
+                success: function (data){
+                    if(data.code==="1"){
+                        var active = $('#recommend-button').hasClass('bottom_active');
+                        if(!active){
+                            $('#recommend-button').removeClass('bottom').addClass('bottom_active')
+                        }
+                    }else{
+                        console.log(data.msg)
+                    }
+                },
+                error:function (err) {
+                    console.log(err)
+                }
+            })
+        }
+    }
+</script>
